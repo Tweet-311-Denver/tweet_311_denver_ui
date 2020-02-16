@@ -1,5 +1,6 @@
 {
   "expo": {
+    "entryPoint": "./src/App/App.js",
     "name": "Blank Template",
     "slug": "tweet_311_denver_ui",
     "privacy": "public",
