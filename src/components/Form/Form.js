@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Header, TextInput } from 'react-native';
+import { View, StyleSheet, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 
 class Form extends Component {
   state = {
@@ -11,16 +11,23 @@ class Form extends Component {
 
   render() {
     return (
-      <View styles={styles.container}>
+      <View style={styles.container}>
         <Text style={styles.h1}>
           Tweet<Text style={styles.h1Color}>311</Text>Denver
         </Text>
         <Text style={styles.label}>Select Category:</Text>
-        <TextInput style={styles.smallInput}/>
+        <TextInput style={styles.smallInput} value={this.state.category} onChange={text => this.setState({category: text})}/>
         <Text style={styles.label}>Description:</Text>
         <TextInput multiline={true} numberoflines={4} style={styles.largeInput}/>
         <View style={styles.smallWrapper}>
+          <Image style={styles.icon} source={require('../../images/placeholder.png')}/>
+          <Text style={styles.iconLabel}>Add Location</Text>
         </View>
+        <View style={styles.smallWrapper}>
+          <Image style={styles.icon} source={require('../../images/photo.png')}/>
+          <Text style={styles.iconLabel}>Add Photo</Text>
+        </View>
+        <TouchableOpacity style={styles.button}><Text style={styles.buttonLabel}>Submit</Text></TouchableOpacity>
       </View>
     )
   }
@@ -29,10 +36,7 @@ class Form extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center'
+    backgroundColor: '#fff'
   },
   h1: {
     color: '#3976EA',
@@ -70,6 +74,41 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginLeft: '10%',
     marginTop: 40
+  },
+  smallWrapper: {
+    alignItems: 'center',
+    alignSelf: 'center',
+    flex: 0,
+    flexDirection: 'row',
+    height: 50,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 40,
+    width: '80%'
+  },
+  icon: {
+    height: 50,
+    marginRight: 15,
+    width: 50
+  },
+  iconLabel: {
+    color: '#3976EA',
+    fontSize: 25
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#3976EA',
+    borderRadius: 20,
+    height: 40,
+    justifyContent: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 40,
+    width: '40%'
+  },
+  buttonLabel: {
+    color: '#FFFFFF',
+    fontSize: 20
   }
 });
 
