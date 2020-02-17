@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 
 export const Tweet = () => {
 
@@ -10,39 +10,72 @@ export const Tweet = () => {
         style={styles.confirmedFalse} 
         source={require('../../../assets/confirm.png')} 
       />
-      <TextInput
-        multiline
-        maxLength='280'
-        style={styles.tweetInput}
-        placeholder='Your Tweet'
-      >
-      </TextInput>
-      <Button title='Confirm' />
+      <View style={styles.inputArea}>
+        <Text style={styles.tweetLabel}>Your Tweet:</Text>
+        <TextInput
+          multiline
+          maxLength='280'
+          style={styles.tweetInput}
+          placeholder='Your Tweet'
+        >
+        </TextInput>
+      </View>
+      <TouchableOpacity style={styles.confirmButton}>
+        <Text style={styles.buttonLabel}>Submit</Text>
+      </TouchableOpacity>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  headerText: {
-    fontSize: 35,
-  },
   tweetContainer: {
     alignItems: 'center',
     backgroundColor: '#fff',
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    padding: 15,
+    width: '95%',
+  },
+  headerText: {
+    color: '#3976EA',
+    fontSize: 35,
+    marginTop: 20,
+  },
+  inputArea: {
+    flex: 1,
+    marginTop: 70,
+    width: '90%',
+  },
+  tweetLabel: {
+    color: '#3976EA',
+    fontSize: 20,
+    paddingBottom: 10,
   },
   tweetInput: {
     borderColor: 'gray', 
     borderWidth: 1, 
     height: 150,
-    marginTop: 10,
     padding: 10,
-    width: 350, 
+    width: '100%', 
   },
   confirmedFalse: {
-    height: 200,
-    margin: 50,
-    width: 200,
+    height: 250,
+    marginTop: 70,
+    width: 250,
+  },
+  confirmButton: {
+    alignItems: 'center',
+    backgroundColor: '#3976EA',
+    borderRadius: 20,
+    height: 40,
+    justifyContent: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: 35,
+    width: '50%',
+  },
+  buttonLabel: {
+    color: '#FFFFFF',
+    fontSize: 20
   }
 })
