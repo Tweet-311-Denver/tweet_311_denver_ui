@@ -10,12 +10,9 @@ import Form from '../components/Form/Form.js';
 const Stack = createStackNavigator();
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
+  state = {
       description: ''
     }
-  }
 
   render() {
     return (
