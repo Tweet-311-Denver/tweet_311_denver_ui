@@ -1,15 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 
-export const Tweet = () => {
+export const Tweet = ({ description }) => {
+
+  const redCheck = <Image style={styles.img} source={require('../../../assets/confirm.png')} />
+  const greenCheck = <Image style={styles.img} source={require('../../../assets/confirmTrue.png')} />
 
   return(
     <View style={styles.tweetContainer}>
       <Text style={styles.headerText}>Confirm Your Tweet:</Text>
-      <Image 
-        style={styles.confirmedFalse} 
-        source={require('../../../assets/confirm.png')} 
-      />
+      { description ? greenCheck : redCheck }
       <View style={styles.inputArea}>
         <Text style={styles.tweetLabel}>Your Tweet:</Text>
         <TextInput
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '100%', 
   },
-  confirmedFalse: {
+  img: {
     height: 250,
     marginTop: 70,
     width: 250,
