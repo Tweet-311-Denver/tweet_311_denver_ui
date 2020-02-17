@@ -16,9 +16,9 @@ class Form extends Component {
           Tweet<Text style={styles.h1Color}>311</Text>Denver
         </Text>
         <Text style={styles.label}>Select Category:</Text>
-        <TextInput style={styles.smallInput} value={this.state.category} onChange={text => this.setState({category: text})}/>
+        <TextInput style={styles.smallInput} value={this.state.category} onChangeText={text => this.setState({category: text})}/>
         <Text style={styles.label}>Description:</Text>
-        <TextInput multiline={true} numberoflines={4} style={styles.largeInput}/>
+        <TextInput multiline={true} style={styles.largeInput} value={this.state.description} onChangeText={text => this.setState({description: text})}/>
         <View style={styles.smallWrapper}>
           <Image style={styles.icon} source={require('../../images/placeholder.png')}/>
           <Text style={styles.iconLabel}>Add Location</Text>
