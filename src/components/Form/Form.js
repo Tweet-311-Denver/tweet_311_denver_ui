@@ -20,11 +20,11 @@ class Form extends Component {
         <Text style={styles.label}>Description:</Text>
         <TextInput multiline={true} style={styles.largeInput} value={this.state.description} onChangeText={text => this.setState({description: text})}/>
         <View style={styles.smallWrapper}>
-          <Image style={styles.icon} source={require('../../images/placeholder.png')}/>
+          <Image style={styles.icon} source={require('../../../assets/images/placeholder.png')}/>
           <Text style={styles.iconLabel}>Add Location</Text>
         </View>
         <View style={styles.smallWrapper}>
-          <Image style={styles.icon} source={require('../../images/photo.png')}/>
+          <Image style={styles.icon} source={require('../../../assets/images/photo.png')}/>
           <Text style={styles.iconLabel}>Add Photo</Text>
         </View>
         <TouchableOpacity style={styles.button}><Text style={styles.buttonLabel}>Submit</Text></TouchableOpacity>

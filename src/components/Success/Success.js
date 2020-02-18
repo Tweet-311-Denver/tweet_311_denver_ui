@@ -7,7 +7,7 @@ export const Success = () => {
     <View style={styles.successContainer}>
       <Text style={styles.headerText}>Success</Text>
       <Text style={styles.messageText}>Form submitted and Tweet Posted</Text>
-      <Image style={styles.img} source={require('../../../assets/completed-task.png')} />
+      <Image style={styles.img} source={require('../../../assets/images/completed-task.png')} />
       <Text style={styles.thanksText}>Thanks!</Text>
       <TouchableOpacity style={styles.homeButton}>
         <Text style={styles.homeLabel}>Home</Text>
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
   img: {
     marginLeft: 'auto',
     marginRight: 'auto',
+    marginRight: 35,
     height: 250,
     marginTop: 50,
     width: 250,

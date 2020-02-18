@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'reac
 
 export const Tweet = ({ description }) => {
 
-  const redCheck = <Image style={styles.img} source={require('../../../assets/confirm.png')} />
-  const greenCheck = <Image style={styles.img} source={require('../../../assets/confirmTrue.png')} />
+  const redCheck = <Image style={styles.img} source={require('../../../assets/images/confirm.png')} />
+  const greenCheck = <Image style={styles.img} source={require('../../../assets/images/confirmTrue.png')} />
 
   return(
     <View style={styles.tweetContainer}>
