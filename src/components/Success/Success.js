@@ -1,0 +1,65 @@
+import React from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+
+export const Success = () => {
+
+  return(
+    <View style={styles.successContainer}>
+      <Text style={styles.headerText}>Success</Text>
+      <Text style={styles.messageText}>Form submitted and Tweet Posted</Text>
+      <Image style={styles.img} source={require('../../../assets/completed-task.png')} />
+      <Text style={styles.thanksText}>Thanks!</Text>
+      <TouchableOpacity style={styles.homeButton}>
+        <Text style={styles.homeLabel}>Home</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  successContainer: {
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    flexDirection: 'column',
+    flex: 1,
+    padding: 15,
+    width: '95%',
+  },
+  headerText: {
+    color: '#3976EA',
+    fontSize: 50,
+    marginTop: 20,
+  },
+  messageText: {
+    color: '#3976EA',
+    fontSize: 20,
+    marginTop: 20,
+  },
+  img: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    height: 250,
+    marginTop: 50,
+    width: 250,
+  },
+  thanksText: {
+    color: '#3976EA',
+    fontSize: 20,
+    marginTop: 40,
+  },
+  homeButton: {
+    alignItems: 'center',
+    backgroundColor: '#3976EA',
+    borderRadius: 20,
+    height: 40,
+    justifyContent: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 50,
+    width: '50%',
+  },
+  homeLabel: {
+    color: '#FFFFFF',
+    fontSize: 20
+  }
+});
