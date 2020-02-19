@@ -7,7 +7,8 @@ class Form extends Component {
       description: '',
       isSnowRemoval: false,
       loaction: '',
-      photo: ''
+      photo: '',
+      error: ''
     }
 
   validateSubmit = () => {
@@ -20,7 +21,25 @@ class Form extends Component {
   }
 
   handleSubmit = () => {
-    console.log(this.validateSubmit());
+    const payload = {
+      report: {
+        category: this.state.isSnowRemoval ? 'snow_removal' : 'other',
+        description: this.state.description,
+        image: this.state.images,
+        email: this.state.email
+      },
+      location: {
+        lat: '',
+        lon: ''
+      }
+    };
+    if (this.validateSubmit()) {
+      // this is where we make the API call
+      // set App's decsription state
+      // redirect to Tweet
+    } else {
+        this.setState({error: 'Please add an email, description, and location.'})
+    }
   }
 
   render() {
@@ -47,6 +66,7 @@ class Form extends Component {
             <Image style={styles.icon} source={require('../../../assets/images/photo.png')}/>
             <Text style={styles.iconLabel}>Add Photo</Text>
           </View>
+          <Text style={styles.error}>{this.state.error}</Text>
           <TouchableOpacity style={styles.button}><Text style={styles.buttonLabel} onPress={() => this.handleSubmit()}>Submit</Text></TouchableOpacity>
         </ScrollView>
       </View>
@@ -122,6 +142,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 40,
     justifyContent: 'center',
+    marginBottom: 40,
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 40,
@@ -133,6 +154,13 @@ const styles = StyleSheet.create({
   },
   CheckBox: {
     marginRight: 15
+  },
+  error: {
+    color: 'red',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 40,
+    width: '80%'
   }
 });
 
