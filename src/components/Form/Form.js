@@ -10,6 +10,19 @@ class Form extends Component {
       photo: ''
     }
 
+  validateSubmit = () => {
+    const { description } = this.state;
+    return this.validateEmail() && description ? true : false;
+  }
+
+  validateEmail = () => {
+    return /\S+@\S+\.\S+/.test(this.state.email);
+  }
+
+  handleSubmit = () => {
+    console.log(this.validateSubmit());
+  }
+
   render() {
     const { navigation } = this.props
     return (
@@ -34,7 +47,7 @@ class Form extends Component {
             <Image style={styles.icon} source={require('../../../assets/images/photo.png')}/>
             <Text style={styles.iconLabel}>Add Photo</Text>
           </View>
-          <TouchableOpacity style={styles.button}><Text style={styles.buttonLabel}>Submit</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.button}><Text style={styles.buttonLabel} onPress={() => this.handleSubmit()}>Submit</Text></TouchableOpacity>
         </ScrollView>
       </View>
     )
