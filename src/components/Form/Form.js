@@ -14,11 +14,11 @@ class Form extends Component {
   validateSubmit = () => {
     const { description } = this.state;
     return this.validateEmail() && description ? true : false;
-  }
+  };
 
   validateEmail = () => {
     return /\S+@\S+\.\S+/.test(this.state.email);
-  }
+  };
 
   handleSubmit = () => {
     const payload = {
@@ -38,9 +38,16 @@ class Form extends Component {
       // set App's decsription state
       // redirect to Tweet
     } else {
-        this.setState({error: 'Please add an email, description, and location.'})
+        this.setState({error: 'Please add a valid email, description, and location.'})
     }
-  }
+  };
+
+  handleChange = (value, type) => {
+    if (this.validateSubmit()) {
+      this.setState({error: ''});
+    }
+    this.setState({[type]: value});
+  };
 
   render() {
     const { navigation } = this.props
@@ -51,7 +58,7 @@ class Form extends Component {
             Tweet<Text style={styles.h1Color}>311</Text>Denver
           </Text>
           <Text style={styles.label}>Enter Email:</Text>
-          <TextInput style={styles.smallInput} value={this.state.email} onChangeText={text => this.setState({email: text})}/>
+          <TextInput style={styles.smallInput} value={this.state.email} onChangeText={text => this.handleChange(text, 'email')}/>
           <View style={styles.smallWrapper}>
             <Switch style={styles.CheckBox} value={this.state.isSnowRemoval} onValueChange={value => this.setState({isSnowRemoval: value})}/>
             <Text style={styles.iconLabel}>Snow Removal?</Text>
