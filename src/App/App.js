@@ -14,13 +14,19 @@ class App extends Component {
       description: ''
     }
 
+  updateDescription = desc => {
+    this.setState({description: desc});
+  };
+
   render() {
     return (
       <NavigationContainer>
         <Stack.Navigator screenOptions={{
           headerShown: true
         }}>
-          <Stack.Screen name="Home" component={Form} />
+        <Stack.Screen name="Home">
+          {props => <Form {...props} desc={this.updateDescription}/>}
+        </Stack.Screen>
           <Stack.Screen name="Tweet" component={Tweet} />
           <Stack.Screen name="Success" component={Success} />
         </Stack.Navigator>
