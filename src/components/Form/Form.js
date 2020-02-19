@@ -1,34 +1,85 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, TextInput, Image, TouchableOpacity, ScrollView, Switch } from 'react-native';
 
 class Form extends Component {
-  state = {
-      category: '',
-      description: '',
-      loaction: '',
-      photo: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+        email: '',
+        description: '',
+        isSnowRemoval: false,
+        loaction: '',
+        photo: '',
+        error: ''
+      }
+  }
+
+  validateSubmit = () => {
+    const { description } = this.state;
+    // We will eventually need to add location to this validation
+    return this.validateEmail() && description ? true : false;
+  };
+
+  validateEmail = () => {
+    return /\S+@\S+\.\S+/.test(this.state.email);
+  };
+
+  handleSubmit = () => {
+    const { navigation } = this.props;
+    const payload = {
+      report: {
+        category: this.state.isSnowRemoval ? 'snow_removal' : 'other',
+        description: this.state.description,
+        image: this.state.images,
+        email: this.state.email
+      },
+      location: {
+        lat: '',
+        lon: ''
+      }
+    };
+    if (this.validateSubmit()) {
+      // this is where we make the API call
+      navigation.navigate('Tweet');
+      this.props.desc(this.state.description);
+    } else {
+        this.setState({error: 'Please add a valid email, description, and location.'})
     }
+  };
+
+  handleChange = (value, type) => {
+    if (this.validateSubmit()) {
+      this.setState({error: ''});
+    }
+    this.setState({[type]: value});
+  };
 
   render() {
-    const { navigation } = this.props
     return (
       <View style={styles.container}>
-        <Text style={styles.h1}>
-          Tweet<Text style={styles.h1Color}>311</Text>Denver
-        </Text>
-        <Text style={styles.label}>Select Category:</Text>
-        <TextInput style={styles.smallInput} value={this.state.category} onChangeText={text => this.setState({category: text})}/>
-        <Text style={styles.label}>Description:</Text>
-        <TextInput multiline={true} style={styles.largeInput} value={this.state.description} onChangeText={text => this.setState({description: text})}/>
-        <View style={styles.smallWrapper}>
-          <Image style={styles.icon} source={require('../../../assets/images/placeholder.png')}/>
-          <Text style={styles.iconLabel}>Add Location</Text>
-        </View>
-        <View style={styles.smallWrapper}>
-          <Image style={styles.icon} source={require('../../../assets/images/photo.png')}/>
-          <Text style={styles.iconLabel}>Add Photo</Text>
-        </View>
-        <TouchableOpacity style={styles.button} onPress={ () => navigation.navigate('Tweet') }><Text style={styles.buttonLabel}>Submit</Text></TouchableOpacity>
+        <ScrollView>
+          <Text style={styles.h1}>
+            Tweet<Text style={styles.h1Color}>311</Text>Denver
+          </Text>
+          <Text style={styles.label}>Enter Email:</Text>
+          <TextInput style={styles.smallInput} value={this.state.email} onChangeText={text => this.handleChange(text, 'email')}/>
+          <View style={styles.smallWrapper}>
+            <Switch style={styles.CheckBox} value={this.state.isSnowRemoval} onValueChange={value => this.setState({isSnowRemoval: value})}/>
+            <Text style={styles.iconLabel}>Snow Removal?</Text>
+          </View>
+          <Text style={styles.label}>Description:</Text>
+          <TextInput multiline={true} style={styles.largeInput} value={this.state.description} onChangeText={text => this.setState({description: text})}/>
+          <View style={styles.smallWrapper}>
+            <Image style={styles.icon} source={require('../../../assets/images/placeholder.png')}/>
+            <Text style={styles.iconLabel}>Add Location</Text>
+          </View>
+          <View style={styles.smallWrapper}>
+            <Image style={styles.icon} source={require('../../../assets/images/photo.png')}/>
+            <Text style={styles.iconLabel}>Add Photo</Text>
+          </View>
+          <Text style={styles.error}>{this.state.error}</Text>
+          <TouchableOpacity style={styles.button}><Text style={styles.buttonLabel} onPress={() => this.handleSubmit()}>Submit</Text></TouchableOpacity>
+        </ScrollView>
       </View>
     )
   }
@@ -102,6 +153,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 40,
     justifyContent: 'center',
+    marginBottom: 40,
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 40,
@@ -110,6 +162,16 @@ const styles = StyleSheet.create({
   buttonLabel: {
     color: '#FFFFFF',
     fontSize: 20
+  },
+  CheckBox: {
+    marginRight: 15
+  },
+  error: {
+    color: 'red',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 40,
+    width: '80%'
   }
 });
 
