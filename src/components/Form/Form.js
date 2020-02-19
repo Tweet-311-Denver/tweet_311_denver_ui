@@ -55,7 +55,6 @@ class Form extends Component {
   };
 
   render() {
-    const { navigation } = this.props
     return (
       <View style={styles.container}>
         <ScrollView>
