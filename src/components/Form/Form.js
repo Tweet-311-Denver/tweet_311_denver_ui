@@ -38,9 +38,8 @@ class Form extends Component {
     };
     if (this.validateSubmit()) {
       // this is where we make the API call
-      // set App's decsription state
       // redirect to Tweet
-      console.log(this.props);
+      this.props.desc(this.state.description);
     } else {
         this.setState({error: 'Please add a valid email, description, and location.'})
     }
