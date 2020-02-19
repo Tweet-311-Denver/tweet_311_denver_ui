@@ -131,9 +131,7 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   CheckBox: {
-    height: 50,
-    marginRight: 15,
-    width: 50
+    marginRight: 15
   }
 });
 
