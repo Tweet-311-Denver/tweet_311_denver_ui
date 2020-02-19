@@ -10,6 +10,7 @@ class Form extends Component {
     }
 
   render() {
+    const { navigation } = this.props
     return (
       <View style={styles.container}>
         <Text style={styles.h1}>
@@ -27,7 +28,7 @@ class Form extends Component {
           <Image style={styles.icon} source={require('../../../assets/images/photo.png')}/>
           <Text style={styles.iconLabel}>Add Photo</Text>
         </View>
-        <TouchableOpacity style={styles.button}><Text style={styles.buttonLabel}>Submit</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={ () => navigation.navigate('Tweet') }><Text style={styles.buttonLabel}>Submit</Text></TouchableOpacity>
       </View>
     )
   }

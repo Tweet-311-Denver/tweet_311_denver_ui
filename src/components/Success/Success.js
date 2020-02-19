@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
-export const Success = () => {
+export const Success = ({ navigation }) => {
 
   return(
     <View style={styles.successContainer}>
@@ -9,7 +9,7 @@ export const Success = () => {
       <Text style={styles.messageText}>Form submitted and Tweet Posted</Text>
       <Image style={styles.img} source={require('../../../assets/images/completed-task.png')} />
       <Text style={styles.thanksText}>Thanks!</Text>
-      <TouchableOpacity style={styles.homeButton}>
+      <TouchableOpacity style={styles.homeButton} onPress={ () => navigation.navigate('Home') }>
         <Text style={styles.homeLabel}>Home</Text>
       </TouchableOpacity>
     </View>
@@ -64,3 +64,5 @@ const styles = StyleSheet.create({
     fontSize: 20
   }
 });
+
+export default Success;

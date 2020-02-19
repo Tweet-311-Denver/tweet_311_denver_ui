@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 
-export const Tweet = ({ description }) => {
+export const Tweet = ({ description, navigation }) => {
 
   const redCheck = <Image style={styles.img} source={require('../../../assets/images/confirm.png')} />
   const greenCheck = <Image style={styles.img} source={require('../../../assets/images/confirmTrue.png')} />
@@ -20,7 +20,7 @@ export const Tweet = ({ description }) => {
         >
         </TextInput>
       </View>
-      <TouchableOpacity style={styles.confirmButton}>
+      <TouchableOpacity style={styles.confirmButton} onPress={ () => navigation.navigate('Success') }>
         <Text style={styles.buttonLabel}>Submit</Text>
       </TouchableOpacity>
     </View>
@@ -79,3 +79,5 @@ const styles = StyleSheet.create({
     fontSize: 20
   }
 })
+
+export default Tweet;
