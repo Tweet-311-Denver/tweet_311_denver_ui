@@ -25,6 +25,7 @@ class Form extends Component {
   };
 
   handleSubmit = () => {
+    const { navigation } = this.props;
     const payload = {
       report: {
         category: this.state.isSnowRemoval ? 'snow_removal' : 'other',
@@ -39,7 +40,7 @@ class Form extends Component {
     };
     if (this.validateSubmit()) {
       // this is where we make the API call
-      // redirect to Tweet
+      navigation.navigate('Tweet');
       this.props.desc(this.state.description);
     } else {
         this.setState({error: 'Please add a valid email, description, and location.'})
