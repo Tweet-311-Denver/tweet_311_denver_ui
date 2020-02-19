@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, TextInput, Image, TouchableOpacity, ScrollView, Switch } from 'react-native';
 
 class Form extends Component {
-  state = {
-      email: '',
-      description: '',
-      isSnowRemoval: false,
-      loaction: '',
-      photo: '',
-      error: ''
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+        email: '',
+        description: '',
+        isSnowRemoval: false,
+        loaction: '',
+        photo: '',
+        error: ''
+      }
+  }
 
   validateSubmit = () => {
     const { description } = this.state;
@@ -37,6 +40,7 @@ class Form extends Component {
       // this is where we make the API call
       // set App's decsription state
       // redirect to Tweet
+      console.log(this.props);
     } else {
         this.setState({error: 'Please add a valid email, description, and location.'})
     }
