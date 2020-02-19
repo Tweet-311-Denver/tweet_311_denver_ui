@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, TextInput, Image, TouchableOpacity, ScrollView, Switch } from 'react-native';
 
 class Form extends Component {
   state = {
-      category: '',
+      email: '',
       description: '',
+      isSnowRemoval: false,
       loaction: '',
       photo: ''
     }
@@ -13,22 +14,28 @@ class Form extends Component {
     const { navigation } = this.props
     return (
       <View style={styles.container}>
-        <Text style={styles.h1}>
-          Tweet<Text style={styles.h1Color}>311</Text>Denver
-        </Text>
-        <Text style={styles.label}>Select Category:</Text>
-        <TextInput style={styles.smallInput} value={this.state.category} onChangeText={text => this.setState({category: text})}/>
-        <Text style={styles.label}>Description:</Text>
-        <TextInput multiline={true} style={styles.largeInput} value={this.state.description} onChangeText={text => this.setState({description: text})}/>
-        <View style={styles.smallWrapper}>
-          <Image style={styles.icon} source={require('../../../assets/images/placeholder.png')}/>
-          <Text style={styles.iconLabel}>Add Location</Text>
-        </View>
-        <View style={styles.smallWrapper}>
-          <Image style={styles.icon} source={require('../../../assets/images/photo.png')}/>
-          <Text style={styles.iconLabel}>Add Photo</Text>
-        </View>
-        <TouchableOpacity style={styles.button} onPress={ () => navigation.navigate('Tweet') }><Text style={styles.buttonLabel}>Submit</Text></TouchableOpacity>
+        <ScrollView>
+          <Text style={styles.h1}>
+            Tweet<Text style={styles.h1Color}>311</Text>Denver
+          </Text>
+          <Text style={styles.label}>Enter Email:</Text>
+          <TextInput style={styles.smallInput} value={this.state.email} onChangeText={text => this.setState({email: text})}/>
+          <View style={styles.smallWrapper}>
+            <Switch style={styles.CheckBox} value={this.state.isSnowRemoval} onValueChange={value => this.setState({isSnowRemoval: value})}/>
+            <Text style={styles.iconLabel}>Snow Removal?</Text>
+          </View>
+          <Text style={styles.label}>Description:</Text>
+          <TextInput multiline={true} style={styles.largeInput} value={this.state.description} onChangeText={text => this.setState({description: text})}/>
+          <View style={styles.smallWrapper}>
+            <Image style={styles.icon} source={require('../../../assets/images/placeholder.png')}/>
+            <Text style={styles.iconLabel}>Add Location</Text>
+          </View>
+          <View style={styles.smallWrapper}>
+            <Image style={styles.icon} source={require('../../../assets/images/photo.png')}/>
+            <Text style={styles.iconLabel}>Add Photo</Text>
+          </View>
+          <TouchableOpacity style={styles.button}><Text style={styles.buttonLabel}>Submit</Text></TouchableOpacity>
+        </ScrollView>
       </View>
     )
   }
@@ -110,6 +117,11 @@ const styles = StyleSheet.create({
   buttonLabel: {
     color: '#FFFFFF',
     fontSize: 20
+  },
+  CheckBox: {
+    height: 50,
+    marginRight: 15,
+    width: 50
   }
 });
 
