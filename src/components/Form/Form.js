@@ -16,6 +16,7 @@ class Form extends Component {
 
   validateSubmit = () => {
     const { description } = this.state;
+    // We will eventually need to add location to this validation
     return this.validateEmail() && description ? true : false;
   };
 
