@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TextInput, Image, TouchableOpacity, ScrollView, Switch } from 'react-native';
-import MapView from 'react-native-maps'
+
 
 class Form extends Component {
   constructor(props) {
@@ -58,16 +58,6 @@ class Form extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <MapView
-      style={styles.map} 
-      region={ { 
-        latitude: 39.7392,
-        longitude: -104.9903,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,  
-          }
-        }        
-      showsUserLocation={true}></MapView>
         <ScrollView>
           <Text style={styles.h1}>
             Tweet<Text style={styles.h1Color}>311</Text>Denver
@@ -82,7 +72,9 @@ class Form extends Component {
           <TextInput multiline={true} style={styles.largeInput} value={this.state.description} onChangeText={text => this.setState({description: text})}/>
           <View style={styles.smallWrapper}>
             <Image style={styles.icon} source={require('../../../assets/images/placeholder.png')}/>
-            <Text style={styles.iconLabel}>Add Location</Text>
+            <TouchableOpacity>
+              <Text style={styles.iconLabel}>Add Location</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.smallWrapper}>
             <Image style={styles.icon} source={require('../../../assets/images/photo.png')}/>
@@ -110,10 +102,6 @@ const styles = StyleSheet.create({
   },
   h1Color: {
     color: '#000000'
-  },
-  map: {
-    height: 300,
-    width: '100%',
   },
   smallInput: {
     borderColor: '#000000',
