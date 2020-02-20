@@ -1,30 +1,59 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
-import MapView from 'react-native-maps'
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import MapView, { Marker } from 'react-native-maps';
 
-export const Maps = () => {
+class Maps extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      markers: []
+    }
+  }
 
-  return(
-    <View style={styles.mapContainer}>
-      <MapView
-      style={styles.map} 
-      region={ { 
-        latitude: 39.7392,
-        longitude: -104.9903,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,  
+  handlePress = (e) => {
+    this.setState({
+      markers: [
+        {
+        coordinate: e.nativeEvent.coordinate,
+        pin: '!'
+      }
+    ]
+    })
+  }
+
+  render() {
+    return(
+      <View style={styles.mapContainer}>
+        <MapView
+        style={styles.map} 
+        region={ { 
+          latitude: 39.7392,
+          longitude: -104.9903,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,  
+            }
           }
-        }        
-      showsUserLocation={true}>
-      </MapView>
-      <TouchableOpacity style={styles.btn}>
-        <Text style={styles.text}>Add Location</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.btn}>
-        <Text style={styles.text}>Back</Text>
-      </TouchableOpacity>
-    </View>
-  )
+          showsTraffic={true}
+          onPress={ this.handlePress }       
+          >
+          {this.state.markers.map(marker => {
+            return (
+              <Marker { ...marker } >
+                <View style={styles.marker}>
+                  <Text>{marker.pin}</Text>
+                </View>
+              </Marker>)
+          })}
+        </MapView>
+        <TouchableOpacity style={styles.btn}>
+          <Text style={styles.text}>Add Location</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.btn} onPress={ () => navigation.navigate('Home') }>
+          <Text style={styles.text}>Back</Text>
+        </TouchableOpacity>
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -42,6 +71,11 @@ const styles = StyleSheet.create({
   text: {
     color: '#FFFFFF',
     fontSize: 20
+  },
+  marker: {
+    backgroundColor: '#550bbc',
+    padding: 5,
+    borderRadius: 5
   },
   btn: {
     alignItems: 'center',

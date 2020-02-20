@@ -74,7 +74,7 @@ class Form extends Component {
           <TextInput multiline={true} style={styles.largeInput} value={this.state.description} onChangeText={text => this.setState({description: text})}/>
           <View style={styles.smallWrapper}>
             <Image style={styles.icon} source={require('../../../assets/images/placeholder.png')}/>
-            <TouchableOpacity onPress={() => navigation.navigate('Location')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Location') }>
               <Text style={styles.iconLabel}>Add Location</Text>
             </TouchableOpacity>
           </View>
