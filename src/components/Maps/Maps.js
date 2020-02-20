@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 
 class Maps extends Component {
@@ -15,7 +15,7 @@ class Maps extends Component {
       markers: [
         {
         coordinate: e.nativeEvent.coordinate,
-        pin: '!'
+        pin: <Image style={styles.img} source={require('../../../assets/images/pin.png')} />
       }
     ]
     })
@@ -39,8 +39,8 @@ class Maps extends Component {
           {this.state.markers.map(marker => {
             return (
               <Marker { ...marker } >
-                <View style={styles.marker}>
-                  <Text>{marker.pin}</Text>
+                <View>
+                  <Text style={styles.img} >{marker.pin}</Text>
                 </View>
               </Marker>)
           })}
@@ -72,10 +72,9 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 20
   },
-  marker: {
-    backgroundColor: '#550bbc',
-    padding: 5,
-    borderRadius: 5
+  img: {
+    height: 30,
+    width: 30,
   },
   btn: {
     alignItems: 'center',
