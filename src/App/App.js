@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Form from '../components/Form/Form.js';
 import Tweet from '../components/Tweet/Tweet';
 import Success from '../components/Success/Success';
+import Maps from '../components/Maps/Maps';
 
 const Stack = createStackNavigator();
 
@@ -24,9 +25,10 @@ class App extends Component {
         <Stack.Navigator screenOptions={{
           headerShown: true
         }}>
-        <Stack.Screen name="Home">
-          {props => <Form {...props} desc={this.updateDescription}/>}
-        </Stack.Screen>
+          <Stack.Screen name="Home">
+            {props => <Form {...props} desc={this.updateDescription}/>}
+          </Stack.Screen>
+          <Stack.Screen name="Location" component={Maps} />
           <Stack.Screen name="Tweet" component={Tweet} />
           <Stack.Screen name="Success" component={Success} />
         </Stack.Navigator>
