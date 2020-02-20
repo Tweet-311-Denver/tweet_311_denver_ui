@@ -23,12 +23,21 @@ class Maps extends Component {
 
   handleSubmit = () => {
     const { navigation } = this.props;
-    navigation.navigate('Home')
+    const { markers } = this.state;
+
+    const latAndLong = {
+      lat: markers[0].coordinate.latitude,
+      long: markers[0].coordinate.longitude
+    }
+
     //here we can add pass in a fn() that will update state in Form for validation
+    navigation.navigate('Home')
   }
 
   getLocation = () => {
-    return this.state.markers.map(marker => {
+    const { markers } = this.state;
+
+    return markers.map(marker => {
       return (
         <Marker { ...marker } key={marker.coordinate}>
           <View>
@@ -39,7 +48,8 @@ class Maps extends Component {
   }
 
   render() {
-    console.log(this.state.markers[0] && this.state.markers[0].coordinate.latitude)
+    const { markers } = this.state;
+
     return(
       <View style={styles.mapContainer}>
         <MapView
@@ -54,7 +64,7 @@ class Maps extends Component {
         showsTraffic={true}
         onPress={ this.handlePress }       
         >
-        {!this.state.markers.length ? null : this.getLocation()}
+        {!markers.length ? null : this.getLocation()}
         </MapView>
         <TouchableOpacity style={styles.btn} onPress={ () => this.handleSubmit() }>
           <Text style={styles.text}>Add Location</Text>
