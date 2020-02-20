@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TextInput, Image, TouchableOpacity, ScrollView, Switch } from 'react-native';
 
+import * as ImagePicker from 'expo-image-picker';
+import Constants from 'expo-constants';
+import * as Permissions from 'expo-permissions';
 
 class Form extends Component {
   constructor(props) {
@@ -14,6 +17,11 @@ class Form extends Component {
         error: ''
       }
   }
+
+  handlePhotoUpload = () => {
+    const options = {};
+    console.log('handled!');
+  };
 
   validateSubmit = () => {
     const { description } = this.state;
@@ -79,11 +87,13 @@ class Form extends Component {
             </TouchableOpacity>
           </View>
           <View style={styles.smallWrapper}>
-            <Image style={styles.icon} source={require('../../../assets/images/photo.png')}/>
+              <Image
+                style={styles.icon} source={require('../../../assets/images/photo.png')}
+              />
             <Text style={styles.iconLabel}>Add Photo</Text>
           </View>
           <Text style={styles.error}>{this.state.error}</Text>
-          <TouchableOpacity style={styles.button}><Text style={styles.buttonLabel} onPress={() => this.handleSubmit()}>Submit</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={() => this.handleSubmit()}><Text style={styles.buttonLabel}>Submit</Text></TouchableOpacity>
         </ScrollView>
       </View>
     )
