@@ -17,6 +17,12 @@ export const Maps = () => {
         }        
       showsUserLocation={true}>
       </MapView>
+      <TouchableOpacity style={styles.btn}>
+        <Text style={styles.text}>Add Location</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.btn}>
+        <Text style={styles.text}>Back</Text>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -27,12 +33,27 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     flexDirection: 'column',
     flex: 1,
-    padding: 15,
-    width: '95%',
+    width: '100%',
   },
   map: {
-    height: 300,
+    height: 500,
     width: '100%',
+  },
+  text: {
+    color: '#FFFFFF',
+    fontSize: 20
+  },
+  btn: {
+    alignItems: 'center',
+    backgroundColor: '#3976EA',
+    borderRadius: 20,
+    height: 40,
+    justifyContent: 'center',
+    marginBottom: 40,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 30,
+    width: '40%'
   }
 });
 
