@@ -9,19 +9,37 @@ class Maps extends Component {
       markers: []
     }
   }
-
+  
   handlePress = (e) => {
     this.setState({
       markers: [
         {
-        coordinate: e.nativeEvent.coordinate,
-        pin: <Image style={styles.img} source={require('../../../assets/images/pin.png')} />
+          coordinate: e.nativeEvent.coordinate,
+          pin: <Image style={styles.img} source={require('../../../assets/images/pin.png')} />
       }
     ]
+  })
+}
+
+  handleSubmit = () => {
+    const { navigation } = this.props;
+    navigation.navigate('Home')
+    //here we can add pass in a fn() that will update state in Form for validation
+  }
+
+  getLocation = () => {
+    return this.state.markers.map(marker => {
+      return (
+        <Marker { ...marker } key={marker.coordinate}>
+          <View>
+            <Text style={styles.img}>{marker.pin}</Text>
+          </View>
+        </Marker>)
     })
   }
 
   render() {
+    console.log(this.state.markers[0] && this.state.markers[0].coordinate.latitude)
     return(
       <View style={styles.mapContainer}>
         <MapView
@@ -31,25 +49,15 @@ class Maps extends Component {
           longitude: -104.9903,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,  
-            }
-          }
-          showsTraffic={true}
-          onPress={ this.handlePress }       
-          >
-          {this.state.markers.map(marker => {
-            return (
-              <Marker { ...marker } >
-                <View>
-                  <Text style={styles.img} >{marker.pin}</Text>
-                </View>
-              </Marker>)
-          })}
+        }
+      }
+        showsTraffic={true}
+        onPress={ this.handlePress }       
+        >
+        {!this.state.markers.length ? null : this.getLocation()}
         </MapView>
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity style={styles.btn} onPress={ () => this.handleSubmit() }>
           <Text style={styles.text}>Add Location</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={ () => navigation.navigate('Home') }>
-          <Text style={styles.text}>Back</Text>
         </TouchableOpacity>
       </View>
     )
@@ -65,7 +73,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   map: {
-    height: 500,
+    height: 650,
     width: '100%',
   },
   text: {
