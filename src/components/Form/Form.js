@@ -18,9 +18,32 @@ class Form extends Component {
       }
   }
 
-  handlePhotoUpload = () => {
-    const options = {};
-    console.log('handled!');
+  componentDidMount = () => {
+    this.getPermissions();
+  };
+
+  selectImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      quality: 1
+    });
+    this.setState({photo: result.uri});
+  };
+
+  getPermissions = async () => {
+    if (Constants.platform.ios) {
+      const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+      if (status !== 'granted') {
+        alert('Sorry, we need camera roll permissions to make this work!');
+      }
+    }
+  }
+
+  handlePhotoUpload = async () => {
+    try {
+      this.selectImage();
+    } catch(error) {
+      this.setState({error});
+    }
   };
 
   validateSubmit = () => {
@@ -70,7 +93,8 @@ class Form extends Component {
       <View style={styles.container}>
         <ScrollView>
           <Text style={styles.h1}>
-            Tweet<Text style={styles.h1Color}>311</Text>Denver
+            Tweet
+            <Text style={styles.h1Color}>311</Text>Denver
           </Text>
           <Text style={styles.label}>Enter Email:</Text>
           <TextInput style={styles.smallInput} value={this.state.email} onChangeText={text => this.handleChange(text, 'email')}/>
@@ -86,13 +110,16 @@ class Form extends Component {
               <Text style={styles.iconLabel}>Add Location</Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.smallWrapper}>
-              <Image
-                style={styles.icon} source={require('../../../assets/images/photo.png')}
-              />
+          <TouchableOpacity style={styles.smallWrapper}
+          onPress={this.handlePhotoUpload}>
+            <Image
+              style={styles.icon} source={require('../../../assets/images/photo.png')}
+            />
             <Text style={styles.iconLabel}>Add Photo</Text>
-          </View>
-          <Text style={styles.error}>{this.state.error}</Text>
+          </TouchableOpacity>
+          <Text style={styles.error}>
+          {this.state.error}
+          </Text>
           <TouchableOpacity style={styles.button} onPress={() => this.handleSubmit()}><Text style={styles.buttonLabel}>Submit</Text></TouchableOpacity>
         </ScrollView>
       </View>
