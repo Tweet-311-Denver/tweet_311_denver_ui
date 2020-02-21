@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/Success/Success.js</title>
+    <title>Code coverage report for src/components/Tweet/Tweet.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -18,20 +18,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/components/Success</a> Success.js</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/components/Tweet</a> Tweet.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -123,12 +123,38 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -190,57 +216,76 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 &nbsp;
-export const Success = ({ navigation }) =&gt; {
+export const Tweet = ({ description, navigation }) =&gt; {
+&nbsp;
+  const redCheck = &lt;Image style={styles.img} source={require('../../../assets/images/confirm.png')} /&gt;
+  const greenCheck = &lt;Image style={styles.img} source={require('../../../assets/images/confirmTrue.png')} /&gt;
 &nbsp;
   return(
-    &lt;View style={styles.successContainer}&gt;
-      &lt;Text style={styles.headerText}&gt;Success&lt;/Text&gt;
-      &lt;Text style={styles.messageText}&gt;Form submitted and Tweet Posted&lt;/Text&gt;
-      &lt;Image style={styles.img} source={require('../../../assets/images/completed-task.png')} /&gt;
-      &lt;Text style={styles.thanksText}&gt;Thanks!&lt;/Text&gt;
-      &lt;TouchableOpacity style={styles.homeButton} onPress={ <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigation.navigate('Home') </span>}&gt;
-        &lt;Text style={styles.homeLabel}&gt;Home&lt;/Text&gt;
+    &lt;View style={styles.tweetContainer}&gt;
+      &lt;Text style={styles.headerText}&gt;Confirm Your Tweet:&lt;/Text&gt;
+      { description ? <span class="branch-0 cbranch-no" title="branch not covered" >greenCheck </span>: redCheck }
+      &lt;View style={styles.inputArea}&gt;
+        &lt;Text style={styles.tweetLabel}&gt;Your Tweet:&lt;/Text&gt;
+        &lt;TextInput
+          multiline
+          maxLength='280'
+          style={styles.tweetInput}
+          placeholder='Your Tweet'
+        &gt;
+        &lt;/TextInput&gt;
+      &lt;/View&gt;
+      &lt;TouchableOpacity style={styles.confirmButton} onPress={ <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigation.navigate('Success') </span>}&gt;
+        &lt;Text style={styles.buttonLabel}&gt;Submit&lt;/Text&gt;
       &lt;/TouchableOpacity&gt;
     &lt;/View&gt;
   )
 }
 &nbsp;
 const styles = StyleSheet.create({
-  successContainer: {
+  tweetContainer: {
     alignItems: 'center',
     backgroundColor: '#fff',
-    flexDirection: 'column',
     flex: 1,
+    justifyContent: 'space-between',
     padding: 15,
     width: '95%',
   },
   headerText: {
     color: '#3976EA',
-    fontSize: 50,
+    fontSize: 35,
     marginTop: 20,
   },
-  messageText: {
+  inputArea: {
+    flex: 1,
+    marginTop: 70,
+    width: '90%',
+  },
+  tweetLabel: {
     color: '#3976EA',
     fontSize: 20,
-    marginTop: 20,
+    paddingBottom: 10,
+  },
+  tweetInput: {
+    borderColor: 'gray', 
+    borderWidth: 1, 
+    height: 150,
+    padding: 10,
+    width: '100%', 
   },
   img: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginRight: 35,
     height: 250,
-    marginTop: 50,
+    marginTop: 70,
     width: 250,
   },
-  thanksText: {
-    color: '#3976EA',
-    fontSize: 20,
-    marginTop: 40,
-  },
-  homeButton: {
+  confirmButton: {
     alignItems: 'center',
     backgroundColor: '#3976EA',
     borderRadius: 20,
@@ -248,16 +293,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: 50,
+    marginBottom: 35,
     width: '50%',
   },
-  homeLabel: {
+  buttonLabel: {
     color: '#FFFFFF',
     fontSize: 20
   }
-});
+})
 &nbsp;
-export default Success;</pre></td></tr></table></pre>
+export default Tweet;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

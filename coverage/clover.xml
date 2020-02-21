@@ -1,12 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1582316756559" clover="3.2.0">
-  <project timestamp="1582316756560" name="All files">
-    <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1" elements="7" coveredelements="5" complexity="0" loc="5" ncloc="5" packages="2" files="2" classes="2"/>
+<coverage generated="1582317239821" clover="3.2.0">
+  <project timestamp="1582317239822" name="All files">
+    <metrics statements="72" coveredstatements="36" conditionals="18" coveredconditionals="3" methods="26" coveredmethods="8" elements="116" coveredelements="47" complexity="0" loc="72" ncloc="72" packages="5" files="9" classes="9"/>
     <package name="assets.images">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="completed-task.png" path="/Users/garrettiannuzzi/tweet_311_denver_ui/assets/images/completed-task.png">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="confirm.png" path="/Users/garrettiannuzzi/tweet_311_denver_ui/assets/images/confirm.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="confirmTrue.png" path="/Users/garrettiannuzzi/tweet_311_denver_ui/assets/images/confirmTrue.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="photo.png" path="/Users/garrettiannuzzi/tweet_311_denver_ui/assets/images/photo.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="placeholder.png" path="/Users/garrettiannuzzi/tweet_311_denver_ui/assets/images/placeholder.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Form">
+      <metrics statements="40" coveredstatements="15" conditionals="14" coveredconditionals="1" methods="15" coveredmethods="4"/>
+      <file name="Form.js" path="/Users/garrettiannuzzi/tweet_311_denver_ui/src/components/Form/Form.js">
+        <metrics statements="40" coveredstatements="15" conditionals="14" coveredconditionals="1" methods="15" coveredmethods="4"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="52" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="73" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="83" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="106" count="0" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="130" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Maps">
+      <metrics statements="17" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="2"/>
+      <file name="Maps.js" path="/Users/garrettiannuzzi/tweet_311_denver_ui/src/components/Maps/Maps.js">
+        <metrics statements="17" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="2"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Success">
@@ -17,6 +102,18 @@
         <line num="6" count="1" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Tweet">
+      <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
+      <file name="Tweet.js" path="/Users/garrettiannuzzi/tweet_311_denver_ui/src/components/Tweet/Tweet.js">
+        <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
       </file>
     </package>
   </project>
