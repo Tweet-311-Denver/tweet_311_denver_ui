@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders success correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView>
+    <View>
+      <Text
+        style={
+          Object {
+            "color": "#3976EA",
+            "fontSize": 45,
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "marginTop": 60,
+          }
+        }
+      >
+        Tweet
+        <Text
+          style={
+            Object {
+              "color": "#000000",
+            }
+          }
+        >
+          311
+        </Text>
+        Denver
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#3976EA",
+            "fontSize": 20,
+            "marginBottom": 10,
+            "marginLeft": "10%",
+            "marginTop": 40,
+          }
+        }
+      >
+        Enter Email:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "borderColor": "#000000",
+            "borderWidth": 1,
+            "fontSize": 30,
+            "height": 50,
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "padding": 5,
+            "width": "80%",
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "flex": 0,
+            "flexDirection": "row",
+            "height": 50,
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "marginTop": 40,
+            "width": "80%",
+          }
+        }
+      >
+        <RCTSwitch
+          accessibilityRole="button"
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "marginRight": 15,
+              },
+            ]
+          }
+          value={false}
+        />
+        <Text
+          style={
+            Object {
+              "color": "#3976EA",
+              "fontSize": 25,
+            }
+          }
+        >
+          Snow Removal?
+        </Text>
+      </View>
+      <Text
+        style={
+          Object {
+            "color": "#3976EA",
+            "fontSize": 20,
+            "marginBottom": 10,
+            "marginLeft": "10%",
+            "marginTop": 40,
+          }
+        }
+      >
+        Description:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        multiline={true}
+        onChangeText={[Function]}
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "borderColor": "#000000",
+            "borderWidth": 1,
+            "fontSize": 30,
+            "height": 200,
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "padding": 5,
+            "width": "80%",
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "flex": 0,
+            "flexDirection": "row",
+            "height": 50,
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "marginTop": 40,
+            "width": "80%",
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 50,
+              "marginRight": 15,
+              "width": 50,
+            }
+          }
+        />
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#3976EA",
+                "fontSize": 25,
+              }
+            }
+          >
+            Add Location
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "flex": 0,
+            "flexDirection": "row",
+            "height": 50,
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "marginTop": 40,
+            "opacity": 1,
+            "width": "80%",
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 50,
+              "marginRight": 15,
+              "width": 50,
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "color": "#3976EA",
+              "fontSize": 25,
+            }
+          }
+        >
+          Add Photo
+        </Text>
+      </View>
+      <Text
+        style={
+          Object {
+            "color": "red",
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "marginTop": 40,
+            "width": "80%",
+          }
+        }
+      >
+        
+      </Text>
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#3976EA",
+            "borderRadius": 20,
+            "height": 40,
+            "justifyContent": "center",
+            "marginBottom": 40,
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "marginTop": 40,
+            "opacity": 1,
+            "width": "40%",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 20,
+            }
+          }
+        >
+          Submit
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
