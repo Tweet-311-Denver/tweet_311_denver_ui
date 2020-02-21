@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders success correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "flexDirection": "column",
+      "padding": 15,
+      "width": "95%",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#3976EA",
+        "fontSize": 50,
+        "marginTop": 20,
+      }
+    }
+  >
+    Success
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#3976EA",
+        "fontSize": 20,
+        "marginTop": 20,
+      }
+    }
+  >
+    Form submitted and Tweet Posted
+  </Text>
+  <Image
+    source={1}
+    style={
+      Object {
+        "height": 250,
+        "marginLeft": "auto",
+        "marginRight": 35,
+        "marginTop": 50,
+        "width": 250,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "#3976EA",
+        "fontSize": 20,
+        "marginTop": 40,
+      }
+    }
+  >
+    Thanks!
+  </Text>
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#3976EA",
+        "borderRadius": 20,
+        "height": 40,
+        "justifyContent": "center",
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "marginTop": 50,
+        "opacity": 1,
+        "width": "50%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 20,
+        }
+      }
+    >
+      Home
+    </Text>
+  </View>
+</View>
+`;
