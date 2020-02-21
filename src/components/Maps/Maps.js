@@ -9,7 +9,7 @@ class Maps extends Component {
       markers: []
     }
   }
-  
+
   handlePress = (e) => {
     this.setState({
       markers: [
@@ -22,16 +22,15 @@ class Maps extends Component {
 }
 
   handleSubmit = () => {
-    const { navigation } = this.props;
+    const { navigation, setLocation } = this.props;
     const { markers } = this.state;
 
     const latAndLong = {
       lat: markers[0].coordinate.latitude,
       long: markers[0].coordinate.longitude
-    }
-
-    //here we can add pass in a fn() that will update state in Form for validation
-    navigation.navigate('Home')
+    };
+    setLocation(latAndLong.lat, latAndLong.long);
+    navigation.navigate('Home');
   }
 
   getLocation = () => {
@@ -53,16 +52,16 @@ class Maps extends Component {
     return(
       <View style={styles.mapContainer}>
         <MapView
-        style={styles.map} 
-        region={ { 
+        style={styles.map}
+        region={ {
           latitude: 39.7392,
           longitude: -104.9903,
           latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,  
+          longitudeDelta: 0.0421,
         }
       }
         showsTraffic={true}
-        onPress={ this.handlePress }       
+        onPress={ this.handlePress }
         >
         {!markers.length ? null : this.getLocation()}
         </MapView>
@@ -109,4 +108,3 @@ const styles = StyleSheet.create({
 });
 
 export default Maps;
-
