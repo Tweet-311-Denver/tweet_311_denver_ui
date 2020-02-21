@@ -15,8 +15,8 @@ class Form extends Component {
         loaction: '',
         photo: '',
         error: ''
-      }
-  }
+    }
+  };
 
   componentDidMount = () => {
     this.getPermissions();
@@ -36,13 +36,13 @@ class Form extends Component {
         alert('Sorry, we need camera roll permissions to make this work!');
       }
     }
-  }
+  };
 
   handlePhotoUpload = async () => {
     try {
       this.selectImage();
     } catch(error) {
-      this.setState({error});
+        this.setState({error});
     }
   };
 
