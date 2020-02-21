@@ -1,4 +1,13 @@
-# tweet_311_denver_ui
+# Tweet**311**Denver
+
+## Tech Stack:
+#### Front End
+  [Cameron MacRae](https://github.com/cammac60) and [Garrett Iannuzzi](https://github.com/Garrett-Iannuzzi)
+  
+- React Native
+- Enzyme / Jest 
+- Expo
+- React Navigation
 
 ## Wireframes:
 
