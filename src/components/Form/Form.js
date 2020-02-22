@@ -87,7 +87,11 @@ class Form extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
+    const { navigation, location } = this.props;
+    const photoButtonText = this.state.photo ?
+        'Change Photo' :
+        'Add Photo';
+    const mapButtonText = location.lat && location.long ? 'Change Location' : 'Add Location';
 
     return (
       <View style={styles.container}>
@@ -105,12 +109,12 @@ class Form extends Component {
           <Text style={styles.label}>Description:</Text>
           <TextInput multiline={true} style={styles.largeInput} value={this.state.description} onChangeText={text => this.setState({description: text})}/>
             <TouchableOpacity style={styles.addButton} onPress={() => navigation.navigate('Location') }>
-              <Text style={styles.iconLabel}>Add Location</Text>
+              <Text style={styles.iconLabel}>{mapButtonText}</Text>
             </TouchableOpacity>
             <TouchableOpacity
             style={styles.addButton}
             onPress={this.handlePhotoUpload}>
-            <Text style={styles.iconLabel}>Add Photo</Text>
+            <Text style={styles.iconLabel}>{photoButtonText}</Text>
           </TouchableOpacity>
           <Text style={styles.error}>
           {this.state.error}
