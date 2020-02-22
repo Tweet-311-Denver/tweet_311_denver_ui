@@ -73,6 +73,7 @@ class Form extends Component {
     if (this.validateSubmit()) {
       // this is where we make the API call
       this.props.desc(this.state.description);
+      this.resetState();
       navigation.navigate('Tweet');
     } else {
         this.setState({error: 'Please add a valid email, description, and location.'})
@@ -84,6 +85,16 @@ class Form extends Component {
       this.setState({error: ''});
     }
     this.setState({[type]: value});
+  };
+
+  resetState = () => {
+    this.setState({
+        email: '',
+        description: '',
+        isSnowRemoval: false,
+        photo: '',
+        error: ''
+    });
   };
 
   render() {
