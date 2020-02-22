@@ -12,7 +12,6 @@ class Form extends Component {
         email: '',
         description: '',
         isSnowRemoval: false,
-        loaction: '',
         photo: '',
         error: ''
     }
@@ -48,8 +47,12 @@ class Form extends Component {
 
   validateSubmit = () => {
     const { description } = this.state;
-    // We will eventually need to add location to this validation
-    return this.validateEmail() && description ? true : false;
+    const { location } = this.props;
+    return this.validateEmail() &&
+      description &&
+      location.lat &&
+      location.long ?
+      true : false;
   };
 
   validateEmail = () => {
@@ -57,7 +60,7 @@ class Form extends Component {
   };
 
   handleSubmit = () => {
-    const { navigation } = this.props;
+    const { navigation, location } = this.props;
     const payload = {
       report: {
         category: this.state.isSnowRemoval ? 'snow_removal' : 'other',
@@ -65,15 +68,13 @@ class Form extends Component {
         image: this.state.images,
         email: this.state.email
       },
-      location: {
-        lat: '',
-        lon: ''
-      }
+      location
     };
     if (this.validateSubmit()) {
       // this is where we make the API call
-      navigation.navigate('Tweet');
       this.props.desc(this.state.description);
+      this.resetState();
+      navigation.navigate('Tweet');
     } else {
         this.setState({error: 'Please add a valid email, description, and location.'})
     }
@@ -86,8 +87,22 @@ class Form extends Component {
     this.setState({[type]: value});
   };
 
+  resetState = () => {
+    this.setState({
+        email: '',
+        description: '',
+        isSnowRemoval: false,
+        photo: '',
+        error: ''
+    });
+  };
+
   render() {
-    const { navigation } = this.props;
+    const { navigation, location } = this.props;
+    const photoButtonText = this.state.photo ?
+        'Change Photo' :
+        'Add Photo';
+    const mapButtonText = location.lat && location.long ? 'Change Location' : 'Add Location';
 
     return (
       <View style={styles.container}>
@@ -104,18 +119,13 @@ class Form extends Component {
           </View>
           <Text style={styles.label}>Description:</Text>
           <TextInput multiline={true} style={styles.largeInput} value={this.state.description} onChangeText={text => this.setState({description: text})}/>
-          <View style={styles.smallWrapper}>
-            <Image style={styles.icon} source={require('../../../assets/images/placeholder.png')}/>
-            <TouchableOpacity onPress={() => navigation.navigate('Location') }>
-              <Text style={styles.iconLabel}>Add Location</Text>
+            <TouchableOpacity style={styles.addButton} onPress={() => navigation.navigate('Location') }>
+              <Text style={styles.iconLabel}>{mapButtonText}</Text>
             </TouchableOpacity>
-          </View>
-          <TouchableOpacity style={styles.smallWrapper}
-          onPress={this.handlePhotoUpload}>
-            <Image
-              style={styles.icon} source={require('../../../assets/images/photo.png')}
-            />
-            <Text style={styles.iconLabel}>Add Photo</Text>
+            <TouchableOpacity
+            style={styles.addButton}
+            onPress={this.handlePhotoUpload}>
+            <Text style={styles.iconLabel}>{photoButtonText}</Text>
           </TouchableOpacity>
           <Text style={styles.error}>
           {this.state.error}
@@ -125,7 +135,7 @@ class Form extends Component {
       </View>
     )
   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -155,7 +165,7 @@ const styles = StyleSheet.create({
   largeInput: {
     borderColor: '#000000',
     borderWidth: 1,
-    fontSize: 30,
+    fontSize: 20,
     height: 200,
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -187,7 +197,7 @@ const styles = StyleSheet.create({
   },
   iconLabel: {
     color: '#3976EA',
-    fontSize: 25
+    fontSize: 20
   },
   button: {
     alignItems: 'center',
@@ -210,6 +220,17 @@ const styles = StyleSheet.create({
   },
   error: {
     color: 'red',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 40,
+    width: '80%'
+  },
+  addButton: {
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    borderRadius: 4,
+    height: 40,
+    justifyContent: 'center',
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 40,
