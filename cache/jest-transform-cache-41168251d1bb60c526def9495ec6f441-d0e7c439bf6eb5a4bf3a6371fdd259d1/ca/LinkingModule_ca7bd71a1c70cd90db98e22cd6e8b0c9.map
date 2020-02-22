@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/Linking/LinkingModule.ts"],"names":[],"mappings":";;;;;AAAA;;eACe,oB","sourcesContent":["import { Linking } from 'react-native';\nexport default Linking;\n"],"sourceRoot":""}

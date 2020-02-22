@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/Platform.ts"],"names":[],"mappings":";;;;;AAAA;;AAEA,IAAM,QAAQ,GAAG;AACf,EAAA,EAAE,EAAE,sBAAoB;AADT,CAAjB;eAIe,Q","sourcesContent":["import { Platform as ReactNativePlatform } from 'react-native';\n\nconst Platform = {\n  OS: ReactNativePlatform.OS,\n};\n\nexport default Platform;\n"],"sourceRoot":""}

@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/index.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AACA","sourcesContent":["export * from './AdapterProxy';\nexport { default as deprecate } from './deprecate';\n"],"sourceRoot":""}

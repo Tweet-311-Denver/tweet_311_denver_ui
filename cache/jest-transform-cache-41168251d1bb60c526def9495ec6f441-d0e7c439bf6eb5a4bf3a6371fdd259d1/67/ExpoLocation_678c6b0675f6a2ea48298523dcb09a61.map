@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/ExpoLocation.ts"],"names":[],"mappings":";;;;;AAAA;;eACe,yBAAmB,Y","sourcesContent":["import { NativeModulesProxy } from '@unimodules/core';\nexport default NativeModulesProxy.ExpoLocation;\n"],"sourceRoot":""}

@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/ExponentConstants.ts"],"names":[],"mappings":";;;;;AAAA;;eACe,yBAAmB,iB","sourcesContent":["import { NativeModulesProxy } from '@unimodules/core';\nexport default NativeModulesProxy.ExponentConstants;\n"],"sourceRoot":""}

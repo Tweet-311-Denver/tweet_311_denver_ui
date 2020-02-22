@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/ExpoPermissions.ts"],"names":[],"mappings":";;;;;AAAA;;eACe,yBAAmB,e","sourcesContent":["import { NativeModulesProxy } from '@unimodules/core';\nexport default NativeModulesProxy.ExpoPermissions;\n"],"sourceRoot":""}
