@@ -8,6 +8,8 @@ import Tweet from '../components/Tweet/Tweet';
 import Success from '../components/Success/Success';
 import Maps from '../components/Maps/Maps';
 
+console.disableYellowBox = true;
+
 const Stack = createStackNavigator();
 
 class App extends Component {
