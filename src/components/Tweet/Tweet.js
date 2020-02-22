@@ -6,7 +6,6 @@ export const Tweet = ({ desc, navigation, setDesc }) => {
   const redCheck = <Image style={styles.img} source={require('../../../assets/images/confirm.png')} />
   const greenCheck = <Image style={styles.img} source={require('../../../assets/images/confirmTrue.png')} />
 
-  console.log(desc);
   return (
     <View style={styles.tweetContainer}>
       <Text style={styles.headerText}>Confirm Your Tweet:</Text>
