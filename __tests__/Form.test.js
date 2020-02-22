@@ -11,6 +11,7 @@ describe('Form', () => {
         long: '-24324'
       }
     } 
+    
     const tree = renderer.create(<Form location={mockLocation}/>).toJSON();
     expect(tree).toMatchSnapshot();
   });
