@@ -12,7 +12,6 @@ class Form extends Component {
         email: '',
         description: '',
         isSnowRemoval: false,
-        loaction: '',
         photo: '',
         error: ''
     }
@@ -48,8 +47,12 @@ class Form extends Component {
 
   validateSubmit = () => {
     const { description } = this.state;
-    // We will eventually need to add location to this validation
-    return this.validateEmail() && description ? true : false;
+    const { location } = this.props;
+    return this.validateEmail() &&
+      description &&
+      location.lat &&
+      location.long ?
+      true : false;
   };
 
   validateEmail = () => {
@@ -57,7 +60,7 @@ class Form extends Component {
   };
 
   handleSubmit = () => {
-    const { navigation } = this.props;
+    const { navigation, location } = this.props;
     const payload = {
       report: {
         category: this.state.isSnowRemoval ? 'snow_removal' : 'other',
@@ -65,15 +68,12 @@ class Form extends Component {
         image: this.state.images,
         email: this.state.email
       },
-      location: {
-        lat: '',
-        lon: ''
-      }
+      location
     };
     if (this.validateSubmit()) {
       // this is where we make the API call
-      navigation.navigate('Tweet');
       this.props.desc(this.state.description);
+      navigation.navigate('Tweet');
     } else {
         this.setState({error: 'Please add a valid email, description, and location.'})
     }
