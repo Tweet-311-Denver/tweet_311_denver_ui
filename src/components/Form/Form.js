@@ -135,7 +135,7 @@ class Form extends Component {
       </View>
     )
   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
   largeInput: {
     borderColor: '#000000',
     borderWidth: 1,
-    fontSize: 30,
+    fontSize: 20,
     height: 200,
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
   },
   iconLabel: {
     color: '#3976EA',
-    fontSize: 25
+    fontSize: 20
   },
   button: {
     alignItems: 'center',
