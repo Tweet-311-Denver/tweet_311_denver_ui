@@ -1,0 +1,1 @@
+{"version":3,"sources":["NativeSafeAreaView.tsx"],"names":[],"mappings":";;;;;AAAA,IAAA,YAAA,GAAA,OAAA,CAAA,cAAA,CAAA;;eAEe,CAAA,GAAA,YAAA,CAAA,sBAAA,EAAA,iBAAA,C","sourcesContent":["import { requireNativeComponent } from 'react-native';\n\nexport default requireNativeComponent('RNCSafeAreaView');\n"]}

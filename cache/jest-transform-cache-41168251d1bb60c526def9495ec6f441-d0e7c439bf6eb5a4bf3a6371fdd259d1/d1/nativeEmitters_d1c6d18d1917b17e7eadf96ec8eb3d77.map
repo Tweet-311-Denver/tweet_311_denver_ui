@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/nativeEmitters.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;AAAA;;AACA","sourcesContent":["import RCTDeviceEventEmitter from 'react-native/Libraries/EventEmitter/RCTDeviceEventEmitter';\nimport RCTEventEmitter from 'react-native/Libraries/vendor/emitter/EventEmitter';\n\nexport { RCTEventEmitter, RCTDeviceEventEmitter };\n"],"sourceRoot":""}

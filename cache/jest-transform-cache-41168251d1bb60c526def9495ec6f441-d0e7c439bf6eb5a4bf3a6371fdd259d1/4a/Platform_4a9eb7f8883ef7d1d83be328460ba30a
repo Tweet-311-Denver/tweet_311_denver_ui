@@ -1,0 +1,14 @@
+38824660110d0582c87304025fd6e29f
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _reactNative = require("react-native");
+
+var Platform = {
+  OS: _reactNative.Platform.OS
+};
+var _default = Platform;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9QbGF0Zm9ybS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQUFBOztBQUVBLElBQU0sUUFBUSxHQUFHO0FBQ2YsRUFBQSxFQUFFLEVBQUUsc0JBQW9CO0FBRFQsQ0FBakI7ZUFJZSxRIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUGxhdGZvcm0gYXMgUmVhY3ROYXRpdmVQbGF0Zm9ybSB9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5cbmNvbnN0IFBsYXRmb3JtID0ge1xuICBPUzogUmVhY3ROYXRpdmVQbGF0Zm9ybS5PUyxcbn07XG5cbmV4cG9ydCBkZWZhdWx0IFBsYXRmb3JtO1xuIl0sInNvdXJjZVJvb3QiOiIifQ==

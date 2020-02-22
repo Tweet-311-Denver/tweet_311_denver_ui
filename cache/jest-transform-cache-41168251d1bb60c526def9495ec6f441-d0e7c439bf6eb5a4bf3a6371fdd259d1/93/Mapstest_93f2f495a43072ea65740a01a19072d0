@@ -1,0 +1,19 @@
+a789827e7f6bef8e35e30373b6fd59c1
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+
+var _reactNativeMaps = _interopRequireDefault(require("react-native-maps"));
+
+var _Maps = _interopRequireDefault(require("../src/components/Maps/Maps"));
+
+describe('Maps', function () {
+  test('renders Maps correctly', function () {
+    var tree = _reactTestRenderer.default.create(_react.default.createElement(_Maps.default, null)).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1hcHMudGVzdC5qcyJdLCJuYW1lcyI6WyJkZXNjcmliZSIsInRlc3QiLCJ0cmVlIiwicmVuZGVyZXIiLCJjcmVhdGUiLCJ0b0pTT04iLCJleHBlY3QiLCJ0b01hdGNoU25hcHNob3QiXSwibWFwcGluZ3MiOiI7O0FBQUE7O0FBQ0E7O0FBQ0E7O0FBRUE7O0FBRUFBLFFBQVEsQ0FBQyxNQUFELEVBQVMsWUFBTTtBQUVyQkMsRUFBQUEsSUFBSSxDQUFDLHdCQUFELEVBQTJCLFlBQU07QUFDbkMsUUFBTUMsSUFBSSxHQUFHQywyQkFBU0MsTUFBVCxDQUFnQiw2QkFBQyxhQUFELE9BQWhCLEVBQTBCQyxNQUExQixFQUFiOztBQUNBQyxJQUFBQSxNQUFNLENBQUNKLElBQUQsQ0FBTixDQUFhSyxlQUFiO0FBQ0QsR0FIRyxDQUFKO0FBS0QsQ0FQTyxDQUFSIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCByZW5kZXJlciBmcm9tICdyZWFjdC10ZXN0LXJlbmRlcmVyJztcbmltcG9ydCBNb2NrTWFwVmlldyBmcm9tICdyZWFjdC1uYXRpdmUtbWFwcyc7XG5cbmltcG9ydCBNYXBzIGZyb20gJy4uL3NyYy9jb21wb25lbnRzL01hcHMvTWFwcyc7XG5cbmRlc2NyaWJlKCdNYXBzJywgKCkgPT4ge1xuXG4gIHRlc3QoJ3JlbmRlcnMgTWFwcyBjb3JyZWN0bHknLCAoKSA9PiB7XG4gICAgY29uc3QgdHJlZSA9IHJlbmRlcmVyLmNyZWF0ZSg8TWFwcyAvPikudG9KU09OKCk7XG4gICAgZXhwZWN0KHRyZWUpLnRvTWF0Y2hTbmFwc2hvdCgpO1xuICB9KTtcblxufSk7XG5cblxuXG4iXX0=

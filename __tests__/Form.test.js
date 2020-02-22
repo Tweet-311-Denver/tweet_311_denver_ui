@@ -6,7 +6,12 @@ import Form from '../src/components/Form/Form';
 describe('Form', () => {
 
   test('renders Form correctly', () => {
-    const tree = renderer.create(<Form />).toJSON();
+    const mockLocation = { location: {
+        lat: '1233',
+        long: '-24324'
+      }
+    } 
+    const tree = renderer.create(<Form location={mockLocation}/>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

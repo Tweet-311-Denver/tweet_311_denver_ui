@@ -1,0 +1,33 @@
+a6d19ff8dab334ff8fdb018ec12b6f53
+'use strict';
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _wrapNativeSuper2 = _interopRequireDefault(require("@babel/runtime/helpers/wrapNativeSuper"));
+
+var HeadlessJsTaskError = function (_Error) {
+  (0, _inherits2.default)(HeadlessJsTaskError, _Error);
+
+  function HeadlessJsTaskError() {
+    (0, _classCallCheck2.default)(this, HeadlessJsTaskError);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(HeadlessJsTaskError).apply(this, arguments));
+  }
+
+  return HeadlessJsTaskError;
+}((0, _wrapNativeSuper2.default)(Error));
+
+exports.default = HeadlessJsTaskError;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkhlYWRsZXNzSnNUYXNrRXJyb3IuanMiXSwibmFtZXMiOlsiSGVhZGxlc3NKc1Rhc2tFcnJvciIsIkVycm9yIl0sIm1hcHBpbmdzIjoiQUFTQTs7Ozs7Ozs7Ozs7Ozs7Ozs7OztJQUVxQkEsbUI7Ozs7Ozs7OztpQ0FBNEJDLEsiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIENvcHlyaWdodCAoYykgRmFjZWJvb2ssIEluYy4gYW5kIGl0cyBhZmZpbGlhdGVzLlxuICpcbiAqIFRoaXMgc291cmNlIGNvZGUgaXMgbGljZW5zZWQgdW5kZXIgdGhlIE1JVCBsaWNlbnNlIGZvdW5kIGluIHRoZVxuICogTElDRU5TRSBmaWxlIGluIHRoZSByb290IGRpcmVjdG9yeSBvZiB0aGlzIHNvdXJjZSB0cmVlLlxuICpcbiAqIEBmbG93XG4gKiBAZm9ybWF0XG4gKi9cbid1c2Ugc3RyaWN0JztcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSGVhZGxlc3NKc1Rhc2tFcnJvciBleHRlbmRzIEVycm9yIHt9XG4iXX0=

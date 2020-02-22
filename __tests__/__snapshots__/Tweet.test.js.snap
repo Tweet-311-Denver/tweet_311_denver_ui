@@ -58,6 +58,7 @@ exports[`renders Tweet correctly 1`] = `
       allowFontScaling={true}
       maxLength="280"
       multiline={true}
+      onChangeText={[Function]}
       placeholder="Your Tweet"
       rejectResponderTermination={true}
       style={

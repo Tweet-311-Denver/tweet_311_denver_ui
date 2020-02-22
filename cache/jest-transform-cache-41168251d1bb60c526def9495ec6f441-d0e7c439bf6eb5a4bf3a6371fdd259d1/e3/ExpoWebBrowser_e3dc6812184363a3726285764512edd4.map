@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/ExpoWebBrowser.ts"],"names":[],"mappings":";;;;;AAAA;;eACe,yBAAmB,cAAnB,IAAsC,E","sourcesContent":["import { NativeModulesProxy } from '@unimodules/core';\nexport default NativeModulesProxy.ExpoWebBrowser || ({} as any);\n"],"sourceRoot":""}

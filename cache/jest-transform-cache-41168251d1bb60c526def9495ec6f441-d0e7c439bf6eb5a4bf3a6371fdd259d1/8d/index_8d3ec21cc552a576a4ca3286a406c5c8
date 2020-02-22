@@ -1,0 +1,249 @@
+d399e516695fad656ce1805e3470b99e
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "createStackNavigator", {
+  enumerable: true,
+  get: function get() {
+    return _createStackNavigator.default;
+  }
+});
+Object.defineProperty(exports, "StackView", {
+  enumerable: true,
+  get: function get() {
+    return _StackView.default;
+  }
+});
+Object.defineProperty(exports, "Header", {
+  enumerable: true,
+  get: function get() {
+    return _Header.default;
+  }
+});
+Object.defineProperty(exports, "HeaderTitle", {
+  enumerable: true,
+  get: function get() {
+    return _HeaderTitle.default;
+  }
+});
+Object.defineProperty(exports, "HeaderBackButton", {
+  enumerable: true,
+  get: function get() {
+    return _HeaderBackButton.default;
+  }
+});
+Object.defineProperty(exports, "HeaderBackground", {
+  enumerable: true,
+  get: function get() {
+    return _HeaderBackground.default;
+  }
+});
+Object.defineProperty(exports, "CardAnimationContext", {
+  enumerable: true,
+  get: function get() {
+    return _CardAnimationContext.default;
+  }
+});
+Object.defineProperty(exports, "HeaderHeightContext", {
+  enumerable: true,
+  get: function get() {
+    return _HeaderHeightContext.default;
+  }
+});
+Object.defineProperty(exports, "GestureHandlerRefContext", {
+  enumerable: true,
+  get: function get() {
+    return _GestureHandlerRefContext.default;
+  }
+});
+Object.defineProperty(exports, "useCardAnimation", {
+  enumerable: true,
+  get: function get() {
+    return _useCardAnimation.default;
+  }
+});
+Object.defineProperty(exports, "useHeaderHeight", {
+  enumerable: true,
+  get: function get() {
+    return _useHeaderHeight.default;
+  }
+});
+Object.defineProperty(exports, "useGestureHandlerRef", {
+  enumerable: true,
+  get: function get() {
+    return _useGestureHandlerRef.default;
+  }
+});
+Object.defineProperty(exports, "StackNavigationOptions", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackNavigationOptions;
+  }
+});
+Object.defineProperty(exports, "StackNavigationProp", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackNavigationProp;
+  }
+});
+Object.defineProperty(exports, "StackHeaderProps", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackHeaderProps;
+  }
+});
+Object.defineProperty(exports, "StackHeaderLeftButtonProps", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackHeaderLeftButtonProps;
+  }
+});
+Object.defineProperty(exports, "StackHeaderTitleProps", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackHeaderTitleProps;
+  }
+});
+Object.defineProperty(exports, "StackCardInterpolatedStyle", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackCardInterpolatedStyle;
+  }
+});
+Object.defineProperty(exports, "StackCardInterpolationProps", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackCardInterpolationProps;
+  }
+});
+Object.defineProperty(exports, "StackCardStyleInterpolator", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackCardStyleInterpolator;
+  }
+});
+Object.defineProperty(exports, "StackHeaderInterpolatedStyle", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackHeaderInterpolatedStyle;
+  }
+});
+Object.defineProperty(exports, "StackHeaderInterpolationProps", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackHeaderInterpolationProps;
+  }
+});
+Object.defineProperty(exports, "StackHeaderStyleInterpolator", {
+  enumerable: true,
+  get: function get() {
+    return _types.StackHeaderStyleInterpolator;
+  }
+});
+exports.TransitionPresets = exports.TransitionSpecs = exports.HeaderStyleInterpolators = exports.CardStyleInterpolators = exports.Assets = void 0;
+
+var CardStyleInterpolators = _interopRequireWildcard(require("./TransitionConfigs/CardStyleInterpolators"));
+
+exports.CardStyleInterpolators = CardStyleInterpolators;
+
+var HeaderStyleInterpolators = _interopRequireWildcard(require("./TransitionConfigs/HeaderStyleInterpolators"));
+
+exports.HeaderStyleInterpolators = HeaderStyleInterpolators;
+
+var TransitionSpecs = _interopRequireWildcard(require("./TransitionConfigs/TransitionSpecs"));
+
+exports.TransitionSpecs = TransitionSpecs;
+
+var TransitionPresets = _interopRequireWildcard(require("./TransitionConfigs/TransitionPresets"));
+
+exports.TransitionPresets = TransitionPresets;
+
+var _createStackNavigator = _interopRequireDefault(require("./navigators/createStackNavigator"));
+
+var _StackView = _interopRequireDefault(require("./views/Stack/StackView"));
+
+var _Header = _interopRequireDefault(require("./views/Header/Header"));
+
+var _HeaderTitle = _interopRequireDefault(require("./views/Header/HeaderTitle"));
+
+var _HeaderBackButton = _interopRequireDefault(require("./views/Header/HeaderBackButton"));
+
+var _HeaderBackground = _interopRequireDefault(require("./views/Header/HeaderBackground"));
+
+var _CardAnimationContext = _interopRequireDefault(require("./utils/CardAnimationContext"));
+
+var _HeaderHeightContext = _interopRequireDefault(require("./utils/HeaderHeightContext"));
+
+var _GestureHandlerRefContext = _interopRequireDefault(require("./utils/GestureHandlerRefContext"));
+
+var _useCardAnimation = _interopRequireDefault(require("./utils/useCardAnimation"));
+
+var _useHeaderHeight = _interopRequireDefault(require("./utils/useHeaderHeight"));
+
+var _useGestureHandlerRef = _interopRequireDefault(require("./utils/useGestureHandlerRef"));
+
+var _types = require("./types");
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function _getRequireWildcardCache() {
+  if (typeof WeakMap !== "function") return null;
+  var cache = new WeakMap();
+
+  _getRequireWildcardCache = function _getRequireWildcardCache() {
+    return cache;
+  };
+
+  return cache;
+}
+
+function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
+    return {
+      default: obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache();
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj.default = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
+
+var Assets = [require("./views/assets/back-icon.png"), require("./views/assets/back-icon-mask.png")];
+exports.Assets = Assets;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LnRzeCJdLCJuYW1lcyI6WyJBc3NldHMiLCJyZXF1aXJlIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsSUFBQSxzQkFBQSxHQUFBLHVCQUFBLENBQUEsT0FBQSw4Q0FBQSxDQUFBOzs7O0FBQ0EsSUFBQSx3QkFBQSxHQUFBLHVCQUFBLENBQUEsT0FBQSxnREFBQSxDQUFBOzs7O0FBQ0EsSUFBQSxlQUFBLEdBQUEsdUJBQUEsQ0FBQSxPQUFBLHVDQUFBLENBQUE7Ozs7QUFDQSxJQUFBLGlCQUFBLEdBQUEsdUJBQUEsQ0FBQSxPQUFBLHlDQUFBLENBQUE7Ozs7QUFLQSxJQUFBLHFCQUFBLEdBQUEsc0JBQUEsQ0FBQSxPQUFBLHFDQUFBLENBQUE7O0FBWUEsSUFBQSxVQUFBLEdBQUEsc0JBQUEsQ0FBQSxPQUFBLDJCQUFBLENBQUE7O0FBQ0EsSUFBQSxPQUFBLEdBQUEsc0JBQUEsQ0FBQSxPQUFBLHlCQUFBLENBQUE7O0FBQ0EsSUFBQSxZQUFBLEdBQUEsc0JBQUEsQ0FBQSxPQUFBLDhCQUFBLENBQUE7O0FBQ0EsSUFBQSxpQkFBQSxHQUFBLHNCQUFBLENBQUEsT0FBQSxtQ0FBQSxDQUFBOztBQUNBLElBQUEsaUJBQUEsR0FBQSxzQkFBQSxDQUFBLE9BQUEsbUNBQUEsQ0FBQTs7QUFlQSxJQUFBLHFCQUFBLEdBQUEsc0JBQUEsQ0FBQSxPQUFBLGdDQUFBLENBQUE7O0FBQ0EsSUFBQSxvQkFBQSxHQUFBLHNCQUFBLENBQUEsT0FBQSwrQkFBQSxDQUFBOztBQUNBLElBQUEseUJBQUEsR0FBQSxzQkFBQSxDQUFBLE9BQUEsb0NBQUEsQ0FBQTs7QUFFQSxJQUFBLGlCQUFBLEdBQUEsc0JBQUEsQ0FBQSxPQUFBLDRCQUFBLENBQUE7O0FBQ0EsSUFBQSxnQkFBQSxHQUFBLHNCQUFBLENBQUEsT0FBQSwyQkFBQSxDQUFBOztBQUNBLElBQUEscUJBQUEsR0FBQSxzQkFBQSxDQUFBLE9BQUEsZ0NBQUEsQ0FBQTs7QUFLQSxJQUFBLE1BQUEsR0FBQSxPQUFBLFdBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQXhDTyxJQUFNQSxNQUFNLEdBQUcsQ0FFcEJDLE9BRm9CLGdDQUFBLEVBSXBCQSxPQUpLLHFDQUFlLENBQWYiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBDYXJkU3R5bGVJbnRlcnBvbGF0b3JzIGZyb20gJy4vVHJhbnNpdGlvbkNvbmZpZ3MvQ2FyZFN0eWxlSW50ZXJwb2xhdG9ycyc7XG5pbXBvcnQgKiBhcyBIZWFkZXJTdHlsZUludGVycG9sYXRvcnMgZnJvbSAnLi9UcmFuc2l0aW9uQ29uZmlncy9IZWFkZXJTdHlsZUludGVycG9sYXRvcnMnO1xuaW1wb3J0ICogYXMgVHJhbnNpdGlvblNwZWNzIGZyb20gJy4vVHJhbnNpdGlvbkNvbmZpZ3MvVHJhbnNpdGlvblNwZWNzJztcbmltcG9ydCAqIGFzIFRyYW5zaXRpb25QcmVzZXRzIGZyb20gJy4vVHJhbnNpdGlvbkNvbmZpZ3MvVHJhbnNpdGlvblByZXNldHMnO1xuXG4vKipcbiAqIE5hdmlnYXRvcnNcbiAqL1xuZXhwb3J0IHsgZGVmYXVsdCBhcyBjcmVhdGVTdGFja05hdmlnYXRvciB9IGZyb20gJy4vbmF2aWdhdG9ycy9jcmVhdGVTdGFja05hdmlnYXRvcic7XG5cbmV4cG9ydCBjb25zdCBBc3NldHMgPSBbXG4gIC8vIGVzbGludC1kaXNhYmxlLW5leHQtbGluZSBpbXBvcnQvbm8tY29tbW9uanNcbiAgcmVxdWlyZSgnLi92aWV3cy9hc3NldHMvYmFjay1pY29uLnBuZycpLFxuICAvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgaW1wb3J0L25vLWNvbW1vbmpzXG4gIHJlcXVpcmUoJy4vdmlld3MvYXNzZXRzL2JhY2staWNvbi1tYXNrLnBuZycpLFxuXTtcblxuLyoqXG4gKiBWaWV3c1xuICovXG5leHBvcnQgeyBkZWZhdWx0IGFzIFN0YWNrVmlldyB9IGZyb20gJy4vdmlld3MvU3RhY2svU3RhY2tWaWV3JztcbmV4cG9ydCB7IGRlZmF1bHQgYXMgSGVhZGVyIH0gZnJvbSAnLi92aWV3cy9IZWFkZXIvSGVhZGVyJztcbmV4cG9ydCB7IGRlZmF1bHQgYXMgSGVhZGVyVGl0bGUgfSBmcm9tICcuL3ZpZXdzL0hlYWRlci9IZWFkZXJUaXRsZSc7XG5leHBvcnQgeyBkZWZhdWx0IGFzIEhlYWRlckJhY2tCdXR0b24gfSBmcm9tICcuL3ZpZXdzL0hlYWRlci9IZWFkZXJCYWNrQnV0dG9uJztcbmV4cG9ydCB7IGRlZmF1bHQgYXMgSGVhZGVyQmFja2dyb3VuZCB9IGZyb20gJy4vdmlld3MvSGVhZGVyL0hlYWRlckJhY2tncm91bmQnO1xuXG4vKipcbiAqIFRyYW5zaXRpb24gcHJlc2V0c1xuICovXG5leHBvcnQge1xuICBDYXJkU3R5bGVJbnRlcnBvbGF0b3JzLFxuICBIZWFkZXJTdHlsZUludGVycG9sYXRvcnMsXG4gIFRyYW5zaXRpb25TcGVjcyxcbiAgVHJhbnNpdGlvblByZXNldHMsXG59O1xuXG4vKipcbiAqIFV0aWxpdGllc1xuICovXG5leHBvcnQgeyBkZWZhdWx0IGFzIENhcmRBbmltYXRpb25Db250ZXh0IH0gZnJvbSAnLi91dGlscy9DYXJkQW5pbWF0aW9uQ29udGV4dCc7XG5leHBvcnQgeyBkZWZhdWx0IGFzIEhlYWRlckhlaWdodENvbnRleHQgfSBmcm9tICcuL3V0aWxzL0hlYWRlckhlaWdodENvbnRleHQnO1xuZXhwb3J0IHsgZGVmYXVsdCBhcyBHZXN0dXJlSGFuZGxlclJlZkNvbnRleHQgfSBmcm9tICcuL3V0aWxzL0dlc3R1cmVIYW5kbGVyUmVmQ29udGV4dCc7XG5cbmV4cG9ydCB7IGRlZmF1bHQgYXMgdXNlQ2FyZEFuaW1hdGlvbiB9IGZyb20gJy4vdXRpbHMvdXNlQ2FyZEFuaW1hdGlvbic7XG5leHBvcnQgeyBkZWZhdWx0IGFzIHVzZUhlYWRlckhlaWdodCB9IGZyb20gJy4vdXRpbHMvdXNlSGVhZGVySGVpZ2h0JztcbmV4cG9ydCB7IGRlZmF1bHQgYXMgdXNlR2VzdHVyZUhhbmRsZXJSZWYgfSBmcm9tICcuL3V0aWxzL3VzZUdlc3R1cmVIYW5kbGVyUmVmJztcblxuLyoqXG4gKiBUeXBlc1xuICovXG5leHBvcnQge1xuICBTdGFja05hdmlnYXRpb25PcHRpb25zLFxuICBTdGFja05hdmlnYXRpb25Qcm9wLFxuICBTdGFja0hlYWRlclByb3BzLFxuICBTdGFja0hlYWRlckxlZnRCdXR0b25Qcm9wcyxcbiAgU3RhY2tIZWFkZXJUaXRsZVByb3BzLFxuICBTdGFja0NhcmRJbnRlcnBvbGF0ZWRTdHlsZSxcbiAgU3RhY2tDYXJkSW50ZXJwb2xhdGlvblByb3BzLFxuICBTdGFja0NhcmRTdHlsZUludGVycG9sYXRvcixcbiAgU3RhY2tIZWFkZXJJbnRlcnBvbGF0ZWRTdHlsZSxcbiAgU3RhY2tIZWFkZXJJbnRlcnBvbGF0aW9uUHJvcHMsXG4gIFN0YWNrSGVhZGVyU3R5bGVJbnRlcnBvbGF0b3IsXG59IGZyb20gJy4vdHlwZXMnO1xuIl19

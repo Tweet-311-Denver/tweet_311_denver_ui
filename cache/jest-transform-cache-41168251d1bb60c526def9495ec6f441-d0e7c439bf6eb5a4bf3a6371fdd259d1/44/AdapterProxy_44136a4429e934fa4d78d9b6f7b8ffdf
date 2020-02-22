@@ -1,0 +1,17 @@
+2f01a62c38c1c5bedc5570a46fcbb522
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactNativeAdapter = require("@unimodules/react-native-adapter");
+
+Object.keys(_reactNativeAdapter).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _reactNativeAdapter[key];
+    }
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9BZGFwdGVyUHJveHkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBOztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCAqIGZyb20gJ0B1bmltb2R1bGVzL3JlYWN0LW5hdGl2ZS1hZGFwdGVyJztcbiJdLCJzb3VyY2VSb290IjoiIn0=

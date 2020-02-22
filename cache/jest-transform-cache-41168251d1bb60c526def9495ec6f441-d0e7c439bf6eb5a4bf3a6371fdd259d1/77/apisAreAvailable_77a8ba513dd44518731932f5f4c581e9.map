@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/apisAreAvailable.ts"],"names":[],"mappings":";;;;;AAAA;;AAEc,SAAU,gBAAV,GAA0B;AACtC,SAAO,CAAC,CAAC,2BAAc,iBAAvB;AACD","sourcesContent":["import { NativeModules } from 'react-native';\n\nexport default function apisAreAvailable(): boolean {\n  return !!NativeModules.ExponentConstants;\n}\n"],"sourceRoot":""}

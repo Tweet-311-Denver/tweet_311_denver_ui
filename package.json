@@ -38,6 +38,7 @@
   },
   "jest": {
     "preset": "jest-expo",
+    "cacheDirectory": "./cache",
     "coveragePathIgnorePatterns": [
       "src/index.js",
       "src/serviceWorker.js"

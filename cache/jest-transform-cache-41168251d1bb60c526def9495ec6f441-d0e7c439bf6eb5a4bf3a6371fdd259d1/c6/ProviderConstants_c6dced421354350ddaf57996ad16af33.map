@@ -1,0 +1,1 @@
+{"version":3,"sources":["ProviderConstants.js"],"names":["PROVIDER_DEFAULT","PROVIDER_GOOGLE"],"mappings":";;;;AAAO,IAAMA,gBAAgB,GAAG,IAAzB;;AACA,IAAMC,eAAe,GAAG,QAAxB","sourcesContent":["export const PROVIDER_DEFAULT = null;\nexport const PROVIDER_GOOGLE = 'google';\n"]}

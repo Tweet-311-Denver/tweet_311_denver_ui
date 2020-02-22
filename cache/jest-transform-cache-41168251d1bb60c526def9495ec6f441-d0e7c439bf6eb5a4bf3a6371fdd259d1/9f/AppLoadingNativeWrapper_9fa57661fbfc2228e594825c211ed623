@@ -1,0 +1,60 @@
+351d0bff322b6a7ef5f3d13eb52bae7d
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var SplashScreen = _interopRequireWildcard(require("./SplashScreen"));
+
+var AppLoading = function (_React$Component) {
+  (0, _inherits2.default)(AppLoading, _React$Component);
+
+  function AppLoading(props) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, AppLoading);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(AppLoading).call(this, props));
+    SplashScreen.preventAutoHide();
+    return _this;
+  }
+
+  (0, _createClass2.default)(AppLoading, [{
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.props.autoHideSplash === undefined || this.props.autoHideSplash) {
+        if (global.__E2E__) {
+          SplashScreen.hide();
+        } else {
+          setTimeout(function () {
+            SplashScreen.hide();
+          }, 200);
+        }
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return null;
+    }
+  }]);
+  return AppLoading;
+}(_react.default.Component);
+
+exports.default = AppLoading;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9sYXVuY2gvQXBwTG9hZGluZ05hdGl2ZVdyYXBwZXIudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7QUFDQTs7SUFNcUIsVTs7O0FBQ25CLHNCQUFZLEtBQVosRUFBd0I7QUFBQTs7QUFBQTtBQUN0QixnSEFBTSxLQUFOO0FBQ0EsSUFBQSxZQUFZLENBQUMsZUFBYjtBQUZzQjtBQUd2Qjs7OzsyQ0FFbUI7QUFDbEIsVUFBSSxLQUFLLEtBQUwsQ0FBVyxjQUFYLEtBQThCLFNBQTlCLElBQTJDLEtBQUssS0FBTCxDQUFXLGNBQTFELEVBQTBFO0FBRXhFLFlBQUksTUFBTSxDQUFDLE9BQVgsRUFBb0I7QUFDbEIsVUFBQSxZQUFZLENBQUMsSUFBYjtBQUNELFNBRkQsTUFFTztBQUNMLFVBQUEsVUFBVSxDQUFDLFlBQUs7QUFDZCxZQUFBLFlBQVksQ0FBQyxJQUFiO0FBQ0QsV0FGUyxFQUVQLEdBRk8sQ0FBVjtBQUdEO0FBQ0Y7QUFDRjs7OzZCQUVLO0FBQ0osYUFBTyxJQUFQO0FBQ0Q7OztFQXJCcUMsZUFBTSxTIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCAqIGFzIFNwbGFzaFNjcmVlbiBmcm9tICcuL1NwbGFzaFNjcmVlbic7XG5cbnR5cGUgUHJvcHMgPSB7XG4gIGF1dG9IaWRlU3BsYXNoPzogYm9vbGVhbjtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIEFwcExvYWRpbmcgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQ8UHJvcHM+IHtcbiAgY29uc3RydWN0b3IocHJvcHM6IFByb3BzKSB7XG4gICAgc3VwZXIocHJvcHMpO1xuICAgIFNwbGFzaFNjcmVlbi5wcmV2ZW50QXV0b0hpZGUoKTtcbiAgfVxuXG4gIGNvbXBvbmVudFdpbGxVbm1vdW50KCkge1xuICAgIGlmICh0aGlzLnByb3BzLmF1dG9IaWRlU3BsYXNoID09PSB1bmRlZmluZWQgfHwgdGhpcy5wcm9wcy5hdXRvSGlkZVNwbGFzaCkge1xuICAgICAgLy8gSGlkZSBpbW1lZGlhdGVseSBpbiBFMkUgdGVzdHNcbiAgICAgIGlmIChnbG9iYWwuX19FMkVfXykge1xuICAgICAgICBTcGxhc2hTY3JlZW4uaGlkZSgpO1xuICAgICAgfSBlbHNlIHtcbiAgICAgICAgc2V0VGltZW91dCgoKSA9PiB7XG4gICAgICAgICAgU3BsYXNoU2NyZWVuLmhpZGUoKTtcbiAgICAgICAgfSwgMjAwKTtcbiAgICAgIH1cbiAgICB9XG4gIH1cblxuICByZW5kZXIoKSB7XG4gICAgcmV0dXJuIG51bGw7XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0=

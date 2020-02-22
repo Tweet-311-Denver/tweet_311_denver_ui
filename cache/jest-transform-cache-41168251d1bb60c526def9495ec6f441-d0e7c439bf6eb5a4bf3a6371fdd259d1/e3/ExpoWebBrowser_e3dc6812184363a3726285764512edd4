@@ -1,0 +1,12 @@
+6a18b84e59c3ca5f2041aaa8c657d0aa
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _core = require("@unimodules/core");
+
+var _default = _core.NativeModulesProxy.ExpoWebBrowser || {};
+
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9FeHBvV2ViQnJvd3Nlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQUFBOztlQUNlLHlCQUFtQixjQUFuQixJQUFzQyxFIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTmF0aXZlTW9kdWxlc1Byb3h5IH0gZnJvbSAnQHVuaW1vZHVsZXMvY29yZSc7XG5leHBvcnQgZGVmYXVsdCBOYXRpdmVNb2R1bGVzUHJveHkuRXhwb1dlYkJyb3dzZXIgfHwgKHt9IGFzIGFueSk7XG4iXSwic291cmNlUm9vdCI6IiJ9
