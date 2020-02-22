@@ -1,0 +1,2 @@
+aa2ff095769031cbb35f4884dbc3b922
+module.exports = require('nanoid/random');

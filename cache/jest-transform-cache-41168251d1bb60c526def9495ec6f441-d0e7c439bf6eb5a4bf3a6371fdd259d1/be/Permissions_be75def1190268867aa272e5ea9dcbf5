@@ -1,0 +1,259 @@
+b9fe1a0b5444bd76167bcb9b061f6847
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getAsync = getAsync;
+exports.askAsync = askAsync;
+Object.defineProperty(exports, "PermissionStatus", {
+  enumerable: true,
+  get: function get() {
+    return _Permissions.PermissionStatus;
+  }
+});
+exports.SYSTEM_BRIGHTNESS = exports.REMINDERS = exports.CALENDAR = exports.CONTACTS = exports.NOTIFICATIONS = exports.USER_FACING_NOTIFICATIONS = exports.LOCATION = exports.AUDIO_RECORDING = exports.CAMERA_ROLL = exports.CAMERA = void 0;
+
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+var _reactNative = require("react-native");
+
+var _CoalescedPermissions = require("./CoalescedPermissions");
+
+var _ExpoPermissions = _interopRequireDefault(require("./ExpoPermissions"));
+
+var _Permissions = require("./Permissions.types");
+
+var CAMERA = 'camera';
+exports.CAMERA = CAMERA;
+var CAMERA_ROLL = 'cameraRoll';
+exports.CAMERA_ROLL = CAMERA_ROLL;
+var AUDIO_RECORDING = 'audioRecording';
+exports.AUDIO_RECORDING = AUDIO_RECORDING;
+var LOCATION = 'location';
+exports.LOCATION = LOCATION;
+var USER_FACING_NOTIFICATIONS = 'userFacingNotifications';
+exports.USER_FACING_NOTIFICATIONS = USER_FACING_NOTIFICATIONS;
+var NOTIFICATIONS = 'notifications';
+exports.NOTIFICATIONS = NOTIFICATIONS;
+var CONTACTS = 'contacts';
+exports.CONTACTS = CONTACTS;
+var CALENDAR = 'calendar';
+exports.CALENDAR = CALENDAR;
+var REMINDERS = 'reminders';
+exports.REMINDERS = REMINDERS;
+var SYSTEM_BRIGHTNESS = 'systemBrightness';
+exports.SYSTEM_BRIGHTNESS = SYSTEM_BRIGHTNESS;
+
+function getAsync() {
+  var _len,
+      types,
+      _key,
+      _args = arguments;
+
+  return _regenerator.default.async(function getAsync$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          for (_len = _args.length, types = new Array(_len), _key = 0; _key < _len; _key++) {
+            types[_key] = _args[_key];
+          }
+
+          if (!(_reactNative.Platform.OS === 'ios')) {
+            _context.next = 5;
+            break;
+          }
+
+          _context.next = 4;
+          return _regenerator.default.awrap(_handleMultiPermissionsRequestIOSAsync(types, _ExpoPermissions.default.getAsync));
+
+        case 4:
+          return _context.abrupt("return", _context.sent);
+
+        case 5:
+          _context.next = 7;
+          return _regenerator.default.awrap(_handlePermissionsRequestAsync(types, _ExpoPermissions.default.getAsync));
+
+        case 7:
+          return _context.abrupt("return", _context.sent);
+
+        case 8:
+        case "end":
+          return _context.stop();
+      }
+    }
+  });
+}
+
+function askAsync() {
+  var _len2,
+      types,
+      _key2,
+      _args2 = arguments;
+
+  return _regenerator.default.async(function askAsync$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          for (_len2 = _args2.length, types = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+            types[_key2] = _args2[_key2];
+          }
+
+          if (!(_reactNative.Platform.OS === 'ios')) {
+            _context2.next = 5;
+            break;
+          }
+
+          _context2.next = 4;
+          return _regenerator.default.awrap(_handleMultiPermissionsRequestIOSAsync(types, _ExpoPermissions.default.askAsync));
+
+        case 4:
+          return _context2.abrupt("return", _context2.sent);
+
+        case 5:
+          _context2.next = 7;
+          return _regenerator.default.awrap(_handlePermissionsRequestAsync(types, _ExpoPermissions.default.askAsync));
+
+        case 7:
+          return _context2.abrupt("return", _context2.sent);
+
+        case 8:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  });
+}
+
+function _handleSinglePermissionRequestIOSAsync(type, handlePermission) {
+  return _regenerator.default.async(function _handleSinglePermissionRequestIOSAsync$(_context3) {
+    while (1) {
+      switch (_context3.prev = _context3.next) {
+        case 0:
+          _context3.next = 2;
+          return _regenerator.default.awrap(handlePermission(type));
+
+        case 2:
+          return _context3.abrupt("return", _context3.sent);
+
+        case 3:
+        case "end":
+          return _context3.stop();
+      }
+    }
+  });
+}
+
+function _handleMultiPermissionsRequestIOSAsync(types, handlePermission) {
+  var permissions, _iterator, _isArray, _i, _ref, _type;
+
+  return _regenerator.default.async(function _handleMultiPermissionsRequestIOSAsync$(_context4) {
+    while (1) {
+      switch (_context4.prev = _context4.next) {
+        case 0:
+          if (types.length) {
+            _context4.next = 2;
+            break;
+          }
+
+          throw new Error('At least one permission type must be specified');
+
+        case 2:
+          permissions = {};
+          _iterator = types, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[typeof Symbol === "function" ? typeof Symbol === "function" ? Symbol.iterator : "@@iterator" : "@@iterator"]();
+
+        case 4:
+          if (!_isArray) {
+            _context4.next = 10;
+            break;
+          }
+
+          if (!(_i >= _iterator.length)) {
+            _context4.next = 7;
+            break;
+          }
+
+          return _context4.abrupt("break", 20);
+
+        case 7:
+          _ref = _iterator[_i++];
+          _context4.next = 14;
+          break;
+
+        case 10:
+          _i = _iterator.next();
+
+          if (!_i.done) {
+            _context4.next = 13;
+            break;
+          }
+
+          return _context4.abrupt("break", 20);
+
+        case 13:
+          _ref = _i.value;
+
+        case 14:
+          _type = _ref;
+          _context4.next = 17;
+          return _regenerator.default.awrap(_handleSinglePermissionRequestIOSAsync(_type, handlePermission));
+
+        case 17:
+          permissions[_type] = _context4.sent;
+
+        case 18:
+          _context4.next = 4;
+          break;
+
+        case 20:
+          return _context4.abrupt("return", {
+            status: (0, _CoalescedPermissions.coalesceStatuses)(permissions),
+            expires: (0, _CoalescedPermissions.coalesceExpirations)(permissions),
+            canAskAgain: (0, _CoalescedPermissions.coalesceCanAskAgain)(permissions),
+            granted: (0, _CoalescedPermissions.coalesceGranted)(permissions),
+            permissions: permissions
+          });
+
+        case 21:
+        case "end":
+          return _context4.stop();
+      }
+    }
+  });
+}
+
+function _handlePermissionsRequestAsync(types, handlePermissions) {
+  var permissions;
+  return _regenerator.default.async(function _handlePermissionsRequestAsync$(_context5) {
+    while (1) {
+      switch (_context5.prev = _context5.next) {
+        case 0:
+          if (types.length) {
+            _context5.next = 2;
+            break;
+          }
+
+          throw new Error('At least one permission type must be specified');
+
+        case 2:
+          _context5.next = 4;
+          return _regenerator.default.awrap(handlePermissions(types));
+
+        case 4:
+          permissions = _context5.sent;
+          return _context5.abrupt("return", {
+            status: (0, _CoalescedPermissions.coalesceStatuses)(permissions),
+            expires: (0, _CoalescedPermissions.coalesceExpirations)(permissions),
+            canAskAgain: (0, _CoalescedPermissions.coalesceCanAskAgain)(permissions),
+            granted: (0, _CoalescedPermissions.coalesceGranted)(permissions),
+            permissions: permissions
+          });
+
+        case 6:
+        case "end":
+          return _context5.stop();
+      }
+    }
+  });
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,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QUFXLEVBQVg7QUFMSyxXQWJUOztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBOztBQXNCQSxTQUFlLDhCQUFmLENBQ0UsS0FERixFQUVFLGlCQUZGO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLGNBSU8sS0FBSyxDQUFDLE1BSmI7QUFBQTtBQUFBO0FBQUE7O0FBQUEsZ0JBS1UsSUFBSSxLQUFKLENBQVUsZ0RBQVYsQ0FMVjs7QUFBQTtBQUFBO0FBQUEsNENBUTRCLGlCQUFpQixDQUFDLEtBQUQsQ0FSN0M7O0FBQUE7QUFRUSxVQUFBLFdBUlI7QUFBQSw0Q0FTUztBQUNMLFlBQUEsTUFBTSxFQUFFLDRDQUFpQixXQUFqQixDQURIO0FBRUwsWUFBQSxPQUFPLEVBQUUsK0NBQW9CLFdBQXBCLENBRko7QUFHTCxZQUFBLFdBQVcsRUFBRSwrQ0FBb0IsV0FBcEIsQ0FIUjtBQUlMLFlBQUEsT0FBTyxFQUFFLDJDQUFnQixXQUFoQixDQUpKO0FBS0wsWUFBQSxXQUFXLEVBQVg7QUFMSyxXQVRUOztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUGxhdGZvcm0gfSBmcm9tICdyZWFjdC1uYXRpdmUnO1xuaW1wb3J0IHtcbiAgY29hbGVzY2VFeHBpcmF0aW9ucyxcbiAgY29hbGVzY2VTdGF0dXNlcyxcbiAgY29hbGVzY2VDYW5Bc2tBZ2FpbixcbiAgY29hbGVzY2VHcmFudGVkLFxufSBmcm9tICcuL0NvYWxlc2NlZFBlcm1pc3Npb25zJztcbmltcG9ydCBQZXJtaXNzaW9ucyBmcm9tICcuL0V4cG9QZXJtaXNzaW9ucyc7XG5cbmltcG9ydCB7XG4gIFBlcm1pc3Npb25SZXNwb25zZSxcbiAgUGVybWlzc2lvblR5cGUsXG4gIFBlcm1pc3Npb25NYXAsXG4gIFBlcm1pc3Npb25TdGF0dXMsXG4gIFBlcm1pc3Npb25FeHBpcmF0aW9uLFxuICBQZXJtaXNzaW9uSW5mbyxcbn0gZnJvbSAnLi9QZXJtaXNzaW9ucy50eXBlcyc7XG5cbmV4cG9ydCB7XG4gIFBlcm1pc3Npb25TdGF0dXMsXG4gIFBlcm1pc3Npb25SZXNwb25zZSxcbiAgUGVybWlzc2lvbkV4cGlyYXRpb24sXG4gIFBlcm1pc3Npb25NYXAsXG4gIFBlcm1pc3Npb25JbmZvLFxuICBQZXJtaXNzaW9uVHlwZSxcbn07XG5cbmV4cG9ydCBjb25zdCBDQU1FUkEgPSAnY2FtZXJhJztcbmV4cG9ydCBjb25zdCBDQU1FUkFfUk9MTCA9ICdjYW1lcmFSb2xsJztcbmV4cG9ydCBjb25zdCBBVURJT19SRUNPUkRJTkcgPSAnYXVkaW9SZWNvcmRpbmcnO1xuZXhwb3J0IGNvbnN0IExPQ0FUSU9OID0gJ2xvY2F0aW9uJztcbmV4cG9ydCBjb25zdCBVU0VSX0ZBQ0lOR19OT1RJRklDQVRJT05TID0gJ3VzZXJGYWNpbmdOb3RpZmljYXRpb25zJztcbmV4cG9ydCBjb25zdCBOT1RJRklDQVRJT05TID0gJ25vdGlmaWNhdGlvbnMnO1xuZXhwb3J0IGNvbnN0IENPTlRBQ1RTID0gJ2NvbnRhY3RzJztcbmV4cG9ydCBjb25zdCBDQUxFTkRBUiA9ICdjYWxlbmRhcic7XG5leHBvcnQgY29uc3QgUkVNSU5ERVJTID0gJ3JlbWluZGVycyc7XG5leHBvcnQgY29uc3QgU1lTVEVNX0JSSUdIVE5FU1MgPSAnc3lzdGVtQnJpZ2h0bmVzcyc7XG5cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBnZXRBc3luYyguLi50eXBlczogUGVybWlzc2lvblR5cGVbXSk6IFByb21pc2U8UGVybWlzc2lvblJlc3BvbnNlPiB7XG4gIGlmIChQbGF0Zm9ybS5PUyA9PT0gJ2lvcycpIHtcbiAgICByZXR1cm4gYXdhaXQgX2hhbmRsZU11bHRpUGVybWlzc2lvbnNSZXF1ZXN0SU9TQXN5bmModHlwZXMsIFBlcm1pc3Npb25zLmdldEFzeW5jKTtcbiAgfVxuICByZXR1cm4gYXdhaXQgX2hhbmRsZVBlcm1pc3Npb25zUmVxdWVzdEFzeW5jKHR5cGVzLCBQZXJtaXNzaW9ucy5nZXRBc3luYyk7XG59XG5cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBhc2tBc3luYyguLi50eXBlczogUGVybWlzc2lvblR5cGVbXSk6IFByb21pc2U8UGVybWlzc2lvblJlc3BvbnNlPiB7XG4gIGlmIChQbGF0Zm9ybS5PUyA9PT0gJ2lvcycpIHtcbiAgICByZXR1cm4gYXdhaXQgX2hhbmRsZU11bHRpUGVybWlzc2lvbnNSZXF1ZXN0SU9TQXN5bmModHlwZXMsIFBlcm1pc3Npb25zLmFza0FzeW5jKTtcbiAgfVxuICByZXR1cm4gYXdhaXQgX2hhbmRsZVBlcm1pc3Npb25zUmVxdWVzdEFzeW5jKHR5cGVzLCBQZXJtaXNzaW9ucy5hc2tBc3luYyk7XG59XG5cbmFzeW5jIGZ1bmN0aW9uIF9oYW5kbGVTaW5nbGVQZXJtaXNzaW9uUmVxdWVzdElPU0FzeW5jKFxuICB0eXBlOiBQZXJtaXNzaW9uVHlwZSxcbiAgaGFuZGxlUGVybWlzc2lvbjogKHR5cGU6IFBlcm1pc3Npb25UeXBlKSA9PiBQcm9taXNlPFBlcm1pc3Npb25JbmZvPlxuKTogUHJvbWlzZTxQZXJtaXNzaW9uSW5mbz4ge1xuICByZXR1cm4gYXdhaXQgaGFuZGxlUGVybWlzc2lvbih0eXBlKTtcbn1cblxuYXN5bmMgZnVuY3Rpb24gX2hhbmRsZU11bHRpUGVybWlzc2lvbnNSZXF1ZXN0SU9TQXN5bmMoXG4gIHR5cGVzOiBQZXJtaXNzaW9uVHlwZVtdLFxuICBoYW5kbGVQZXJtaXNzaW9uOiAodHlwZTogUGVybWlzc2lvblR5cGUpID0+IFByb21pc2U8UGVybWlzc2lvbkluZm8+XG4pOiBQcm9taXNlPFBlcm1pc3Npb25SZXNwb25zZT4ge1xuICBpZiAoIXR5cGVzLmxlbmd0aCkge1xuICAgIHRocm93IG5ldyBFcnJvcignQXQgbGVhc3Qgb25lIHBlcm1pc3Npb24gdHlwZSBtdXN0IGJlIHNwZWNpZmllZCcpO1xuICB9XG5cbiAgbGV0IHBlcm1pc3Npb25zID0ge307XG4gIGZvciAobGV0IHR5cGUgb2YgdHlwZXMpIHtcbiAgICBwZXJtaXNzaW9uc1t0eXBlXSA9IGF3YWl0IF9oYW5kbGVTaW5nbGVQZXJtaXNzaW9uUmVxdWVzdElPU0FzeW5jKHR5cGUsIGhhbmRsZVBlcm1pc3Npb24pO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBzdGF0dXM6IGNvYWxlc2NlU3RhdHVzZXMocGVybWlzc2lvbnMpLFxuICAgIGV4cGlyZXM6IGNvYWxlc2NlRXhwaXJhdGlvbnMocGVybWlzc2lvbnMpLFxuICAgIGNhbkFza0FnYWluOiBjb2FsZXNjZUNhbkFza0FnYWluKHBlcm1pc3Npb25zKSxcbiAgICBncmFudGVkOiBjb2FsZXNjZUdyYW50ZWQocGVybWlzc2lvbnMpLFxuICAgIHBlcm1pc3Npb25zLFxuICB9O1xufVxuXG5hc3luYyBmdW5jdGlvbiBfaGFuZGxlUGVybWlzc2lvbnNSZXF1ZXN0QXN5bmMoXG4gIHR5cGVzOiBQZXJtaXNzaW9uVHlwZVtdLFxuICBoYW5kbGVQZXJtaXNzaW9uczogKHR5cGVzOiBQZXJtaXNzaW9uVHlwZVtdKSA9PiBQcm9taXNlPFBlcm1pc3Npb25NYXA+XG4pOiBQcm9taXNlPFBlcm1pc3Npb25SZXNwb25zZT4ge1xuICBpZiAoIXR5cGVzLmxlbmd0aCkge1xuICAgIHRocm93IG5ldyBFcnJvcignQXQgbGVhc3Qgb25lIHBlcm1pc3Npb24gdHlwZSBtdXN0IGJlIHNwZWNpZmllZCcpO1xuICB9XG5cbiAgY29uc3QgcGVybWlzc2lvbnMgPSBhd2FpdCBoYW5kbGVQZXJtaXNzaW9ucyh0eXBlcyk7XG4gIHJldHVybiB7XG4gICAgc3RhdHVzOiBjb2FsZXNjZVN0YXR1c2VzKHBlcm1pc3Npb25zKSxcbiAgICBleHBpcmVzOiBjb2FsZXNjZUV4cGlyYXRpb25zKHBlcm1pc3Npb25zKSxcbiAgICBjYW5Bc2tBZ2FpbjogY29hbGVzY2VDYW5Bc2tBZ2FpbihwZXJtaXNzaW9ucyksXG4gICAgZ3JhbnRlZDogY29hbGVzY2VHcmFudGVkKHBlcm1pc3Npb25zKSxcbiAgICBwZXJtaXNzaW9ucyxcbiAgfTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0=

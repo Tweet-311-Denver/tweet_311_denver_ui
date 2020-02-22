@@ -1,0 +1,12 @@
+da356f8e8481b4f6d71cf4134dae6c9a
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default() {
+  throw new Error("'NavigationNativeContainer' has been renamed to 'NavigationContainer");
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk5hdmlnYXRpb25OYXRpdmVDb250YWluZXIudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBZSxTQUFBLFFBQUEsR0FBVztBQUN4QixRQUFNLElBQUEsS0FBQSxDQUFOLHNFQUFNLENBQU47QUFHRCIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uKCkge1xuICB0aHJvdyBuZXcgRXJyb3IoXG4gICAgXCInTmF2aWdhdGlvbk5hdGl2ZUNvbnRhaW5lcicgaGFzIGJlZW4gcmVuYW1lZCB0byAnTmF2aWdhdGlvbkNvbnRhaW5lclwiXG4gICk7XG59XG4iXX0=

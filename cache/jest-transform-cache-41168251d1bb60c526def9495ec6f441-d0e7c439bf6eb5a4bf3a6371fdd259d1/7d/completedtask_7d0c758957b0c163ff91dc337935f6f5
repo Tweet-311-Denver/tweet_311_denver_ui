@@ -1,0 +1,42 @@
+faac1834d1658b9d452aac705953d488
+/* istanbul ignore next */
+var cov_yhk4cb07g = function () {
+  var path = "/Users/garrettiannuzzi/tweet_311_denver_ui/assets/images/completed-task.png";
+  var hash = "2830c55a2e9f308b96c02b3b189760aeda766129";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/garrettiannuzzi/tweet_311_denver_ui/assets/images/completed-task.png",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 19
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
+    hash: "2830c55a2e9f308b96c02b3b189760aeda766129"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  return coverage[path] = coverageData;
+}();
+
+cov_yhk4cb07g.s[0]++;
+module.exports = 1;

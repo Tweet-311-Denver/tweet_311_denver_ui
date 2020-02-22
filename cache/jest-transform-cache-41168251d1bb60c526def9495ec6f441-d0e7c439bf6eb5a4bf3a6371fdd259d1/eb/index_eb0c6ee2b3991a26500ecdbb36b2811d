@@ -1,0 +1,4 @@
+abfacf707602286fb8ed8e81c8a2143d
+'use strict';
+
+module.exports = require('./lib/index');

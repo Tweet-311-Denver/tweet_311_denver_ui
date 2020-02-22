@@ -1,0 +1,31 @@
+dc9705103c4ca253baf88b86b9f44c56
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.setRecoveryProps = setRecoveryProps;
+exports.recoveredProps = void 0;
+
+var _ExpoErrorRecovery = _interopRequireDefault(require("./ExpoErrorRecovery"));
+
+var _ErroRecoveryStore = require("./ErroRecoveryStore");
+
+require("./ErrorRecovery.fx");
+
+var recoveredProps = _getRecoveredProps();
+
+exports.recoveredProps = recoveredProps;
+
+function setRecoveryProps(props) {
+  (0, _ErroRecoveryStore.setRecoveryPropsToSave)(props);
+}
+
+function _getRecoveredProps() {
+  if (_ExpoErrorRecovery.default.recoveredProps) {
+    return JSON.parse(_ExpoErrorRecovery.default.recoveredProps);
+  }
+
+  return null;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9FcnJvclJlY292ZXJ5LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQUE7O0FBQ0E7O0FBQ0E7O0FBRU8sSUFBTSxjQUFjLEdBQUcsa0JBQWtCLEVBQXpDOzs7O0FBRUQsU0FBVSxnQkFBVixDQUEyQixLQUEzQixFQUF3RDtBQUM1RCxpREFBdUIsS0FBdkI7QUFDRDs7QUFFRCxTQUFTLGtCQUFULEdBQTJCO0FBQ3pCLE1BQUksMkJBQWtCLGNBQXRCLEVBQXNDO0FBQ3BDLFdBQU8sSUFBSSxDQUFDLEtBQUwsQ0FBVywyQkFBa0IsY0FBN0IsQ0FBUDtBQUNEOztBQUNELFNBQU8sSUFBUDtBQUNEIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IEV4cG9FcnJvclJlY292ZXJ5IGZyb20gJy4vRXhwb0Vycm9yUmVjb3ZlcnknO1xuaW1wb3J0IHsgc2V0UmVjb3ZlcnlQcm9wc1RvU2F2ZSB9IGZyb20gJy4vRXJyb1JlY292ZXJ5U3RvcmUnO1xuaW1wb3J0ICcuL0Vycm9yUmVjb3ZlcnkuZngnO1xuXG5leHBvcnQgY29uc3QgcmVjb3ZlcmVkUHJvcHMgPSBfZ2V0UmVjb3ZlcmVkUHJvcHMoKTtcblxuZXhwb3J0IGZ1bmN0aW9uIHNldFJlY292ZXJ5UHJvcHMocHJvcHM6IHsgW2tleTogc3RyaW5nXTogYW55IH0pOiB2b2lkIHtcbiAgc2V0UmVjb3ZlcnlQcm9wc1RvU2F2ZShwcm9wcyk7XG59XG5cbmZ1bmN0aW9uIF9nZXRSZWNvdmVyZWRQcm9wcygpOiB7IFtrZXk6IHN0cmluZ106IGFueSB9IHwgbnVsbCB7XG4gIGlmIChFeHBvRXJyb3JSZWNvdmVyeS5yZWNvdmVyZWRQcm9wcykge1xuICAgIHJldHVybiBKU09OLnBhcnNlKEV4cG9FcnJvclJlY292ZXJ5LnJlY292ZXJlZFByb3BzKTtcbiAgfVxuICByZXR1cm4gbnVsbDtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0=

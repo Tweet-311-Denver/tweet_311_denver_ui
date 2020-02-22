@@ -1,0 +1,10 @@
+2ae4d88b3db4f6ee0a504889f21b97b5
+const parse = require('./parse');
+
+const stringify = require('./stringify');
+
+const JSON5 = {
+  parse,
+  stringify
+};
+module.exports = JSON5;

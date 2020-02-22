@@ -1,0 +1,30 @@
+1f0dbb28bc5536c70c8f75f481d694d2
+module.exports = {
+  ExponentKernel: {
+    getSessionAsync: {
+      type: 'function',
+      functionType: 'async'
+    },
+    removeSessionAsync: {
+      type: 'function',
+      functionType: 'async'
+    },
+    setSessionAsync: {
+      type: 'function',
+      functionType: 'async'
+    }
+  },
+  DevLoadingView: {
+    getConstants: {
+      type: 'function'
+    },
+    addListener: {
+      type: 'function',
+      functionType: 'async'
+    },
+    removeListeners: {
+      type: 'function',
+      functionType: 'async'
+    }
+  }
+};

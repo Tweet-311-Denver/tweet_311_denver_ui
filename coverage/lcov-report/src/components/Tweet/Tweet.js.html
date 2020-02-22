@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">71.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>5/7</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">71.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>5/7</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -138,7 +138,10 @@
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -157,6 +160,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -220,18 +225,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 &nbsp;
-export const Tweet = ({ description, navigation }) =&gt; {
+export const Tweet = ({ desc, navigation, setDesc }) =&gt; {
 &nbsp;
   const redCheck = &lt;Image style={styles.img} source={require('../../../assets/images/confirm.png')} /&gt;
   const greenCheck = &lt;Image style={styles.img} source={require('../../../assets/images/confirmTrue.png')} /&gt;
 &nbsp;
-  return(
+  return (
     &lt;View style={styles.tweetContainer}&gt;
       &lt;Text style={styles.headerText}&gt;Confirm Your Tweet:&lt;/Text&gt;
-      { description ? <span class="branch-0 cbranch-no" title="branch not covered" >greenCheck </span>: redCheck }
+      { desc ? <span class="branch-0 cbranch-no" title="branch not covered" >greenCheck </span>: redCheck }
       &lt;View style={styles.inputArea}&gt;
         &lt;Text style={styles.tweetLabel}&gt;Your Tweet:&lt;/Text&gt;
         &lt;TextInput
@@ -239,6 +245,8 @@ export const Tweet = ({ description, navigation }) =&gt; {
           maxLength='280'
           style={styles.tweetInput}
           placeholder='Your Tweet'
+          value={desc}
+          onChangeText={<span class="fstat-no" title="function not covered" >te</span>xt =&gt; <span class="cstat-no" title="statement not covered" >setDesc(text)}</span>
         &gt;
         &lt;/TextInput&gt;
       &lt;/View&gt;
@@ -247,7 +255,7 @@ export const Tweet = ({ description, navigation }) =&gt; {
       &lt;/TouchableOpacity&gt;
     &lt;/View&gt;
   )
-}
+};
 &nbsp;
 const styles = StyleSheet.create({
   tweetContainer: {
@@ -274,11 +282,11 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   tweetInput: {
-    borderColor: 'gray', 
-    borderWidth: 1, 
+    borderColor: 'gray',
+    borderWidth: 1,
     height: 150,
     padding: 10,
-    width: '100%', 
+    width: '100%',
   },
   img: {
     height: 250,
@@ -302,14 +310,15 @@ const styles = StyleSheet.create({
   }
 })
 &nbsp;
-export default Tweet;</pre></td></tr></table></pre>
+export default Tweet;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Feb 22 2020 12:03:08 GMT-0700 (Mountain Standard Time)
+                at Sat Feb 22 2020 15:02:06 GMT-0700 (Mountain Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

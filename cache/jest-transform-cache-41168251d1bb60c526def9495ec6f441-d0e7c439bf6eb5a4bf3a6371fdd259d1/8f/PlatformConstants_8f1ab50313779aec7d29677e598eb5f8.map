@@ -1,0 +1,1 @@
+{"version":3,"sources":["PlatformConstants.js"],"names":["NativeModules","PlatformConstants"],"mappings":";;;;;AAAA;;eAEeA,2BAAcC,iB","sourcesContent":["import { NativeModules } from 'react-native';\n\nexport default NativeModules.PlatformConstants;\n"]}

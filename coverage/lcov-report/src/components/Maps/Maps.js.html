@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.06% </span>
+                <span class="strong">44.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/17</span>
+                <span class='fraction'>8/18</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.06% </span>
+                <span class="strong">44.44% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/17</span>
+                <span class='fraction'>8/18</span>
             </div>
         
             
@@ -166,9 +166,7 @@
 <a name='L108'></a><a href='#L108'>108</a>
 <a name='L109'></a><a href='#L109'>109</a>
 <a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L111'></a><a href='#L111'>111</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -199,8 +197,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -245,7 +242,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -291,30 +287,29 @@ class Maps extends Component {
       markers: []
     }
   }
-  
+&nbsp;
   handlePress = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
 <span class="cstat-no" title="statement not covered" >    this.setState({</span>
       markers: [
         {
           coordinate: e.nativeEvent.coordinate,
           pin: &lt;Image style={styles.img} source={require('../../../assets/images/pin.png')} /&gt;
-      }
-    ]
-  })
-}
+        }
+      ]
+    });
+  };
 &nbsp;
   handleSubmit = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-    const { navigation } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+    const { navigation, setLocation } = <span class="cstat-no" title="statement not covered" >this.props;</span>
     const { markers } = <span class="cstat-no" title="statement not covered" >this.state;</span>
 &nbsp;
     const latAndLong = <span class="cstat-no" title="statement not covered" >{</span>
       lat: markers[0].coordinate.latitude,
       long: markers[0].coordinate.longitude
-    }
-&nbsp;
-    //here we can add pass in a fn() that will update state in Form for validation
-<span class="cstat-no" title="statement not covered" >    navigation.navigate('Home')</span>
-  }
+    };
+<span class="cstat-no" title="statement not covered" >    setLocation(latAndLong.lat, latAndLong.long);</span>
+<span class="cstat-no" title="statement not covered" >    navigation.navigate('Home');</span>
+  };
 &nbsp;
   getLocation = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
     const { markers } = <span class="cstat-no" title="statement not covered" >this.state;</span>
@@ -327,7 +322,7 @@ class Maps extends Component {
           &lt;/View&gt;
         &lt;/Marker&gt;)
     })
-  }
+  };
 &nbsp;
   render() {
     const { markers } = this.state;
@@ -335,16 +330,16 @@ class Maps extends Component {
     return(
       &lt;View style={styles.mapContainer}&gt;
         &lt;MapView
-        style={styles.map} 
-        region={ { 
+        style={styles.map}
+        region={ {
           latitude: 39.7392,
           longitude: -104.9903,
           latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,  
+          longitudeDelta: 0.0421,
         }
       }
         showsTraffic={true}
-        onPress={ this.handlePress }       
+        onPress={ this.handlePress }
         &gt;
         {!markers.length ? null : <span class="branch-1 cbranch-no" title="branch not covered" >this.getLocation()}</span>
         &lt;/MapView&gt;
@@ -354,7 +349,7 @@ class Maps extends Component {
       &lt;/View&gt;
     )
   }
-}
+};
 &nbsp;
 const styles = StyleSheet.create({
   mapContainer: {
@@ -391,7 +386,6 @@ const styles = StyleSheet.create({
 });
 &nbsp;
 export default Maps;
-&nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -399,7 +393,7 @@ export default Maps;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Feb 22 2020 12:03:08 GMT-0700 (Mountain Standard Time)
+                at Sat Feb 22 2020 15:02:06 GMT-0700 (Mountain Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

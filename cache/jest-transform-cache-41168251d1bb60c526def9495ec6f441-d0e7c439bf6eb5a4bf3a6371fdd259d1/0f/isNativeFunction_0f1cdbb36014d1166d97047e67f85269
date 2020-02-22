@@ -1,0 +1,6 @@
+ba12c824026c5e206306dc938e2c436c
+function _isNativeFunction(fn) {
+  return Function.toString.call(fn).indexOf("[native code]") !== -1;
+}
+
+module.exports = _isNativeFunction;

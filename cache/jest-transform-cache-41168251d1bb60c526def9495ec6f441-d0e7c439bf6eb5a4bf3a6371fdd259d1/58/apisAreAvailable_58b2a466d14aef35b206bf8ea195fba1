@@ -1,0 +1,12 @@
+05f20e4118a7dbb5bcb44dff3151e7ee
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = apisAreAvailable;
+
+var _reactNative = require("react-native");
+
+function apisAreAvailable() {
+  return !!_reactNative.NativeModules.ExponentConstants;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9hcGlzQXJlQXZhaWxhYmxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7O0FBQUE7O0FBRWMsU0FBVSxnQkFBVixHQUEwQjtBQUN0QyxTQUFPLENBQUMsQ0FBQywyQkFBYyxpQkFBdkI7QUFDRCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5hdGl2ZU1vZHVsZXMgfSBmcm9tICdyZWFjdC1uYXRpdmUnO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBhcGlzQXJlQXZhaWxhYmxlKCk6IGJvb2xlYW4ge1xuICByZXR1cm4gISFOYXRpdmVNb2R1bGVzLkV4cG9uZW50Q29uc3RhbnRzO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ==

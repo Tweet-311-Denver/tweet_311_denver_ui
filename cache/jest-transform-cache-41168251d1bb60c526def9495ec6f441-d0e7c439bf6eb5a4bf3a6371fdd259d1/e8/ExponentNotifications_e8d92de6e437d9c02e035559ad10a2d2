@@ -1,0 +1,11 @@
+775f44644d3da506e143b73ee180dd7c
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _reactNative = require("react-native");
+
+var _default = _reactNative.NativeModules.ExponentNotifications;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9Ob3RpZmljYXRpb25zL0V4cG9uZW50Tm90aWZpY2F0aW9ucy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQUFBOztlQUNlLDJCQUFjLHFCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTmF0aXZlTW9kdWxlcyB9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5leHBvcnQgZGVmYXVsdCBOYXRpdmVNb2R1bGVzLkV4cG9uZW50Tm90aWZpY2F0aW9ucztcbiJdLCJzb3VyY2VSb290IjoiIn0=

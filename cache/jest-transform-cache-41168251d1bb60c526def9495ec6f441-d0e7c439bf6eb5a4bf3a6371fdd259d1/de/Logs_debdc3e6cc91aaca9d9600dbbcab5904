@@ -1,0 +1,31 @@
+43d66c2c997d1e434951026a52b7a27b
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.enableExpoCliLogging = enableExpoCliLogging;
+exports.disableExpoCliLogging = disableExpoCliLogging;
+
+var _RemoteConsole = _interopRequireDefault(require("./RemoteConsole"));
+
+var _originalConsole;
+
+function enableExpoCliLogging() {
+  if (_originalConsole) {
+    return;
+  }
+
+  _originalConsole = global.console;
+  global.console = _RemoteConsole.default.createRemoteConsole(global.console);
+}
+
+function disableExpoCliLogging() {
+  if (!_originalConsole) {
+    return;
+  }
+
+  global.console = _originalConsole;
+  _originalConsole = null;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9sb2dzL0xvZ3MudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFBQTs7QUFFQSxJQUFJLGdCQUFKOztBQUVNLFNBQVUsb0JBQVYsR0FBOEI7QUFDbEMsTUFBSSxnQkFBSixFQUFzQjtBQUNwQjtBQUNEOztBQUVELEVBQUEsZ0JBQWdCLEdBQUcsTUFBTSxDQUFDLE9BQTFCO0FBQ0EsRUFBQSxNQUFNLENBQUMsT0FBUCxHQUFpQix1QkFBYyxtQkFBZCxDQUFrQyxNQUFNLENBQUMsT0FBekMsQ0FBakI7QUFDRDs7QUFFSyxTQUFVLHFCQUFWLEdBQStCO0FBQ25DLE1BQUksQ0FBQyxnQkFBTCxFQUF1QjtBQUNyQjtBQUNEOztBQUVELEVBQUEsTUFBTSxDQUFDLE9BQVAsR0FBaUIsZ0JBQWpCO0FBQ0EsRUFBQSxnQkFBZ0IsR0FBRyxJQUFuQjtBQUNEIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlbW90ZUNvbnNvbGUgZnJvbSAnLi9SZW1vdGVDb25zb2xlJztcblxubGV0IF9vcmlnaW5hbENvbnNvbGU6IHR5cGVvZiBjb25zb2xlIHwgbnVsbDtcblxuZXhwb3J0IGZ1bmN0aW9uIGVuYWJsZUV4cG9DbGlMb2dnaW5nKCk6IHZvaWQge1xuICBpZiAoX29yaWdpbmFsQ29uc29sZSkge1xuICAgIHJldHVybjtcbiAgfVxuXG4gIF9vcmlnaW5hbENvbnNvbGUgPSBnbG9iYWwuY29uc29sZTtcbiAgZ2xvYmFsLmNvbnNvbGUgPSBSZW1vdGVDb25zb2xlLmNyZWF0ZVJlbW90ZUNvbnNvbGUoZ2xvYmFsLmNvbnNvbGUpO1xufVxuXG5leHBvcnQgZnVuY3Rpb24gZGlzYWJsZUV4cG9DbGlMb2dnaW5nKCk6IHZvaWQge1xuICBpZiAoIV9vcmlnaW5hbENvbnNvbGUpIHtcbiAgICByZXR1cm47XG4gIH1cblxuICBnbG9iYWwuY29uc29sZSA9IF9vcmlnaW5hbENvbnNvbGU7XG4gIF9vcmlnaW5hbENvbnNvbGUgPSBudWxsO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ==

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/Updates/ExponentUpdates.ts"],"names":[],"mappings":";;;;;AAAA;;eACe,2BAAc,e","sourcesContent":["import { NativeModules } from 'react-native';\nexport default NativeModules.ExponentUpdates;\n"],"sourceRoot":""}
