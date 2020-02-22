@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Tweet correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "justifyContent": "space-between",
+      "padding": 15,
+      "width": "95%",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#3976EA",
+        "fontSize": 35,
+        "marginTop": 20,
+      }
+    }
+  >
+    Confirm Your Tweet:
+  </Text>
+  <Image
+    source={1}
+    style={
+      Object {
+        "height": 250,
+        "marginTop": 70,
+        "width": 250,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginTop": 70,
+        "width": "90%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#3976EA",
+          "fontSize": 20,
+          "paddingBottom": 10,
+        }
+      }
+    >
+      Your Tweet:
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      maxLength="280"
+      multiline={true}
+      onChangeText={[Function]}
+      placeholder="Your Tweet"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderColor": "gray",
+          "borderWidth": 1,
+          "height": 150,
+          "padding": 10,
+          "width": "100%",
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#3976EA",
+        "borderRadius": 20,
+        "height": 40,
+        "justifyContent": "center",
+        "marginBottom": 35,
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "opacity": 1,
+        "width": "50%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 20,
+        }
+      }
+    >
+      Submit
+    </Text>
+  </View>
+</View>
+`;
