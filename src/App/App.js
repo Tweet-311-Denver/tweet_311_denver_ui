@@ -50,7 +50,12 @@ class App extends Component {
             {props => <Maps {...props} setLocation={this.handleLocationChange}
             />}
           </Stack.Screen>
-          <Stack.Screen name="Tweet" component={Tweet} />
+          <Stack.Screen name="Tweet">
+            {props => <Tweet
+              {...props} desc={this.state.description}
+              setDesc={this.updateDescription}
+            />}
+          </Stack.Screen>
           <Stack.Screen name="Success" component={Success} />
         </Stack.Navigator>
       </NavigationContainer>

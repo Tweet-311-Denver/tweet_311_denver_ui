@@ -1,15 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 
-export const Tweet = ({ description, navigation }) => {
+export const Tweet = ({ desc, navigation, setDesc }) => {
 
   const redCheck = <Image style={styles.img} source={require('../../../assets/images/confirm.png')} />
   const greenCheck = <Image style={styles.img} source={require('../../../assets/images/confirmTrue.png')} />
 
-  return(
+  console.log(desc);
+  return (
     <View style={styles.tweetContainer}>
       <Text style={styles.headerText}>Confirm Your Tweet:</Text>
-      { description ? greenCheck : redCheck }
+      { desc ? greenCheck : redCheck }
       <View style={styles.inputArea}>
         <Text style={styles.tweetLabel}>Your Tweet:</Text>
         <TextInput
@@ -17,6 +18,8 @@ export const Tweet = ({ description, navigation }) => {
           maxLength='280'
           style={styles.tweetInput}
           placeholder='Your Tweet'
+          value={desc}
+          onChangeText={text => setDesc(text)}
         >
         </TextInput>
       </View>
@@ -25,7 +28,7 @@ export const Tweet = ({ description, navigation }) => {
       </TouchableOpacity>
     </View>
   )
-}
+};
 
 const styles = StyleSheet.create({
   tweetContainer: {
@@ -52,11 +55,11 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   tweetInput: {
-    borderColor: 'gray', 
-    borderWidth: 1, 
+    borderColor: 'gray',
+    borderWidth: 1,
     height: 150,
     padding: 10,
-    width: '100%', 
+    width: '100%',
   },
   img: {
     height: 250,
