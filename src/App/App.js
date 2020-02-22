@@ -8,15 +8,33 @@ import Tweet from '../components/Tweet/Tweet';
 import Success from '../components/Success/Success';
 import Maps from '../components/Maps/Maps';
 
+console.disableYellowBox = true;
+
 const Stack = createStackNavigator();
 
 class App extends Component {
-  state = {
-      description: ''
+  constructor() {
+    super();
+    this.state = {
+      description: '',
+      location: {
+        lat: '',
+        long: ''
+      }
     }
+  }
 
   updateDescription = desc => {
     this.setState({description: desc});
+  };
+
+  handleLocationChange = (lat, long) => {
+    this.setState({
+      location: {
+        lat,
+        long
+      }
+    });
   };
 
   render() {
@@ -26,10 +44,18 @@ class App extends Component {
           headerShown: true
         }}>
           <Stack.Screen name="Home">
-            {props => <Form {...props} desc={this.updateDescription}/>}
+            {props => <Form {...props} desc={this.updateDescription} location={this.state.location}/>}
           </Stack.Screen>
-          <Stack.Screen name="Location" component={Maps} />
-          <Stack.Screen name="Tweet" component={Tweet} />
+          <Stack.Screen name="Location">
+            {props => <Maps {...props} setLocation={this.handleLocationChange}
+            />}
+          </Stack.Screen>
+          <Stack.Screen name="Tweet">
+            {props => <Tweet
+              {...props} desc={this.state.description}
+              setDesc={this.updateDescription}
+            />}
+          </Stack.Screen>
           <Stack.Screen name="Success" component={Success} />
         </Stack.Navigator>
       </NavigationContainer>
