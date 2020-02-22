@@ -104,17 +104,12 @@ class Form extends Component {
           </View>
           <Text style={styles.label}>Description:</Text>
           <TextInput multiline={true} style={styles.largeInput} value={this.state.description} onChangeText={text => this.setState({description: text})}/>
-          <View style={styles.smallWrapper}>
-            <Image style={styles.icon} source={require('../../../assets/images/placeholder.png')}/>
-            <TouchableOpacity onPress={() => navigation.navigate('Location') }>
+            <TouchableOpacity style={styles.addButton} onPress={() => navigation.navigate('Location') }>
               <Text style={styles.iconLabel}>Add Location</Text>
             </TouchableOpacity>
-          </View>
-          <TouchableOpacity style={styles.smallWrapper}
-          onPress={this.handlePhotoUpload}>
-            <Image
-              style={styles.icon} source={require('../../../assets/images/photo.png')}
-            />
+            <TouchableOpacity
+            style={styles.addButton}
+            onPress={this.handlePhotoUpload}>
             <Text style={styles.iconLabel}>Add Photo</Text>
           </TouchableOpacity>
           <Text style={styles.error}>
@@ -210,6 +205,17 @@ const styles = StyleSheet.create({
   },
   error: {
     color: 'red',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 40,
+    width: '80%'
+  },
+  addButton: {
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    borderRadius: 4,
+    height: 40,
+    justifyContent: 'center',
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 40,

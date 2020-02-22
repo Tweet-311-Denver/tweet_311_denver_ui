@@ -16,10 +16,10 @@ class Maps extends Component {
         {
           coordinate: e.nativeEvent.coordinate,
           pin: <Image style={styles.img} source={require('../../../assets/images/pin.png')} />
-      }
-    ]
-  })
-}
+        }
+      ]
+    });
+  };
 
   handleSubmit = () => {
     const { navigation, setLocation } = this.props;
@@ -31,7 +31,7 @@ class Maps extends Component {
     };
     setLocation(latAndLong.lat, latAndLong.long);
     navigation.navigate('Home');
-  }
+  };
 
   getLocation = () => {
     const { markers } = this.state;
@@ -44,7 +44,7 @@ class Maps extends Component {
           </View>
         </Marker>)
     })
-  }
+  };
 
   render() {
     const { markers } = this.state;
@@ -71,7 +71,7 @@ class Maps extends Component {
       </View>
     )
   }
-}
+};
 
 const styles = StyleSheet.create({
   mapContainer: {
