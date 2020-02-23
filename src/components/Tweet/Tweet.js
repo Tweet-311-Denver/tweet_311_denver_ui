@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Linking, TextInput, Button, } from 'react-native';
+import { View, StyleSheet, Text, Linking, TextInput, Button, TouchableOpacity } from 'react-native';
 
 
 export default class Tweet extends Component {
@@ -46,22 +46,23 @@ export default class Tweet extends Component {
   };
 
   render() {
+    const { navigation, setDec } = this.props;
+    const { tweetContent, twitterViaAccount } = this.state;
+
     return (
       <View style={styles.container}>
-        <Text
-          style={{ textAlign: 'center', fontSize: 20, paddingVertical: 30 }}>
-          Submit A Tweet
-        </Text>
-        <Text style={{ marginTop: 20 }}>Enter Tweet Content</Text>
+        <Text style={styles.h1}>Submit A Tweet</Text>
+        <Text style={styles.inputLabel}>Enter Tweet Content</Text>
         <TextInput
-          value={this.state.tweetContent}
-          onChangeText={tweetContent => this.setState({ tweetContent })}
+          value={tweetContent}
+          onChangeText={tweetContent => this.setState({ tweetContent }, setDec(tweetContent))}
           placeholder={'Enter Tweet Content'}
+          maxLength='280'
           style={styles.input}
         />
-        <Text style={{ marginTop: 20 }}>Enter Twitter Account</Text>
+        <Text style={styles.inputLabel}>Tag Twitter Account</Text>
         <TextInput
-          value={this.state.twitterViaAccount}
+          value={twitterViaAccount}
           onChangeText={twitterViaAccount =>
             this.setState({ twitterViaAccount })
           }
@@ -71,6 +72,9 @@ export default class Tweet extends Component {
         <View style={{ marginTop: 20 }}>
           <Button onPress={this.tweetNow} title="Tweet Now" />
         </View>
+        <TouchableOpacity style={styles.confirmButton} onPress={ () => navigation.navigate('Success') }>
+          <Text style={styles.buttonLabel}>Skip Tweet</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -79,111 +83,45 @@ export default class Tweet extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 50,
     padding: 30,
+    backgroundColor: '#ffffff'
+  },
+  h1: {
+    color: '#3976EA',
+    fontSize: 45,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    textAlign: 'center', 
+    fontSize: 40, 
   },
   input: {
+    borderColor: 'gray',
+    lineHeight: 1,
+    borderWidth: 1,
     width: '100%',
-    height: 44,
-    padding: 10,
-    backgroundColor: '#D3D3D3',
+    height: 150,
+    padding: 5,
+    paddingTop: 0,
   },
+  inputLabel: {
+    color: '#3976EA',
+    fontSize: 18,
+    marginTop: 20, 
+    marginBottom: 8
+  },
+  confirmButton: {
+    alignItems: 'center',
+    backgroundColor: '#3976EA',
+    borderRadius: 20,
+    height: 40,
+    justifyContent: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 35,
+    width: '50%',
+  },
+  buttonLabel: {
+    color: '#FFFFFF',
+    fontSize: 20
+  }
 });
-
-
-
-
-
-
-// export const Tweet = ({ desc, navigation, setDesc }) => {
-
-//   const redCheck = <Image style={styles.img} source={require('../../../assets/images/confirm.png')} />
-//   const greenCheck = <Image style={styles.img} source={require('../../../assets/images/confirmTrue.png')} />
-
-//   return (
-//     <View style={styles.tweetContainer}>
-//       <Text style={styles.headerText}>Tweet the Issue:</Text>
-//       {/* { desc ? greenCheck : redCheck } */}
-//       <View style={styles.inputArea}>
-//         <WebView
-//           originWhitelist={['*']}
-//           source={{ uri: 'https://twitter.com/intent/tweet' }}
-//           style={styles.window}
-//           useWebKit={true}
-          
-//         />
-//         <Text style={styles.tweetLabel}>Your Tweet:</Text>
-//         <TextInput
-//           multiline
-//           maxLength='280'
-//           style={styles.tweetInput}
-//           placeholder='Your Tweet'
-//           value={desc}
-//           onChangeText={text => setDesc(text)}
-//         >
-//         </TextInput>
-//       </View>
-      // <TouchableOpacity style={styles.confirmButton} onPress={ () => navigation.navigate('Success') }>
-      //   <Text style={styles.buttonLabel}>Submit</Text>
-      // </TouchableOpacity>
-//     </View>
-//   )
-// };
-
-// const styles = StyleSheet.create({
-//   tweetContainer: {
-//     alignItems: 'center',
-//     backgroundColor: '#fff',
-//     flex: 1,
-//     justifyContent: 'space-between',
-//     padding: 1,
-//     width: '100%',
-//   },
-//   headerText: {
-//     color: '#3976EA',
-//     fontSize: 35,
-//     marginTop: 5,
-//   },
-//   inputArea: {
-//     flex: 1,
-//     marginTop: 10,
-//     width: '90%',
-//   },
-//   window: {
-//     height: '100%',
-//     marginBottom: 5,
-//     width: '100%',
-//   },
-//   tweetLabel: {
-//     color: '#3976EA',
-//     fontSize: 20,
-//     paddingBottom: 10,
-//   },
-//   tweetInput: {
-//     borderColor: 'gray',
-//     borderWidth: 1,
-//     height: 150,
-//     padding: 10,
-//     width: '100%',
-//   },
-//   img: {
-//     height: 100,
-//     marginTop: 10,
-//     width: 100,
-//   },
-//   confirmButton: {
-//     alignItems: 'center',
-//     backgroundColor: '#3976EA',
-//     borderRadius: 20,
-//     height: 40,
-//     justifyContent: 'center',
-//     marginLeft: 'auto',
-//     marginRight: 'auto',
-//     marginBottom: 35,
-//     width: '50%',
-//   },
-//   buttonLabel: {
-//     color: '#FFFFFF',
-//     fontSize: 20
-//   }
-// })
