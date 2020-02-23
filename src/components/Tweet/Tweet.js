@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Linking, TextInput, Button, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, Linking, TextInput, TouchableOpacity } from 'react-native';
 
 
 export default class Tweet extends Component {
@@ -46,7 +46,7 @@ export default class Tweet extends Component {
   };
 
   render() {
-    const { navigation, setDec } = this.props;
+    const { navigation, setDesc } = this.props;
     const { tweetContent, twitterViaAccount } = this.state;
 
     return (
@@ -55,9 +55,10 @@ export default class Tweet extends Component {
         <Text style={styles.inputLabel}>Enter Tweet Content</Text>
         <TextInput
           value={tweetContent}
-          onChangeText={tweetContent => this.setState({ tweetContent }, setDec(tweetContent))}
+          onChangeText={tweetContent => this.setState({ tweetContent }, setDesc(tweetContent))}
           placeholder={'Enter Tweet Content'}
           maxLength='280'
+          multiline
           style={styles.input}
         />
         <Text style={styles.inputLabel}>Tag Twitter Account</Text>
@@ -69,8 +70,10 @@ export default class Tweet extends Component {
           placeholder={'Enter Via Account'}
           style={styles.input}
         />
-        <View style={{ marginTop: 20 }}>
-          <Button onPress={this.tweetNow} title="Tweet Now" />
+        <View style={{ marginTop: 15 }}>
+          <TouchableOpacity style={styles.tweetBtn} onPress={this.tweetNow} title="Tweet">
+            <Text style={styles.tweetLabel}>Tweet</Text>
+          </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.confirmButton} onPress={ () => navigation.navigate('Success') }>
           <Text style={styles.buttonLabel}>Skip Tweet</Text>
@@ -88,26 +91,38 @@ const styles = StyleSheet.create({
   },
   h1: {
     color: '#3976EA',
-    fontSize: 45,
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    textAlign: 'center', 
     fontSize: 40, 
+    textAlign: 'center', 
   },
   input: {
     borderColor: 'gray',
-    lineHeight: 1,
     borderWidth: 1,
-    width: '100%',
     height: 150,
-    padding: 5,
-    paddingTop: 0,
+    paddingLeft: 10,
+    paddingBottom: 90,
+    width: '100%',
   },
   inputLabel: {
     color: '#3976EA',
+    textAlign: 'center', 
     fontSize: 18,
     marginTop: 20, 
     marginBottom: 8
+  },
+  tweetBtn: {
+    alignItems: 'center',
+    backgroundColor: '#3976EA',
+    borderRadius: 20,
+    height: 40,
+    justifyContent: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 35,
+    width: '50%',
+  },
+  tweetLabel: {
+    color: '#FFFFFF',
+    fontSize: 20
   },
   confirmButton: {
     alignItems: 'center',
