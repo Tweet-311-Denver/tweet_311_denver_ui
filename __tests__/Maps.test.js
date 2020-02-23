@@ -6,10 +6,10 @@ import Maps from '../src/components/Maps/Maps';
 
 jest.mock('react-native-maps', () => {
   const { View } = require('react-native');
-  const MockMapView = (props: any) => {
+  const MockMapView = (props : any) => {
     return <View>{props.children}</View>;
   };
-  const MockMarker = (props: any) => {
+  const MockMarker = (props : any) => {
     return <View>{props.children}</View>;
   };
   return {
