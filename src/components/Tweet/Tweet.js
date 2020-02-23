@@ -13,7 +13,8 @@ export default class Tweet extends Component {
   
   tweetNow = () => {
     let twitterParameters = '';
-    let { tweetContent, twitterViaAccount } = this.state
+    const { tweetContent, twitterViaAccount } = this.state;
+    const { navigation } = this.props;
 
     if (tweetContent != undefined) {
       if (twitterParameters.includes('?') == false) {
@@ -37,7 +38,7 @@ export default class Tweet extends Component {
 
     Linking.openURL(url)
       .then(data => {
-        alert('Twitter Opened');
+        navigation.navigate('Success')
       })
       .catch(() => {
         alert('Something went wrong');
