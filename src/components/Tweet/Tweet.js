@@ -1,69 +1,128 @@
-import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import React, { Component } from 'react';
+import { View, StyleSheet, Text, Linking, TextInput, TouchableOpacity } from 'react-native';
 
-export const Tweet = ({ desc, navigation, setDesc }) => {
 
-  const redCheck = <Image style={styles.img} source={require('../../../assets/images/confirm.png')} />
-  const greenCheck = <Image style={styles.img} source={require('../../../assets/images/confirmTrue.png')} />
+export default class Tweet extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tweetContent: this.props.desc,
+      twitterViaAccount: 'Tweet311Denver',
+    };
+  }
+  
+  tweetNow = () => {
+    let twitterParameters = '';
+    const { tweetContent, twitterViaAccount } = this.state;
+    const { navigation } = this.props;
 
-  return (
-    <View style={styles.tweetContainer}>
-      <Text style={styles.headerText}>Confirm Your Tweet:</Text>
-      { desc ? greenCheck : redCheck }
-      <View style={styles.inputArea}>
-        <Text style={styles.tweetLabel}>Your Tweet:</Text>
+    if (tweetContent != undefined) {
+      if (twitterParameters.includes('?') == false) {
+        twitterParameters =
+          twitterParameters + '?text=' + encodeURI(tweetContent);
+      } else {
+        twitterParameters =
+          twitterParameters + '&text=' + encodeURI(tweetContent);
+      }
+    }
+    if (twitterViaAccount != undefined) {
+      if (twitterParameters.includes('?') == false) {
+        twitterParameters =
+          twitterParameters + '?via=' + encodeURI(twitterViaAccount);
+      } else {
+        twitterParameters =
+          twitterParameters + '&via=' + encodeURI(twitterViaAccount);
+      }
+    }
+    let url = 'https://twitter.com/intent/tweet' + twitterParameters;
+
+    Linking.openURL(url)
+      .then(data => {
+        navigation.navigate('Success')
+      })
+      .catch(() => {
+        alert('Something went wrong');
+      });
+  };
+
+  render() {
+    const { navigation, setDesc } = this.props;
+    const { tweetContent, twitterViaAccount } = this.state;
+
+    return (
+      <View style={styles.container}>
+        <Text style={styles.h1}>Submit A Tweet</Text>
+        <Text style={styles.inputLabel}>Enter Tweet Content</Text>
         <TextInput
-          multiline
+          value={tweetContent}
+          onChangeText={tweetContent => this.setState({ tweetContent }, setDesc(tweetContent))}
+          placeholder={'Enter Tweet Content'}
           maxLength='280'
-          style={styles.tweetInput}
-          placeholder='Your Tweet'
-          value={desc}
-          onChangeText={text => setDesc(text)}
-        >
-        </TextInput>
+          multiline
+          style={styles.input}
+        />
+        <Text style={styles.inputLabel}>Tag Twitter Account</Text>
+        <TextInput
+          value={twitterViaAccount}
+          onChangeText={twitterViaAccount =>
+            this.setState({ twitterViaAccount })
+          }
+          placeholder={'Enter Via Account'}
+          style={styles.input}
+        />
+        <View style={{ marginTop: 15 }}>
+          <TouchableOpacity style={styles.tweetBtn} onPress={this.tweetNow} title="Tweet">
+            <Text style={styles.tweetLabel}>Tweet</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity style={styles.confirmButton} onPress={ () => navigation.navigate('Success') }>
+          <Text style={styles.buttonLabel}>Skip Tweet</Text>
+        </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.confirmButton} onPress={ () => navigation.navigate('Success') }>
-        <Text style={styles.buttonLabel}>Submit</Text>
-      </TouchableOpacity>
-    </View>
-  )
-};
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  tweetContainer: {
-    alignItems: 'center',
-    backgroundColor: '#fff',
+  container: {
     flex: 1,
-    justifyContent: 'space-between',
-    padding: 15,
-    width: '95%',
+    padding: 30,
+    backgroundColor: '#ffffff'
   },
-  headerText: {
+  h1: {
     color: '#3976EA',
-    fontSize: 35,
-    marginTop: 20,
+    fontSize: 40, 
+    textAlign: 'center', 
   },
-  inputArea: {
-    flex: 1,
-    marginTop: 70,
-    width: '90%',
-  },
-  tweetLabel: {
-    color: '#3976EA',
-    fontSize: 20,
-    paddingBottom: 10,
-  },
-  tweetInput: {
+  input: {
     borderColor: 'gray',
     borderWidth: 1,
     height: 150,
-    padding: 10,
+    paddingLeft: 10,
+    paddingBottom: 90,
     width: '100%',
   },
-  img: {
-    height: 250,
-    marginTop: 70,
-    width: 250,
+  inputLabel: {
+    color: '#3976EA',
+    textAlign: 'center', 
+    fontSize: 18,
+    marginTop: 20, 
+    marginBottom: 8
+  },
+  tweetBtn: {
+    alignItems: 'center',
+    backgroundColor: '#3976EA',
+    borderRadius: 20,
+    height: 40,
+    justifyContent: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 35,
+    width: '50%',
+  },
+  tweetLabel: {
+    color: '#FFFFFF',
+    fontSize: 20
   },
   confirmButton: {
     alignItems: 'center',
@@ -73,13 +132,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginBottom: 35,
+    marginTop: 35,
     width: '50%',
   },
   buttonLabel: {
     color: '#FFFFFF',
     fontSize: 20
   }
-})
-
-export default Tweet;
+});
