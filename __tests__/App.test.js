@@ -1,9 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import App from '../src/App/App';
+import App from '../src/App/App.js';
 
-test('renders App correctly', () => {
-  const tree = renderer.create(<App />).toJSON();
-  expect(tree).toMatchSnapshot();
+describe('App', () => {
+
+  test.skip('renders App correctly', () => {
+    const tree = renderer.create(<App />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
 });
