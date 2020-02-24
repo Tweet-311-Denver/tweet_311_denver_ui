@@ -61,7 +61,7 @@ class Maps extends Component {
 
     return markers.map(marker => {
       return (
-        <Marker { ...marker } key={marker.coordinate}>
+        <Marker {...marker} key={marker.coordinate}>
           <View>
             <Text style={styles.img}>{marker.pin}</Text>
           </View>
