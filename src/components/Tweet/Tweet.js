@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Linking, TextInput, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Dimensions, Text, Linking, TextInput, TouchableOpacity } from 'react-native';
 
+const height = Dimensions.get('window').height;
+const width = Dimensions.get('window').width;
 
 export default class Tweet extends Component {
   constructor(props) {
@@ -100,7 +102,7 @@ const styles = StyleSheet.create({
     height: 150,
     paddingLeft: 10,
     paddingBottom: 90,
-    width: '100%',
+    width: width * 0.85,
   },
   inputLabel: {
     color: '#3976EA',

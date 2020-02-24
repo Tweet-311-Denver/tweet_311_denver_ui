@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, TextInput, Image, TouchableOpacity, ScrollView, Switch } from 'react-native';
+import { View, StyleSheet, Text, TextInput, Dimensions, TouchableOpacity, ScrollView, Switch } from 'react-native';
 
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
+
+const height = Dimensions.get('window').height;
+const width = Dimensions.get('window').width;
 
 class Form extends Component {
   constructor(props) {
@@ -140,7 +143,8 @@ class Form extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    justifyContent: 'space-between',
+    backgroundColor: 'white',
   },
   h1: {
     color: '#3976EA',
