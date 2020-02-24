@@ -1,5 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Image } from 'react-native';
+
+const height = Dimensions.get('window').height;
+const width = Dimensions.get('window').width;
 
 export const Success = ({ navigation }) => {
 
@@ -23,7 +26,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     flex: 1,
     padding: 15,
-    width: '95%',
+    width: '100%',
   },
   headerText: {
     color: '#3976EA',
