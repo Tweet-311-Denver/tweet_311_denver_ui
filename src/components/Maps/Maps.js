@@ -34,7 +34,7 @@ class Maps extends Component {
       markers: [
         {
           coordinate: e.nativeEvent.coordinate,
-          pin: <Image style={styles.img} source={require('../../../assets/images/pin.png')} />
+          pin: <Image style={styles.imgPin} source={require('../../../assets/images/pin.png')} />
         }
       ]
     });
@@ -106,6 +106,8 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   map: {
+    borderColor: '#3976EA',
+    borderWidth: 1,
     height: 600,
     width: '100%',
   },
@@ -135,7 +137,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 15,
   },
-  img: {
+  imgPin: {
     height: 30,
     width: 30,
   },
