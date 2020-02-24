@@ -10,6 +10,25 @@ class Maps extends Component {
     }
   }
 
+  handleValidation = () => {
+    const { markers } = this.state;
+    const greenCheck = <Image style={styles.greenCheck} source={require('../../../assets/images/green_check.png')}></Image>
+    const redX = <Image style={styles.redCheck} source={require('../../../assets/images/stop.png')}></Image>
+
+    if(!markers.length) {
+      return(
+        <View style={styles.xContainer}>
+          <Text style={styles.redText}>Please Select A Location</Text>
+          <Text>{redX}</Text>
+        </View>
+      )
+    } else {
+      return(
+        <Text>{greenCheck}</Text>
+      )
+    }
+  }
+
   handlePress = (e) => {
     this.setState({
       markers: [
@@ -69,6 +88,7 @@ class Maps extends Component {
         >
         {!markers.length ? null : this.getLocation()}
         </MapView>
+        {this.handleValidation()}
         <TouchableOpacity style={styles.btn} onPress={ () => this.handleSubmit() }>
           <Text style={styles.text}>Add Location</Text>
         </TouchableOpacity>
@@ -86,12 +106,34 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   map: {
-    height: 650,
+    height: 600,
     width: '100%',
+  },
+  xContainer: {
+    alignItems: 'center',
+    flexDirection: 'column',
+    flex: 1,
   },
   text: {
     color: '#FFFFFF',
     fontSize: 20
+  },
+  redCheck: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    height: 35,
+    width: 35,
+  },
+  greenCheck: {
+    height: 45,
+    marginTop: 25,
+    width: 60,
+  },
+  redText: {
+    color: 'red',
+    fontSize: 10,
+    marginTop: 15,
+    marginBottom: 15,
   },
   img: {
     height: 30,
@@ -101,13 +143,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#3976EA',
     borderRadius: 20,
-    height: 40,
+    height: 45,
     justifyContent: 'center',
-    marginBottom: 40,
+    marginBottom: 50,
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: 30,
-    width: '40%'
+    marginTop: 20,
+    width: '50%'
   }
 });
 
