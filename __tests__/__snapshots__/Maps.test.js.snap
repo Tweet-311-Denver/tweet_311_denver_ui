@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Maps renders Maps correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "flexDirection": "column",
+      "width": "100%",
+    }
+  }
+>
+  <View />
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#3976EA",
+        "borderRadius": 20,
+        "height": 40,
+        "justifyContent": "center",
+        "marginBottom": 40,
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "marginTop": 30,
+        "opacity": 1,
+        "width": "40%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 20,
+        }
+      }
+    >
+      Add Location
+    </Text>
+  </View>
+</View>
+`;
