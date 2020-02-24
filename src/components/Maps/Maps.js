@@ -25,12 +25,16 @@ class Maps extends Component {
     const { navigation, setLocation } = this.props;
     const { markers } = this.state;
 
-    const latAndLong = {
-      lat: markers[0].coordinate.latitude,
-      long: markers[0].coordinate.longitude
-    };
-    setLocation(latAndLong.lat, latAndLong.long);
-    navigation.navigate('Home');
+    if(markers.length) {
+      const latAndLong = {
+        lat: markers[0].coordinate.latitude,
+        long: markers[0].coordinate.longitude
+      };
+      setLocation(latAndLong.lat, latAndLong.long);
+      navigation.navigate('Home');
+    } else {
+      navigation.navigate('Home');
+    }
   };
 
   getLocation = () => {
