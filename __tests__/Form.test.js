@@ -10,6 +10,9 @@ describe('Form', () => {
       long: '-24324'
     }
   };
+  const mockNavigation = {
+    navigate: jest.fn()
+  };
 
   test('renders Form correctly', () => {
     const tree = renderer.create(<Form location={mockLocation}/>).toJSON();
@@ -48,6 +51,21 @@ describe('Form', () => {
       const instance = renderer.create(<Form location={mockLocation}/>).getInstance();
       instance.handleSubmit();
       expect(instance.state.error).toEqual('Please add a valid email, description, and location.');
+    });
+
+    test('handleSubmit should rest the state if the fields are filled in', async () => {
+      const instance = renderer.create(<Form location={mockLocation} desc={jest.fn()} navigation={mockNavigation}/>).getInstance();
+      instance.handleChange('email@g.gg', 'email');
+      instance.handleChange('description text', 'description');
+      instance.validateSubmit = jest.fn().mockImplementation(() => true);
+      instance.handleSubmit();
+      expect(instance.state).toEqual({
+          email: '',
+          description: '',
+          isSnowRemoval: false,
+          photo: '',
+          error: ''
+      });
     });
 
   });
