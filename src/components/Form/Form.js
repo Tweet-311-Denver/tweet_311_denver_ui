@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
   addButton: {
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.1)',
-    borderRadius: 44,
+    borderRadius: 25,
     height: 40,
     justifyContent: 'center',
     marginLeft: 'auto',
