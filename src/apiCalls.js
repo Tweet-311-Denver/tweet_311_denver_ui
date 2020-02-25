@@ -8,10 +8,12 @@ export const sendReport = async payload => {
       'Content-Type': 'application/json'
     }
   };
+  let url = `http://localhost:3000/api/v1/test/reports?serviceKey=${SERVICE_KEY}`;
   const response = await
-    fetch(`http://localhost:3000/api/v1/reports?serviceKey=${SERVICE_KEY}`, options);
+    fetch(url, options);
+    console.log(response);
   if(!response.ok) {
-    throw new Error('Error: There was a problem submitting your report.');
+    throw new Error(`Error: ${response.status}. There was a problem submitting your report.`);
   }
   const report = await response.json();
   return report

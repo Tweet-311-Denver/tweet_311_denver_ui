@@ -76,14 +76,22 @@ class Form extends Component {
       location
     };
     if (this.validateSubmit()) {
-      // this is where we make the API call
-      console.log(payload);
+      this.postForm(payload);
       this.props.desc(this.state.description);
       this.resetState();
       navigation.navigate('Tweet');
     } else {
         this.setState({error: 'Please add a valid email, description, and location.'})
     }
+  };
+
+  postForm = async payload => {
+    try {
+      const response = await sendReport(payload);
+      console.log(response);
+    } catch(error) {
+        console.log(error);
+    };
   };
 
   handleChange = (value, type) => {

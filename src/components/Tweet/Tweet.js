@@ -12,7 +12,7 @@ export default class Tweet extends Component {
       twitterViaAccount: 'Tweet311Denver',
     };
   }
-  
+
   tweetNow = () => {
     let twitterParameters = '';
     const { tweetContent, twitterViaAccount } = this.state;
@@ -97,9 +97,9 @@ const styles = StyleSheet.create({
   h1: {
     color: '#3976EA',
     fontSize: 40,
-    fontWeight: 'bold', 
+    fontWeight: 'bold',
     marginTop: height * .05,
-    textAlign: 'center', 
+    textAlign: 'center',
   },
   img: {
     height: 50,
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   inputLabel: {
     color: '#3976EA',
     fontSize: 20,
-    marginTop: 20, 
+    marginTop: 20,
     marginBottom: 8
   },
   tweetBtn: {
