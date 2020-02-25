@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Dimensions, Text, View, TouchableOpacity, Image } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
+
+const height = Dimensions.get('window').height;
+const width = Dimensions.get('window').width;
 
 class Maps extends Component {
   constructor(props) {
@@ -108,7 +111,7 @@ const styles = StyleSheet.create({
   map: {
     borderColor: '#3976EA',
     borderWidth: 1,
-    height: 600,
+    height: height * .65,
     width: '100%',
   },
   xContainer: {
@@ -133,9 +136,9 @@ const styles = StyleSheet.create({
   },
   redText: {
     color: 'red',
-    fontSize: 10,
-    marginTop: 15,
-    marginBottom: 15,
+    fontSize: 15,
+    marginTop: height * .04,
+    marginBottom: height * .02,
   },
   imgPin: {
     height: 30,
@@ -147,10 +150,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 45,
     justifyContent: 'center',
-    marginBottom: 50,
+    marginBottom: height * .06,
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: 20,
+    marginTop: height * .04,
     width: '50%'
   }
 });

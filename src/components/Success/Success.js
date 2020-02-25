@@ -39,9 +39,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   img: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginRight: 35,
+    marginRight: width * -.08,
     height: 250,
     marginTop: 50,
     width: 250,
