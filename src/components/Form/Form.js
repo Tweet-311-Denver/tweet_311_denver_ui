@@ -7,6 +7,7 @@ import * as Permissions from 'expo-permissions';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
+import { sendReport } from '../../apiCalls';
 
 class Form extends Component {
   constructor(props) {
@@ -64,17 +65,19 @@ class Form extends Component {
 
   handleSubmit = () => {
     const { navigation, location } = this.props;
+    const { isSnowRemoval, description, email, photo } = this.state;
     const payload = {
       report: {
-        category: this.state.isSnowRemoval ? 'snow_removal' : 'other',
-        description: this.state.description,
-        image: this.state.images,
-        email: this.state.email
+        category: isSnowRemoval ? 'snow_removal' : 'other',
+        description,
+        image: photo,
+        email
       },
       location
     };
     if (this.validateSubmit()) {
       // this is where we make the API call
+      console.log(payload);
       this.props.desc(this.state.description);
       this.resetState();
       navigation.navigate('Tweet');
@@ -180,7 +183,7 @@ const styles = StyleSheet.create({
   label: {
     color: '#3976EA',
     fontSize: 20,
-    fontWeight: 'bold', 
+    fontWeight: 'bold',
     marginBottom: 10,
     marginLeft: '10%',
     marginTop: 30
