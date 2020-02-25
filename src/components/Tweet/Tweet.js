@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Dimensions, Text, Linking, TextInput, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Dimensions, Text, Linking, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -53,33 +53,36 @@ export default class Tweet extends Component {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.h1}>Submit A Tweet</Text>
-        <Text style={styles.inputLabel}>Enter Tweet Content</Text>
-        <TextInput
-          value={tweetContent}
-          onChangeText={tweetContent => this.setState({ tweetContent }, setDesc(tweetContent))}
-          placeholder={'Enter Tweet Content'}
-          maxLength='280'
-          multiline
-          style={styles.input}
-        />
-        <Text style={styles.inputLabel}>Tag Twitter Account</Text>
-        <TextInput
-          value={twitterViaAccount}
-          onChangeText={twitterViaAccount =>
-            this.setState({ twitterViaAccount })
-          }
-          placeholder={'Enter Via Account'}
-          style={styles.input}
-        />
-        <View style={{ marginTop: 15 }}>
-          <TouchableOpacity style={styles.tweetBtn} onPress={this.tweetNow} title="Tweet">
-            <Text style={styles.tweetLabel}>Tweet</Text>
+        <ScrollView>
+          <Text style={styles.h1}>Submit A Tweet</Text>
+          <Text style={styles.inputLabel}>Enter Tweet Content</Text>
+          <TextInput
+            value={tweetContent}
+            onChangeText={tweetContent => this.setState({ tweetContent }, setDesc(tweetContent))}
+            placeholder={'Enter Tweet Content'}
+            maxLength='280'
+            multiline={true}
+            style={styles.input}
+          />
+          <Text style={styles.inputLabel}>Tag Twitter Account</Text>
+          <TextInput
+            value={twitterViaAccount}
+            onChangeText={twitterViaAccount =>
+              this.setState({ twitterViaAccount })
+            }
+            multiline={true}
+            placeholder={'Enter Via Account'}
+            style={styles.input}
+          />
+          <View style={{ marginTop: 15 }}>
+            <TouchableOpacity style={styles.tweetBtn} onPress={this.tweetNow} title="Tweet">
+              <Text style={styles.tweetLabel}>Tweet</Text>
+            </TouchableOpacity>
+          </View>
+          <TouchableOpacity style={styles.confirmButton} onPress={ () => navigation.navigate('Success') }>
+            <Text style={styles.buttonLabel}>Skip Tweet</Text>
           </TouchableOpacity>
-        </View>
-        <TouchableOpacity style={styles.confirmButton} onPress={ () => navigation.navigate('Success') }>
-          <Text style={styles.buttonLabel}>Skip Tweet</Text>
-        </TouchableOpacity>
+        </ScrollView>
       </View>
     );
   }
