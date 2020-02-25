@@ -86,6 +86,8 @@ class Maps extends Component {
           longitudeDelta: 0.0421,
         }
       }
+        zoomEnabled={true}
+        showsUserLocation={true}
         showsTraffic={true}
         onPress={ this.handlePress }
         >
@@ -130,7 +132,7 @@ const styles = StyleSheet.create({
     width: 35,
   },
   greenCheck: {
-    height: 45,
+    height: 55,
     marginTop: 25,
     width: 60,
   },
@@ -154,7 +156,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: height * .04,
-    width: '50%'
+    width: width * .5,
   }
 });
 
