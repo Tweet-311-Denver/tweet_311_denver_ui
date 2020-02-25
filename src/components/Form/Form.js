@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     borderColor: '#000000',
     borderWidth: 1,
     fontSize: 20,
-    height: 200,
+    height: 150,
     marginLeft: 'auto',
     marginRight: 'auto',
     padding: 5,
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 40,
-    width: '40%'
+    width: width * .5
   },
   buttonLabel: {
     color: '#FFFFFF',
@@ -232,13 +232,13 @@ const styles = StyleSheet.create({
   addButton: {
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.1)',
-    borderRadius: 4,
+    borderRadius: 44,
     height: 40,
     justifyContent: 'center',
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: 40,
-    width: '80%'
+    marginTop: 20,
+    width: width * .65
   }
 });
 
