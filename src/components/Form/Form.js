@@ -148,8 +148,9 @@ const styles = StyleSheet.create({
   },
   h1: {
     color: '#3976EA',
-    fontSize: 45,
-    marginTop: 60,
+    fontSize: 35,
+    fontWeight: 'bold',
+    marginTop: height * .02,
     marginLeft: 'auto',
     marginRight: 'auto'
   },
@@ -158,7 +159,7 @@ const styles = StyleSheet.create({
   },
   smallInput: {
     borderColor: '#000000',
-    borderWidth: 1,
+    borderWidth: 2,
     fontSize: 30,
     height: 50,
     marginLeft: 'auto',
@@ -168,7 +169,7 @@ const styles = StyleSheet.create({
   },
   largeInput: {
     borderColor: '#000000',
-    borderWidth: 1,
+    borderWidth: 2,
     fontSize: 20,
     height: 150,
     marginLeft: 'auto',
@@ -181,7 +182,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 10,
     marginLeft: '10%',
-    marginTop: 40
+    marginTop: 30
   },
   smallWrapper: {
     alignItems: 'center',
@@ -201,7 +202,8 @@ const styles = StyleSheet.create({
   },
   iconLabel: {
     color: '#3976EA',
-    fontSize: 20
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   button: {
     alignItems: 'center',
@@ -212,12 +214,13 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: 40,
+    marginTop: 30,
     width: width * .5
   },
   buttonLabel: {
     color: '#FFFFFF',
-    fontSize: 20
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   CheckBox: {
     marginRight: 15

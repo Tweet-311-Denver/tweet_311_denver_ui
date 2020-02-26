@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
-export const Welcome = () => {
+export const Welcome = ({ navigation }) => {
 
   return(
     <View style={styles.welcomeContainer}>
@@ -15,12 +15,12 @@ export const Welcome = () => {
       <Image style={styles.img} source={require('../../../assets/images/denver.png')}></Image>
       <Text style={styles.welcomeText}>Welcome!</Text>
       <Text style={styles.welcomePara}>
-        Thank you for using Tweet311Denver. We aim to build a safer, cleaner, 
+        Thank you for using <Text style={styles.logo}>Tweet311Denver</Text>. We aim to build a safer, cleaner, 
         and more enjoyable commute experience for bikers, pedestrians, and 
         public transportation enthusiasts. Submit a claim below and contribute 
         to positive change!
       </Text>
-      <TouchableOpacity style={styles.startButton}>
+      <TouchableOpacity style={styles.startButton} onPress={ () => navigation.navigate('Home') }>
         <Text style={styles.startText}>Start Form</Text>
       </TouchableOpacity>
       </LinearGradient>
@@ -37,10 +37,14 @@ const styles = StyleSheet.create({
     flex: 1,
     width: width * 1,
   },
+  logo: {
+    fontSize: 19,
+    fontWeight: 'bold',
+  },
   img: {
     height: 300,
-    marginTop: height * .09,
-    marginLeft: width * .05,
+    marginTop: height * .15,
+    marginLeft: width * .03,
     width: 300,
   },
   linearGradient: {
@@ -51,17 +55,19 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 50,
     fontWeight: 'bold',
-    marginLeft: width * .05,
+    marginLeft: width * .04,
     marginBottom: 15,
   },
   welcomePara: {
     color: '#FFFFFF',
     fontSize: 18,
-    marginLeft: width * .05,
+    marginLeft: width * .04,
+    marginRight: width * .03
   },
   startText: {
     color: '#FFFFFF',
-    fontSize: 20
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   startButton: {
     alignItems: 'center',

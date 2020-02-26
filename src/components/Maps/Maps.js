@@ -123,7 +123,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#FFFFFF',
-    fontSize: 20
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   redCheck: {
     marginLeft: 'auto',

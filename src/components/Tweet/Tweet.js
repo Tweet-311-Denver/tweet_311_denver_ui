@@ -96,12 +96,14 @@ const styles = StyleSheet.create({
   },
   h1: {
     color: '#3976EA',
-    fontSize: 40, 
+    fontSize: 40,
+    fontWeight: 'bold', 
     textAlign: 'center', 
   },
   input: {
     borderColor: 'gray',
-    borderWidth: 1,
+    borderWidth: 2,
+    fontSize: 20,
     height: 150,
     paddingLeft: 10,
     paddingBottom: 90,
@@ -109,8 +111,8 @@ const styles = StyleSheet.create({
   },
   inputLabel: {
     color: '#3976EA',
-    textAlign: 'center', 
     fontSize: 18,
+    fontWeight: 'bold', 
     marginTop: 20, 
     marginBottom: 8
   },
@@ -127,7 +129,8 @@ const styles = StyleSheet.create({
   },
   tweetLabel: {
     color: '#FFFFFF',
-    fontSize: 20
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   confirmButton: {
     alignItems: 'center',
@@ -142,6 +145,7 @@ const styles = StyleSheet.create({
   },
   buttonLabel: {
     color: '#FFFFFF',
-    fontSize: 20
+    fontSize: 20,
+    fontWeight: 'bold',
   }
 });
