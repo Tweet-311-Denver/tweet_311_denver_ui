@@ -8,7 +8,7 @@ export const sendReport = async payload => {
       'Content-Type': 'application/json'
     }
   };
-  let url = `http://localhost:3000/api/v1/test/reports?serviceKey=${SERVICE_KEY}`;
+  let url = `https://tweet311denver-service.herokuapp.com/api/v1/reports?serviceKey=${SERVICE_KEY}`;
   const response = await
     fetch(url, options);
   if(!response.ok) {
