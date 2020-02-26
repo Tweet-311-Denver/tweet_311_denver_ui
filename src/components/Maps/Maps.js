@@ -129,8 +129,8 @@ const styles = StyleSheet.create({
   redCheck: {
     marginLeft: 'auto',
     marginRight: 'auto',
-    height: 35,
-    width: 35,
+    height: 40,
+    width: 40,
   },
   greenCheck: {
     height: 55,
@@ -139,8 +139,8 @@ const styles = StyleSheet.create({
   },
   redText: {
     color: 'red',
-    fontSize: 15,
-    marginTop: height * .04,
+    fontSize: 18,
+    marginTop: height * .02,
     marginBottom: height * .02,
   },
   imgPin: {

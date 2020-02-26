@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     width: width * 1,
   },
   logo: {
-    fontSize: 19,
+    fontSize: 20,
     fontWeight: 'bold',
   },
   img: {
