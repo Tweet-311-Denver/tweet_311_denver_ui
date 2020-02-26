@@ -25,24 +25,13 @@ exports[`renders Success correctly 1`] = `
   >
     Success!
   </Text>
-  <Text
-    style={
-      Object {
-        "color": "#3976EA",
-        "fontSize": 20,
-        "marginTop": 20,
-      }
-    }
-  >
-    Form submitted and Tweet Posted
-  </Text>
   <Image
     source={1}
     style={
       Object {
         "height": 250,
         "marginRight": -60,
-        "marginTop": 50,
+        "marginTop": 35,
         "width": 250,
       }
     }
@@ -51,14 +40,35 @@ exports[`renders Success correctly 1`] = `
     style={
       Object {
         "color": "#3976EA",
-        "fontSize": 30,
-        "fontWeight": "bold",
-        "marginTop": 40,
+        "fontSize": 24,
+        "marginTop": 30,
       }
     }
   >
-    Thanks!
+    Denver might email for more info
   </Text>
+  <Text
+    style={
+      Object {
+        "color": "#3976EA",
+        "fontSize": 25,
+        "fontWeight": "bold",
+        "marginTop": 25,
+      }
+    }
+  >
+    Denver 311 Case-ID:
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "black",
+        "fontSize": 28,
+        "fontWeight": "bold",
+        "marginTop": 25,
+      }
+    }
+  />
   <View
     accessible={true}
     focusable={true}
