@@ -8,6 +8,7 @@ import Tweet from '../components/Tweet/Tweet';
 import Success from '../components/Success/Success';
 import Maps from '../components/Maps/Maps';
 import Welcome from '../components/Welcome/Welcome';
+import Loader from '../components/Loader/Loader.js';
 
 console.disableYellowBox = true;
 
