@@ -12,7 +12,7 @@
 
 
 ## Tech Stack:
-#### Front End
+#### Front-End
   [Cameron MacRae](https://github.com/cammac60) and [Garrett Iannuzzi](https://github.com/Garrett-Iannuzzi)
   
 - React Native
@@ -20,9 +20,10 @@
 - Expo
 - React Navigation
 
-#### Back End
+#### Back-End
 
 [Alice Post](https://github.com/ap2322) and [Dustin Mikusko](https://github.com/Dustin-Mikusko)
+See the back-end repo [here](https://github.com/Tweet-311-Denver/tweet_311_denver_service)
 
 - Node.js 
 - Hapi.js
