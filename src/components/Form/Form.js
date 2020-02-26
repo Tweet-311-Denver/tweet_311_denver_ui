@@ -65,12 +65,12 @@ class Form extends Component {
 
   handleSubmit = () => {
     const { navigation, location } = this.props;
-    const { isSnowRemoval, description, email, photo } = this.state;
+    const { isSnowRemoval, description, email } = this.state;
     const payload = {
       report: {
         category: isSnowRemoval ? 'snow_removal' : 'other',
         description,
-        image: photo,
+        image: '',
         email
       },
       location
