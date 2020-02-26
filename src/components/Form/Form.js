@@ -78,7 +78,6 @@ class Form extends Component {
     if (this.validateSubmit()) {
       this.postForm(payload);
       this.props.desc(this.state.description);
-      this.resetState();
       navigation.navigate('Tweet');
     } else {
         this.setState({error: 'Please add a valid email, description, and location.'})
@@ -89,6 +88,7 @@ class Form extends Component {
     const { setCase, setFetchError } = this.props;
     try {
       const response = await sendReport(payload);
+      this.resetState();
       setCase(response);
     } catch(error) {
         this.setState({error: 'Sorry, we couldn\'t complete your request. Please try again.'});

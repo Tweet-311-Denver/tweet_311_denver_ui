@@ -31,7 +31,6 @@ class App extends Component {
   setCase = async response => {
     const { caseID } = response.confirmation311;
     await this.setState({caseID});
-    console.log(this.state.caseID);
   };
 
   updateDescription = desc => {
