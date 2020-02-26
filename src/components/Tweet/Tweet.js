@@ -95,13 +95,10 @@ export default class Tweet extends Component {
               <Text style={styles.tweetLabel}>Tweet</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.confirmButton} onPress={ () => navigation.navigate('Success') }>
+          <TouchableOpacity style={styles.confirmButton} onPress={this.handleSkip}>
             <Text style={styles.buttonLabel}>Skip Tweet</Text>
           </TouchableOpacity>
-        </View>
-        <TouchableOpacity style={styles.confirmButton} onPress={this.handleSkip}>
-          <Text style={styles.buttonLabel}>Skip Tweet</Text>
-        </TouchableOpacity>
+        </ScrollView>
       </View>
     );
   }
