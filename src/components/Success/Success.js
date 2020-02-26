@@ -8,7 +8,7 @@ export const Success = ({ navigation }) => {
 
   return(
     <View style={styles.successContainer}>
-      <Text style={styles.headerText}>Success</Text>
+      <Text style={styles.headerText}>Success!</Text>
       <Text style={styles.messageText}>Form submitted and Tweet Posted</Text>
       <Image style={styles.img} source={require('../../../assets/images/completed-task.png')} />
       <Text style={styles.thanksText}>Thanks!</Text>
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
   headerText: {
     color: '#3976EA',
     fontSize: 50,
+    fontWeight: 'bold',
     marginTop: 20,
   },
   messageText: {
@@ -46,7 +47,8 @@ const styles = StyleSheet.create({
   },
   thanksText: {
     color: '#3976EA',
-    fontSize: 20,
+    fontSize: 30,
+    fontWeight: 'bold',
     marginTop: 40,
   },
   homeButton: {
@@ -62,7 +64,8 @@ const styles = StyleSheet.create({
   },
   homeLabel: {
     color: '#FFFFFF',
-    fontSize: 20
+    fontSize: 20,
+    fontWeight: 'bold',
   }
 });
 
