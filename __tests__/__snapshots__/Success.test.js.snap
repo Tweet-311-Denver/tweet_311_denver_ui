@@ -9,7 +9,7 @@ exports[`renders Success correctly 1`] = `
       "flex": 1,
       "flexDirection": "column",
       "padding": 15,
-      "width": "95%",
+      "width": "100%",
     }
   }
 >
@@ -18,11 +18,12 @@ exports[`renders Success correctly 1`] = `
       Object {
         "color": "#3976EA",
         "fontSize": 50,
+        "fontWeight": "bold",
         "marginTop": 20,
       }
     }
   >
-    Success
+    Success!
   </Text>
   <Text
     style={
@@ -40,8 +41,7 @@ exports[`renders Success correctly 1`] = `
     style={
       Object {
         "height": 250,
-        "marginLeft": "auto",
-        "marginRight": 35,
+        "marginRight": -60,
         "marginTop": 50,
         "width": 250,
       }
@@ -51,7 +51,8 @@ exports[`renders Success correctly 1`] = `
     style={
       Object {
         "color": "#3976EA",
-        "fontSize": 20,
+        "fontSize": 30,
+        "fontWeight": "bold",
         "marginTop": 40,
       }
     }
@@ -89,6 +90,7 @@ exports[`renders Success correctly 1`] = `
         Object {
           "color": "#FFFFFF",
           "fontSize": 20,
+          "fontWeight": "bold",
         }
       }
     >

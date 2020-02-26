@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Success correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "flexDirection": "column",
+      "width": 750,
+    }
+  }
+>
+  <ViewManagerAdapter_ExpoLinearGradient
+    proxiedProperties={
+      Object {
+        "colors": Array [
+          4283197087,
+          4282079640,
+          4279840618,
+        ],
+        "endPoint": undefined,
+        "locations": undefined,
+        "startPoint": undefined,
+      }
+    }
+    style={
+      Object {
+        "height": 1334,
+        "width": 750,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 300,
+          "marginLeft": 22.5,
+          "marginTop": 200.1,
+          "width": 300,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 50,
+          "fontWeight": "bold",
+          "marginBottom": 15,
+          "marginLeft": 30,
+        }
+      }
+    >
+      Welcome!
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 18,
+          "marginLeft": 30,
+          "marginRight": 22.5,
+        }
+      }
+    >
+      Thank you for using 
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Tweet311Denver
+      </Text>
+      . We aim to build a safer, cleaner, and more enjoyable commute experience for bikers, pedestrians, and public transportation enthusiasts. Submit a claim below and contribute to positive change!
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#3976EA",
+          "borderRadius": 20,
+          "height": 40,
+          "justifyContent": "center",
+          "marginLeft": "auto",
+          "marginRight": "auto",
+          "marginTop": 50,
+          "opacity": 1,
+          "width": 375,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 20,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Start Form
+      </Text>
+    </View>
+  </ViewManagerAdapter_ExpoLinearGradient>
+</View>
+`;

@@ -22,7 +22,6 @@ export default class Tweet extends Component {
   };
 
   tweetNow = () => {
-    const { setCase } = this.props;
     let twitterParameters = '';
     const { tweetContent, twitterViaAccount } = this.state;
     const { navigation } = this.props;
@@ -50,7 +49,6 @@ export default class Tweet extends Component {
     Linking.openURL(url)
       .then(data => {
         navigation.navigate('Success');
-        setCase('');
       })
       .catch(() => {
         alert('Something went wrong');
@@ -58,9 +56,8 @@ export default class Tweet extends Component {
   };
 
   handleSkip = () => {
-    const { navigation, setCase } = this.props;
+    const { navigation } = this.props;
     navigation.navigate('Success');
-    setCase('');
   };
 
   render() {
