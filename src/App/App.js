@@ -7,6 +7,7 @@ import Form from '../components/Form/Form.js';
 import Tweet from '../components/Tweet/Tweet';
 import Success from '../components/Success/Success';
 import Maps from '../components/Maps/Maps';
+import Welcome from '../components/Welcome/Welcome';
 
 console.disableYellowBox = true;
 
@@ -43,6 +44,7 @@ class App extends Component {
         <Stack.Navigator screenOptions={{
           headerShown: true
         }}>
+          <Stack.Screen name="Tweet311Denver" component={Welcome} />
           <Stack.Screen name="Home">
             {props => <Form {...props} desc={this.updateDescription} location={this.state.location}/>}
           </Stack.Screen>
