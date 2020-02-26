@@ -160,11 +160,11 @@ const styles = StyleSheet.create({
   smallInput: {
     borderColor: '#000000',
     borderWidth: 2,
-    fontSize: 30,
+    fontSize: 20,
     height: 50,
     marginLeft: 'auto',
     marginRight: 'auto',
-    padding: 5,
+    padding: 8,
     width: '80%'
   },
   largeInput: {
@@ -174,12 +174,13 @@ const styles = StyleSheet.create({
     height: 150,
     marginLeft: 'auto',
     marginRight: 'auto',
-    padding: 5,
+    padding: 8,
     width: '80%'
   },
   label: {
     color: '#3976EA',
     fontSize: 20,
+    fontWeight: 'bold', 
     marginBottom: 10,
     marginLeft: '10%',
     marginTop: 30

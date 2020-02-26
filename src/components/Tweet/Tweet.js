@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Dimensions, Text, Linking, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { View, StyleSheet, Dimensions, Image, Text, Linking, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -54,8 +54,8 @@ export default class Tweet extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <Text style={styles.h1}>Submit A Tweet</Text>
-          <Text style={styles.inputLabel}>Enter Tweet Content</Text>
+          <Text style={styles.h1}>Submit Tweet <Image style={styles.img} source={require('../../../assets/images/twitter.png')}></Image></Text>
+          <Text style={styles.inputLabel}>Tweet Content</Text>
           <TextInput
             value={tweetContent}
             onChangeText={tweetContent => this.setState({ tweetContent }, setDesc(tweetContent))}
@@ -100,6 +100,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold', 
     textAlign: 'center', 
   },
+  img: {
+    height: 50,
+    width: 50,
+  },
   input: {
     borderColor: 'gray',
     borderWidth: 2,
@@ -111,8 +115,7 @@ const styles = StyleSheet.create({
   },
   inputLabel: {
     color: '#3976EA',
-    fontSize: 18,
-    fontWeight: 'bold', 
+    fontSize: 20,
     marginTop: 20, 
     marginBottom: 8
   },
@@ -125,11 +128,11 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 35,
-    width: '50%',
+    width: width * .5,
   },
   tweetLabel: {
     color: '#FFFFFF',
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
   },
   confirmButton: {
@@ -141,11 +144,11 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 35,
-    width: '50%',
+    width: width * .5,
   },
   buttonLabel: {
     color: '#FFFFFF',
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
   }
 });
