@@ -62,10 +62,11 @@ class App extends Component {
             />}
           </Stack.Screen>
           <Stack.Screen name="Tweet" options={{headerShown: false}}>
-            {props => <Tweet
+            {props => this.state.caseID ?
+              <Tweet
               {...props} desc={this.state.description}
-              setDesc={this.updateDescription}
-            />}
+              setDesc={this.updateDescription} /> :
+              <Loader />}
           </Stack.Screen>
           <Stack.Screen name="Success" component={Success} />
         </Stack.Navigator>
