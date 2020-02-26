@@ -44,7 +44,7 @@ class App extends Component {
         <Stack.Navigator screenOptions={{
           headerShown: true
         }}>
-          <Stack.Screen name="Tweet311Denver" component={Welcome} />
+          <Stack.Screen name="Welcome" component={Welcome} />
           <Stack.Screen name="Home">
             {props => <Form {...props} desc={this.updateDescription} location={this.state.location}/>}
           </Stack.Screen>
