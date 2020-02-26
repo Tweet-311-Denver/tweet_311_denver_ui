@@ -88,8 +88,9 @@ class Form extends Component {
     const { setCase, setFetchError } = this.props;
     try {
       const response = await sendReport(payload);
+      const { caseID } = response.confirmation311;
       this.resetState();
-      setCase(response);
+      setCase(caseID);
     } catch(error) {
         this.setState({error: 'Sorry, we couldn\'t complete your request. Please try again.'});
         setFetchError();

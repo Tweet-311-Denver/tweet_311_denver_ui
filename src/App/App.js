@@ -28,9 +28,8 @@ class App extends Component {
     }
   }
 
-  setCase = async response => {
-    const { caseID } = response.confirmation311;
-    await this.setState({caseID});
+  setCase = caseID => {
+    this.setState({caseID});
   };
 
   updateDescription = desc => {
@@ -78,7 +77,8 @@ class App extends Component {
             {props => caseID || hasError ?
               <Tweet
               {...props} desc={this.state.description}
-              setDesc={this.updateDescription} error={hasError} resetFetchError={this.resetFetchError}/> :
+              setDesc={this.updateDescription} error={hasError} resetFetchError={this.resetFetchError}
+              setCase={this.setCase}/> :
               <Loader />}
           </Stack.Screen>
           <Stack.Screen name="Success" component={Success} />

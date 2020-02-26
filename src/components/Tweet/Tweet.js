@@ -22,6 +22,7 @@ export default class Tweet extends Component {
   };
 
   tweetNow = () => {
+    const { setCase } = this.props;
     let twitterParameters = '';
     const { tweetContent, twitterViaAccount } = this.state;
     const { navigation } = this.props;
@@ -48,15 +49,22 @@ export default class Tweet extends Component {
 
     Linking.openURL(url)
       .then(data => {
-        navigation.navigate('Success')
+        navigation.navigate('Success');
+        setCase('');
       })
       .catch(() => {
         alert('Something went wrong');
       });
   };
 
+  handleSkip = () => {
+    const { navigation, setCase } = this.props;
+    navigation.navigate('Success');
+    setCase('');
+  };
+
   render() {
-    const { navigation, setDesc } = this.props;
+    const { setDesc } = this.props;
     const { tweetContent, twitterViaAccount } = this.state;
 
     return (
@@ -90,7 +98,10 @@ export default class Tweet extends Component {
           <TouchableOpacity style={styles.confirmButton} onPress={ () => navigation.navigate('Success') }>
             <Text style={styles.buttonLabel}>Skip Tweet</Text>
           </TouchableOpacity>
-        </ScrollView>
+        </View>
+        <TouchableOpacity style={styles.confirmButton} onPress={this.handleSkip}>
+          <Text style={styles.buttonLabel}>Skip Tweet</Text>
+        </TouchableOpacity>
       </View>
     );
   }
