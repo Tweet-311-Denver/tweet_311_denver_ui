@@ -47,7 +47,11 @@ class App extends Component {
   };
 
   setFetchError = () => {
-    this.setState({hasError: true})
+    this.setState({hasError: true});
+  };
+
+  resetFetchError = () => {
+    this.setState({hasError: false});
   };
 
   render() {
@@ -63,6 +67,7 @@ class App extends Component {
             {props => <Form {...props} desc={this.updateDescription} location={this.state.location}
             setCase={this.setCase}
             setFetchError={this.setFetchError}
+            setLocation={this.handleLocationChange}
             />}
           </Stack.Screen>
           <Stack.Screen name="Location">
@@ -73,7 +78,7 @@ class App extends Component {
             {props => caseID || hasError ?
               <Tweet
               {...props} desc={this.state.description}
-              setDesc={this.updateDescription} error={hasError}/> :
+              setDesc={this.updateDescription} error={hasError} resetFetchError={this.resetFetchError}/> :
               <Loader />}
           </Stack.Screen>
           <Stack.Screen name="Success" component={Success} />

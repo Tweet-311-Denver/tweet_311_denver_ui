@@ -14,9 +14,10 @@ export default class Tweet extends Component {
   }
 
   componentDidMount = () => {
-    const { error, navigation } = this.props;
+    const { error, navigation, resetFetchError } = this.props;
     if (error) {
       navigation.navigate('Home');
+      resetFetchError();
     }
   };
 

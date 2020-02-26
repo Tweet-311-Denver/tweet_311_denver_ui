@@ -105,6 +105,7 @@ class Form extends Component {
   };
 
   resetState = () => {
+    const { setLocation } = this.props;
     this.setState({
         email: '',
         description: '',
@@ -112,6 +113,7 @@ class Form extends Component {
         photo: '',
         error: ''
     });
+    setLocation('', '');
   };
 
   render() {
