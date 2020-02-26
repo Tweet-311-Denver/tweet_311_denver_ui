@@ -4,224 +4,185 @@ exports[`Tweet renders Tweet correctly 1`] = `
 <View
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#fff",
+      "backgroundColor": "#ffffff",
       "flex": 1,
-      "justifyContent": "space-between",
-      "padding": 15,
-      "width": "95%",
+      "padding": 30,
     }
   }
 >
-  <Text
-    style={
-      Object {
-        "color": "#3976EA",
-        "fontSize": 35,
-        "marginTop": 20,
-      }
-    }
-  >
-    Confirm Your Tweet:
-  </Text>
-  <Image
-    source={1}
-    style={
-      Object {
-        "height": 250,
-        "marginTop": 70,
-        "width": 250,
-      }
-    }
-  />
-  <View
-    style={
-      Object {
-        "flex": 1,
-        "marginTop": 70,
-        "width": "90%",
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "color": "#3976EA",
-          "fontSize": 20,
-          "paddingBottom": 10,
+  <RCTScrollView>
+    <View>
+      <Text
+        style={
+          Object {
+            "color": "#3976EA",
+            "fontSize": 40,
+            "fontWeight": "bold",
+            "marginTop": 66.7,
+            "textAlign": "center",
+          }
         }
-      }
-    >
-      Your Tweet:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      maxLength="280"
-      multiline={true}
-      onChangeText={[Function]}
-      placeholder="Your Tweet"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "borderColor": "gray",
-          "borderWidth": 1,
-          "height": 150,
-          "padding": 10,
-          "width": "100%",
+      >
+        Submit Tweet 
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 50,
+              "width": 50,
+            }
+          }
+        />
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#3976EA",
+            "fontSize": 20,
+            "marginBottom": 8,
+            "marginTop": 20,
+          }
         }
-      }
-      underlineColorAndroid="transparent"
-    />
-  </View>
-  <View
-    accessible={true}
-    focusable={true}
-    isTVSelectable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#3976EA",
-        "borderRadius": 20,
-        "height": 40,
-        "justifyContent": "center",
-        "marginBottom": 35,
-        "marginLeft": "auto",
-        "marginRight": "auto",
-        "opacity": 1,
-        "width": "50%",
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "color": "#FFFFFF",
-          "fontSize": 20,
+      >
+        Tweet Content
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        maxLength="280"
+        multiline={true}
+        onChangeText={[Function]}
+        placeholder="Enter Tweet Content"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "borderColor": "gray",
+            "borderWidth": 2,
+            "fontSize": 20,
+            "height": 150,
+            "paddingBottom": 90,
+            "paddingLeft": 10,
+            "width": 637.5,
+          }
         }
-      }
-    >
-      Submit
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`renders Tweet correctly 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#fff",
-      "flex": 1,
-      "justifyContent": "space-between",
-      "padding": 15,
-      "width": "95%",
-    }
-  }
->
-  <Text
-    style={
-      Object {
-        "color": "#3976EA",
-        "fontSize": 35,
-        "marginTop": 20,
-      }
-    }
-  >
-    Confirm Your Tweet:
-  </Text>
-  <Image
-    source={1}
-    style={
-      Object {
-        "height": 250,
-        "marginTop": 70,
-        "width": 250,
-      }
-    }
-  />
-  <View
-    style={
-      Object {
-        "flex": 1,
-        "marginTop": 70,
-        "width": "90%",
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "color": "#3976EA",
-          "fontSize": 20,
-          "paddingBottom": 10,
+        underlineColorAndroid="transparent"
+      />
+      <Text
+        style={
+          Object {
+            "color": "#3976EA",
+            "fontSize": 20,
+            "marginBottom": 8,
+            "marginTop": 20,
+          }
         }
-      }
-    >
-      Your Tweet:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      maxLength="280"
-      multiline={true}
-      onChangeText={[Function]}
-      placeholder="Your Tweet"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "borderColor": "gray",
-          "borderWidth": 1,
-          "height": 150,
-          "padding": 10,
-          "width": "100%",
+      >
+        Tag Twitter Account
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        multiline={true}
+        onChangeText={[Function]}
+        placeholder="Enter Via Account"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "borderColor": "gray",
+            "borderWidth": 2,
+            "fontSize": 20,
+            "height": 150,
+            "paddingBottom": 90,
+            "paddingLeft": 10,
+            "width": 637.5,
+          }
         }
-      }
-      underlineColorAndroid="transparent"
-    />
-  </View>
-  <View
-    accessible={true}
-    focusable={true}
-    isTVSelectable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#3976EA",
-        "borderRadius": 20,
-        "height": 40,
-        "justifyContent": "center",
-        "marginBottom": 35,
-        "marginLeft": "auto",
-        "marginRight": "auto",
-        "opacity": 1,
-        "width": "50%",
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "color": "#FFFFFF",
-          "fontSize": 20,
+        underlineColorAndroid="transparent"
+        value="Tweet311Denver"
+      />
+      <View
+        style={
+          Object {
+            "marginTop": 15,
+          }
         }
-      }
-    >
-      Submit
-    </Text>
-  </View>
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#3976EA",
+              "borderRadius": 20,
+              "height": 40,
+              "justifyContent": "center",
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "marginTop": 35,
+              "opacity": 1,
+              "width": 375,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 22,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Tweet
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#3976EA",
+            "borderRadius": 20,
+            "height": 40,
+            "justifyContent": "center",
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "marginTop": 35,
+            "opacity": 1,
+            "width": 375,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 22,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Skip Tweet
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
 </View>
 `;

@@ -14,6 +14,41 @@ exports[`Maps renders Maps correctly 1`] = `
 >
   <View />
   <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "column",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 18,
+          "marginBottom": 26.68,
+          "marginTop": 26.68,
+        }
+      }
+    >
+      Please Select A Location
+    </Text>
+    <Text>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 40,
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "width": 40,
+          }
+        }
+      />
+    </Text>
+  </View>
+  <View
     accessible={true}
     focusable={true}
     isTVSelectable={true}
@@ -29,14 +64,14 @@ exports[`Maps renders Maps correctly 1`] = `
         "alignItems": "center",
         "backgroundColor": "#3976EA",
         "borderRadius": 20,
-        "height": 40,
+        "height": 45,
         "justifyContent": "center",
-        "marginBottom": 40,
+        "marginBottom": 80.03999999999999,
         "marginLeft": "auto",
         "marginRight": "auto",
-        "marginTop": 30,
+        "marginTop": 53.36,
         "opacity": 1,
-        "width": "40%",
+        "width": 375,
       }
     }
   >
@@ -45,6 +80,7 @@ exports[`Maps renders Maps correctly 1`] = `
         Object {
           "color": "#FFFFFF",
           "fontSize": 20,
+          "fontWeight": "bold",
         }
       }
     >

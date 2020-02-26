@@ -78,10 +78,16 @@ class App extends Component {
               <Tweet
               {...props} desc={this.state.description}
               setDesc={this.updateDescription} error={hasError} resetFetchError={this.resetFetchError}
-              setCase={this.setCase}/> :
+              /> :
               <Loader />}
           </Stack.Screen>
-          <Stack.Screen name="Success" component={Success} />
+          <Stack.Screen name="Success">
+            {props => <Success  
+              {...props}
+              caseID={this.state.caseID}
+              setCase={this.setCase}
+              />}
+          </Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
     );

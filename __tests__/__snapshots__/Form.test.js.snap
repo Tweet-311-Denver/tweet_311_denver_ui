@@ -4,8 +4,9 @@ exports[`Form renders Form correctly 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#fff",
+      "backgroundColor": "white",
       "flex": 1,
+      "justifyContent": "space-between",
     }
   }
 >
@@ -15,10 +16,11 @@ exports[`Form renders Form correctly 1`] = `
         style={
           Object {
             "color": "#3976EA",
-            "fontSize": 45,
+            "fontSize": 35,
+            "fontWeight": "bold",
             "marginLeft": "auto",
             "marginRight": "auto",
-            "marginTop": 60,
+            "marginTop": 26.68,
           }
         }
       >
@@ -39,9 +41,10 @@ exports[`Form renders Form correctly 1`] = `
           Object {
             "color": "#3976EA",
             "fontSize": 20,
+            "fontWeight": "bold",
             "marginBottom": 10,
             "marginLeft": "10%",
-            "marginTop": 40,
+            "marginTop": 30,
           }
         }
       >
@@ -54,12 +57,12 @@ exports[`Form renders Form correctly 1`] = `
         style={
           Object {
             "borderColor": "#000000",
-            "borderWidth": 1,
-            "fontSize": 30,
+            "borderWidth": 2,
+            "fontSize": 20,
             "height": 50,
             "marginLeft": "auto",
             "marginRight": "auto",
-            "padding": 5,
+            "padding": 8,
             "width": "80%",
           }
         }
@@ -104,6 +107,7 @@ exports[`Form renders Form correctly 1`] = `
             Object {
               "color": "#3976EA",
               "fontSize": 20,
+              "fontWeight": "bold",
             }
           }
         >
@@ -115,9 +119,10 @@ exports[`Form renders Form correctly 1`] = `
           Object {
             "color": "#3976EA",
             "fontSize": 20,
+            "fontWeight": "bold",
             "marginBottom": 10,
             "marginLeft": "10%",
-            "marginTop": 40,
+            "marginTop": 30,
           }
         }
       >
@@ -131,12 +136,12 @@ exports[`Form renders Form correctly 1`] = `
         style={
           Object {
             "borderColor": "#000000",
-            "borderWidth": 1,
+            "borderWidth": 2,
             "fontSize": 20,
-            "height": 200,
+            "height": 150,
             "marginLeft": "auto",
             "marginRight": "auto",
-            "padding": 5,
+            "padding": 8,
             "width": "80%",
           }
         }
@@ -158,14 +163,14 @@ exports[`Form renders Form correctly 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "rgba(0, 0, 0, 0.1)",
-            "borderRadius": 4,
+            "borderRadius": 25,
             "height": 40,
             "justifyContent": "center",
             "marginLeft": "auto",
             "marginRight": "auto",
-            "marginTop": 40,
+            "marginTop": 20,
             "opacity": 1,
-            "width": "80%",
+            "width": 487.5,
           }
         }
       >
@@ -174,6 +179,7 @@ exports[`Form renders Form correctly 1`] = `
             Object {
               "color": "#3976EA",
               "fontSize": 20,
+              "fontWeight": "bold",
             }
           }
         >
@@ -195,14 +201,14 @@ exports[`Form renders Form correctly 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "rgba(0, 0, 0, 0.1)",
-            "borderRadius": 4,
+            "borderRadius": 25,
             "height": 40,
             "justifyContent": "center",
             "marginLeft": "auto",
             "marginRight": "auto",
-            "marginTop": 40,
+            "marginTop": 20,
             "opacity": 1,
-            "width": "80%",
+            "width": 487.5,
           }
         }
       >
@@ -211,6 +217,7 @@ exports[`Form renders Form correctly 1`] = `
             Object {
               "color": "#3976EA",
               "fontSize": 20,
+              "fontWeight": "bold",
             }
           }
         >
@@ -251,9 +258,9 @@ exports[`Form renders Form correctly 1`] = `
             "marginBottom": 40,
             "marginLeft": "auto",
             "marginRight": "auto",
-            "marginTop": 40,
+            "marginTop": 30,
             "opacity": 1,
-            "width": "40%",
+            "width": 375,
           }
         }
       >
@@ -262,6 +269,7 @@ exports[`Form renders Form correctly 1`] = `
             Object {
               "color": "#FFFFFF",
               "fontSize": 20,
+              "fontWeight": "bold",
             }
           }
         >
