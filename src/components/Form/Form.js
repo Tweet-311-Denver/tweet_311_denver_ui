@@ -86,11 +86,13 @@ class Form extends Component {
   };
 
   postForm = async payload => {
-    const { setCase } = this.props;
+    const { setCase, setFetchError } = this.props;
     try {
       const response = await sendReport(payload);
       setCase(response);
     } catch(error) {
+        this.setState({error: 'Sorry, we couldn\'t complete your request. Please try again.'});
+        setFetchError();
         console.log(error);
     };
   };

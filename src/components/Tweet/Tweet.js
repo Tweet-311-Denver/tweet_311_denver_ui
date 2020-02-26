@@ -13,6 +13,14 @@ export default class Tweet extends Component {
     };
   }
 
+  componentDidMount = () => {
+    const { error, navigation } = this.props;
+    console.log('Error is in tweet', error);
+    if (error) {
+      navigation.navigate('Home');
+    }
+  };
+
   tweetNow = () => {
     let twitterParameters = '';
     const { tweetContent, twitterViaAccount } = this.state;

@@ -23,7 +23,8 @@ class App extends Component {
         lat: '',
         long: ''
       },
-      caseID: ''
+      caseID: '',
+      hasError: false
     }
   }
 
@@ -46,7 +47,13 @@ class App extends Component {
     });
   };
 
+  setFetchError = () => {
+    this.setState({hasError: true})
+  };
+
   render() {
+    const { caseID, hasError } = this.state;
+
     return (
       <NavigationContainer>
         <Stack.Navigator screenOptions={{
@@ -55,17 +62,19 @@ class App extends Component {
           <Stack.Screen name="Welcome" component={Welcome} />
           <Stack.Screen name="Home">
             {props => <Form {...props} desc={this.updateDescription} location={this.state.location}
-            setCase={this.setCase}/>}
+            setCase={this.setCase}
+            setFetchError={this.setFetchError}
+            />}
           </Stack.Screen>
           <Stack.Screen name="Location">
             {props => <Maps {...props} setLocation={this.handleLocationChange}
             />}
           </Stack.Screen>
           <Stack.Screen name="Tweet" options={{headerShown: false}}>
-            {props => this.state.caseID ?
+            {props => caseID || hasError ?
               <Tweet
               {...props} desc={this.state.description}
-              setDesc={this.updateDescription} /> :
+              setDesc={this.updateDescription} error={hasError}/> :
               <Loader />}
           </Stack.Screen>
           <Stack.Screen name="Success" component={Success} />
