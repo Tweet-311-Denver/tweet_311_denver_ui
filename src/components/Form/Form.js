@@ -86,9 +86,10 @@ class Form extends Component {
   };
 
   postForm = async payload => {
+    const { setCase } = this.props;
     try {
       const response = await sendReport(payload);
-      console.log(response);
+      setCase(response);
     } catch(error) {
         console.log(error);
     };

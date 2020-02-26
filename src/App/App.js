@@ -21,9 +21,16 @@ class App extends Component {
       location: {
         lat: '',
         long: ''
-      }
+      },
+      caseID: ''
     }
   }
+
+  setCase = async response => {
+    const { caseID } = response.confirmation311;
+    await this.setState({caseID});
+    console.log(this.state.caseID);
+  };
 
   updateDescription = desc => {
     this.setState({description: desc});
@@ -46,7 +53,8 @@ class App extends Component {
         }}>
           <Stack.Screen name="Welcome" component={Welcome} />
           <Stack.Screen name="Home">
-            {props => <Form {...props} desc={this.updateDescription} location={this.state.location}/>}
+            {props => <Form {...props} desc={this.updateDescription} location={this.state.location}
+            setCase={this.setCase}/>}
           </Stack.Screen>
           <Stack.Screen name="Location">
             {props => <Maps {...props} setLocation={this.handleLocationChange}
