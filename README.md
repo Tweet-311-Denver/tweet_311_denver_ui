@@ -56,8 +56,7 @@
 
 
 ## Screenshots:
-<img width="308" alt="Screen Shot 2020-02-25 at 8 45 32 PM" src="https://user-images.githubusercontent.com/48968224/75309952-c5880180-580f-11ea-8eaa-5a3d7435e4f2.png"><img width="310" alt="Screen Shot 2020-02-25 at 8 47 31 PM" src="https://user-images.githubusercontent.com/48968224/75310050-0d0e8d80-5810-11ea-82a1-6d04127fa468.png">
-![Screen Shot 2020-02-26 at 9 39 09 AM](https://user-images.githubusercontent.com/48968224/75367250-44ffea00-587d-11ea-981f-8bbc13ef3d22.png)
+<img width="308" alt="Screen Shot 2020-02-25 at 8 45 32 PM" src="https://user-images.githubusercontent.com/48968224/75309952-c5880180-580f-11ea-8eaa-5a3d7435e4f2.png"><img width="310" alt="Screen Shot 2020-02-25 at 8 47 31 PM" src="https://user-images.githubusercontent.com/48968224/75310050-0d0e8d80-5810-11ea-82a1-6d04127fa468.png">![Screen Shot 2020-02-26 at 9 39 09 AM](https://user-images.githubusercontent.com/48968224/75367250-44ffea00-587d-11ea-981f-8bbc13ef3d22.png)
 
 
 ## Project Goals
