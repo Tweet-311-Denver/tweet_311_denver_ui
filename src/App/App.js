@@ -52,7 +52,7 @@ class App extends Component {
             {props => <Maps {...props} setLocation={this.handleLocationChange}
             />}
           </Stack.Screen>
-          <Stack.Screen name="Tweet">
+          <Stack.Screen name="Tweet" options={{headerShown: false}}>
             {props => <Tweet
               {...props} desc={this.state.description}
               setDesc={this.updateDescription}

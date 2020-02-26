@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     color: '#3976EA',
     fontSize: 40,
     fontWeight: 'bold', 
+    marginTop: height * .05,
     textAlign: 'center', 
   },
   img: {
