@@ -10,6 +10,8 @@ npm-debug.*
 web-build/
 web-report/
 /cache
+/coverage
+.env
 
 # macOS
 .DS_Store

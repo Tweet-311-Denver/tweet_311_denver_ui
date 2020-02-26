@@ -1,3 +1,5 @@
+import { SERVICE_KEY } from 'react-native-dotenv';
+
 export const sendReport = async payload => {
   const options = {
     method: 'POST',
@@ -6,11 +8,12 @@ export const sendReport = async payload => {
       'Content-Type': 'application/json'
     }
   };
+  let url = `https://tweet311denver-service.herokuapp.com/api/v1/reports?serviceKey=${SERVICE_KEY}`;
   const response = await
-    fetch('https://tweet311denver-service.herokuapp.com/api/v1/locations', options);
+    fetch(url, options);
   if(!response.ok) {
-    throw new Error('Error: There was a problem submitting your report.');
+    throw new Error(`${response.status}: There was a problem submitting your report.`);
   }
-  const id = await response.json();
-  return id
+  const report = await response.json();
+  return report
 };

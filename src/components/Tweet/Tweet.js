@@ -12,8 +12,17 @@ export default class Tweet extends Component {
       twitterViaAccount: 'Tweet311Denver',
     };
   }
-  
+
+  componentDidMount = () => {
+    const { error, navigation, resetFetchError } = this.props;
+    if (error) {
+      navigation.navigate('Home');
+      resetFetchError();
+    }
+  };
+
   tweetNow = () => {
+    const { setCase } = this.props;
     let twitterParameters = '';
     const { tweetContent, twitterViaAccount } = this.state;
     const { navigation } = this.props;
@@ -40,15 +49,22 @@ export default class Tweet extends Component {
 
     Linking.openURL(url)
       .then(data => {
-        navigation.navigate('Success')
+        navigation.navigate('Success');
+        setCase('');
       })
       .catch(() => {
         alert('Something went wrong');
       });
   };
 
+  handleSkip = () => {
+    const { navigation, setCase } = this.props;
+    navigation.navigate('Success');
+    setCase('');
+  };
+
   render() {
-    const { navigation, setDesc } = this.props;
+    const { setDesc } = this.props;
     const { tweetContent, twitterViaAccount } = this.state;
 
     return (
@@ -79,7 +95,7 @@ export default class Tweet extends Component {
               <Text style={styles.tweetLabel}>Tweet</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.confirmButton} onPress={ () => navigation.navigate('Success') }>
+          <TouchableOpacity style={styles.confirmButton} onPress={this.handleSkip}>
             <Text style={styles.buttonLabel}>Skip Tweet</Text>
           </TouchableOpacity>
         </ScrollView>
@@ -97,9 +113,9 @@ const styles = StyleSheet.create({
   h1: {
     color: '#3976EA',
     fontSize: 40,
-    fontWeight: 'bold', 
+    fontWeight: 'bold',
     marginTop: height * .05,
-    textAlign: 'center', 
+    textAlign: 'center',
   },
   img: {
     height: 50,
@@ -117,7 +133,7 @@ const styles = StyleSheet.create({
   inputLabel: {
     color: '#3976EA',
     fontSize: 20,
-    marginTop: 20, 
+    marginTop: 20,
     marginBottom: 8
   },
   tweetBtn: {

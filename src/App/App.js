@@ -8,6 +8,7 @@ import Tweet from '../components/Tweet/Tweet';
 import Success from '../components/Success/Success';
 import Maps from '../components/Maps/Maps';
 import Welcome from '../components/Welcome/Welcome';
+import Loader from '../components/Loader/Loader.js';
 
 console.disableYellowBox = true;
 
@@ -21,9 +22,15 @@ class App extends Component {
       location: {
         lat: '',
         long: ''
-      }
+      },
+      caseID: '',
+      hasError: false
     }
   }
+
+  setCase = caseID => {
+    this.setState({caseID});
+  };
 
   updateDescription = desc => {
     this.setState({description: desc});
@@ -38,7 +45,17 @@ class App extends Component {
     });
   };
 
+  setFetchError = () => {
+    this.setState({hasError: true});
+  };
+
+  resetFetchError = () => {
+    this.setState({hasError: false});
+  };
+
   render() {
+    const { caseID, hasError } = this.state;
+
     return (
       <NavigationContainer>
         <Stack.Navigator screenOptions={{
@@ -46,17 +63,23 @@ class App extends Component {
         }}>
           <Stack.Screen name="Welcome" component={Welcome} />
           <Stack.Screen name="Home">
-            {props => <Form {...props} desc={this.updateDescription} location={this.state.location}/>}
+            {props => <Form {...props} desc={this.updateDescription} location={this.state.location}
+            setCase={this.setCase}
+            setFetchError={this.setFetchError}
+            setLocation={this.handleLocationChange}
+            />}
           </Stack.Screen>
           <Stack.Screen name="Location">
             {props => <Maps {...props} setLocation={this.handleLocationChange}
             />}
           </Stack.Screen>
           <Stack.Screen name="Tweet" options={{headerShown: false}}>
-            {props => <Tweet
+            {props => caseID || hasError ?
+              <Tweet
               {...props} desc={this.state.description}
-              setDesc={this.updateDescription}
-            />}
+              setDesc={this.updateDescription} error={hasError} resetFetchError={this.resetFetchError}
+              setCase={this.setCase}/> :
+              <Loader />}
           </Stack.Screen>
           <Stack.Screen name="Success" component={Success} />
         </Stack.Navigator>
