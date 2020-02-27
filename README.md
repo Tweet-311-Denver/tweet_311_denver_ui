@@ -55,7 +55,8 @@ See the back-end repo [here](https://github.com/Tweet-311-Denver/tweet_311_denve
   - You can either scan the bar code in the terminal or use the command line tools to open the application 
 
 ## Video
-[](https://docs.google.com/presentation/d/1OyxgUi-l1shv616ZrI5dt9qzkgznBkdu_HluiRpHczM/edit?ts=5e56cd6e#slide=id.g700a40663b_2_11)
+Click on the link below to see a video demo.
+[Click Me](https://www.youtube.com/watch?v=xwjWnJ-YrRA&feature=youtu.be)
 
 
 ## Screenshots:
