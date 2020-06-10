@@ -1,6 +1,6 @@
 # Tweet311Denver
 
-**Tweet311Denver** is a mobile application for the commuters of Denver Colorado. Tweet311 Denver allows you to fill out one form that will trigger processing form to the city and county of Denver for whatever the issue might be, snow in the road, pot-holes, or an emergency. We realize that most users are checking Twitter for this up-to-date information so our app will take you directly to Twitter so you can keep your friends informed.Our goal is to keep the roads and walkways a safer place for everyone.
+**Tweet311Denver** is a mobile application for the commuters of Denver Colorado. Tweet311 Denver allows you to fill out one form that will trigger processing from the city and county of Denver for whatever the issue might be, snow in the road, pot-holes, or an emergency. We realize that most users are checking Twitter for this up-to-date information so our app will take you directly to Twitter so you can keep your friends informed.Our goal is to keep the roads and walkways a safer place for everyone.
 
 ## Table of Contents 
 - [Tech Stack and Team](#tech-stack)
