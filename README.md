@@ -56,7 +56,7 @@ See the back-end repo [here](https://github.com/Tweet-311-Denver/tweet_311_denve
 
 ## Video
 Click on the link to see a video demo.
-[Click Me](https://www.youtube.com/watch?v=xwjWnJ-YrRA&feature=youtu.be)
+[Click Me](https://www.youtube.com/watch?v=cad_aqusE_k&feature=share)
 
 
 ## Screenshots:
