@@ -67,7 +67,8 @@ Click on the link to see a video demo.
 
   - Use an agile process to turn defined requirements into deployed and production ready software
 
-- Gain experience dividing applications into components and domains of responsibilities to facilitate multi-developer teams. Service oriented architecture concepts and patterns are highly encouraged.
+- Gain experience dividing applications into components and domains of responsibilities to facilitate multi-developer teams. 
+- Service oriented architecture concepts.
 - Practice an advanced, professional git workflow (see whole-team expectations)
 - Gain more experience using continuous integration tools to build and automate the deployment of features in various environments
 - Build applications that execute in development, test, CI, and production environments
